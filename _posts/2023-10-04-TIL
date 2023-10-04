@@ -1,0 +1,109 @@
+---
+title:  "[Spring] Today I learned"
+excerpt: "I reminded myself about how spring framework works again!"
+
+categories:
+  - Blog
+tags:
+  - [sherpasoft, spring]
+
+toc: true
+toc_sticky: true
+ 
+date: 2023-10-24
+last_modified_at: 2023-10-24
+---
+
+# 1. web.xml?
+- Definition
+    - 
+    Deployment Descripter(배포 설명자) for WebApplication
+    
+- Characteristic
+    -
+    - one web.xml for web application
+    - insde of WEB-INF folder
+    - setting values in web.xml file is loaded on memory when web application starts
+
+- Role
+    -
+    - how servlet is mapped
+    - check the url that is necessary for authentication
+    
+    - Role for Spring MVC
+        - 
+        - DispatcherServlet
+            ```
+            - create Spring Container(manaing lifecycle of controller)
+            - accepting client's request directly at first
+            - intercept the client's request and send it to controller
+            ```
+        - ContextLoaderListner
+        - encodingFilter
+
+- Filter
+    -
+    ```
+    <web-app>
+        <filter>
+            <filter-name>HighlightFilter</filter-name>
+            <filter-class>javacan.filter.HighlightFilter</filter-class>
+            <init-param>
+                <param-name>paramName</param-name>
+                <param-value>value</param-value>
+             </init-param>
+        </filter>
+     
+        <filter-mapping>
+            <filter-name>HighlightFilter</filter-name>
+            <url-pattern>*.txt</url-pattern>
+        </filter-mapping>
+    </web-app>
+  ```
+
+    ### filter-name 
+    > assign filter that will be used in application
+    ### filter-class 
+    > what filter you will use? (HighlightFilter)
+    ### init-param 
+    > when filter is initialized(when init() is called), parameter paramName will be passed. <br>
+   > This is usually used when the objects or resources need to be initialized or when additional information is necessary when assinging objects or resources.
+    ### filter-mapping 
+    > when client use filters for specific URI. (HighlightFilter is used for .txt file)
+
+- context-param
+    -
+    ```
+    <context-param>
+        <param-name>driver</param-name>
+        <param-value>com.mysql.cj.jdbc.Driver</param-value>
+    </context-param>
+    <context-param>
+        <param-name>url</param-name>
+        <param-value>jdbc:mysql://localhost:3307/knou</ param-value>
+    </context-param>
+    <context-param>
+        <param-name>username</param-name>
+        <param-value>user</param-value>
+    </context-param>
+    <context-param>
+        <param-name>password</param-name>
+        <param-value>****</param-value>
+    </context-param>
+    ```
+    ### context-param
+    > parameter that is shared by servlets
+    ### param-name
+    > parameter name
+    ### param-value
+    > value of parameter
+    
+- contents
+    -
+    1. initial variable for ServletContext
+    2. definition for servlet and jsp, mapping
+    3. MimeType mapping
+    4. validated time for session
+    5. welcome file list
+    6. error handler
+
