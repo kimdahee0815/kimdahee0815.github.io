@@ -40,8 +40,8 @@ export const SITE_METADATA = {
       mapping: 'title', // supported options: pathname, url, title
       reactions: '1', // Emoji reactions: 1 = enable / 0 = disable
       metadata: '0',
-      theme: 'light_high_contrast',
-      darkTheme: 'transparent_dark',
+      theme: 'dark_protanopia',
+      darkTheme: 'catppuccin_latte',
       themeURL: '',
       lang: 'en',
     },

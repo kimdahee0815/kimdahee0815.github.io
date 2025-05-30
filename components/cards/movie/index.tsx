@@ -1,6 +1,6 @@
 import { GradientBorder } from '~/components/ui/gradient-border'
 import { GrowingUnderline } from '~/components/ui/growing-underline'
-import { Image, Zoom } from '~/components/ui/image'
+import { Image, Zoom } from '~/components/ui/Image'
 import Link from '~/components/ui/Link'
 import { TiltedGridBackground } from '~/components/ui/tilted-grid-background'
 import type { ImdbMovie } from '~/types/data'

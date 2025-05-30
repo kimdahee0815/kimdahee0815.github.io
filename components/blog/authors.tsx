@@ -1,5 +1,5 @@
 import type { Author } from '~/.contentlayer/generated'
-import { Image } from '~/components/ui/image'
+import { Image } from '~/components/ui/Image'
 import Link from '~/components/ui/Link'
 import type { CoreContent } from '~/types/data'
 
