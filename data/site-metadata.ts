@@ -18,9 +18,9 @@ export const SITE_METADATA = {
   x: 'https://x.com/dianakim815',
   locale: 'en-US',
   stickyNav: true,
-  goodreadsBookshelfUrl: 'https://www.goodreads.com/review/list/179720035-leo-huynh',
-  goodreadsFeedUrl: 'https://www.goodreads.com/review/list_rss/179720035',
-  imdbRatingsList: 'https://www.imdb.com/user/ur154483197/ratings/?view=grid',
+  goodreadsBookshelfUrl: 'https://www.goodreads.com/review/list/190809482-daheekim',
+  goodreadsFeedUrl: 'https://www.goodreads.com/review/list_rss/190809482',
+  imdbRatingsList: 'https://www.imdb.com/user/ur203182499/ratings/?view=grid',
   analytics: {
     umamiAnalytics: {
       websiteId: process.env.NEXT_UMAMI_ID,
