@@ -30,7 +30,7 @@ export const SITE_METADATA = {
   newsletter: {
     // supports mailchimp, buttondown, convertkit, klaviyo, revue, emailoctopus, beehive
     // Please add your .env file and modify it according to your selection
-    provider: 'buttondown',
+    provider: 'beehive',
   },
   comments: {
     giscusConfigs: {
