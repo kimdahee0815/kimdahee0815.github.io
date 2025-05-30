@@ -1,0 +1,30 @@
+'use client'
+
+import NextLink from 'next/link'
+import type { LinkProps } from 'next/link'
+import type { AnchorHTMLAttributes } from 'react'
+import clsx from 'clsx'
+
+type Props = LinkProps & AnchorHTMLAttributes<HTMLAnchorElement>
+
+const Link = ({ href, className, children, ...rest }: Props) => {
+  const isInternalLink = typeof href === 'string' && (href.startsWith('/') || href.startsWith('#'))
+
+  const mergedClassName = clsx('break-words', className)
+
+  if (isInternalLink) {
+    return (
+      <NextLink href={href} {...rest} className={mergedClassName}>
+        {children}
+      </NextLink>
+    )
+  }
+
+  return (
+    <a href={href} className={clsx(mergedClassName, 'flex')} target="_blank" rel="noopener noreferrer" {...rest}>
+      {children}
+    </a>
+  )
+}
+
+export default Link
