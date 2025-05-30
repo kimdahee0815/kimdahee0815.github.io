@@ -15,6 +15,7 @@ export const SITE_METADATA = {
   email: 'kimdahee0815@gmail.com',
   github: 'https://github.com/kimdahee0815',
   linkedin: 'https://www.linkedin.com/in/dahee-kim-6aaa5b267/',
+  x: 'https://x.com/dianakim815',
   locale: 'en-US',
   stickyNav: true,
   goodreadsBookshelfUrl: 'https://www.goodreads.com/review/list/179720035-leo-huynh',
