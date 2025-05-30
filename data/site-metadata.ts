@@ -24,7 +24,7 @@ export const SITE_METADATA = {
   analytics: {
     umamiAnalytics: {
       websiteId: process.env.NEXT_UMAMI_ID,
-      shareUrl: 'https://cloud.umami.is/share/UQkiuQnS5MhhzuMz/letshackthemoon.com',
+      shareUrl: 'https://cloud.umami.is/share/iUdLUqgPQbTwZ91c/letshackthemoon.com',
     },
   },
   newsletter: {
