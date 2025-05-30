@@ -13,7 +13,7 @@ export default async function Projects() {
       if (p.repo && typeof p.repo === 'string') {
         const repoData = await fetchRepoData(p.repo as string)
         if (repoData) {
-          return { ...p, repo: repoData }
+          return { ...p, repoData }
         }
       }
       return p

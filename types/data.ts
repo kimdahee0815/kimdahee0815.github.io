@@ -16,6 +16,7 @@ export type Project = {
   imgSrc: string
   url?: string
   repo?: string
+  repoData?: GithubRepository
   builtWith: string[]
   links?: { title: string; url: string }[]
 }
