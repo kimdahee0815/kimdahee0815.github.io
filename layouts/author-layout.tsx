@@ -83,7 +83,7 @@ export function AuthorLayout({ children }: Props) {
                 </a>{' '}
                 using <strong>Tailwind Nextjs Starter Blog</strong>.
               </p>
-              <p>
+              {/* <p>
                 A huge thanks to{' '}
                 <a href="https://twitter.com/timlrxx" target="_blank">
                   Timothy Lin
@@ -97,7 +97,7 @@ export function AuthorLayout({ children }: Props) {
                   Trong Khanh
                 </a>{' '}
                 for the minimal, lightweight, and super easy-to-customize blog starter.
-              </p>
+              </p> */}
               {/* <p>A few major over-engineering-changes from the original repo:</p>
               <ul>
                 <li>
