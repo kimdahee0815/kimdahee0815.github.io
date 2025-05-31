@@ -29,7 +29,7 @@ export default async function BooksPage() {
             </p>
             <p className="mt-3 italic flex">
               *Data pulled from my{' '}
-              <Link href={SITE_METADATA.goodreadsBookshelfUrl} className="font-medium">
+              <Link href={SITE_METADATA.goodreadsBookshelfUrl} className="font-medium ml-1">
                 <GrowingUnderline data-umami-event="goodreads-feed" active>
                   Goodreads bookshelf
                 </GrowingUnderline>
