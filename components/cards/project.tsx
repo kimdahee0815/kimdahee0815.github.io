@@ -16,7 +16,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
   const href = repository?.url || url
 
   return (
-    <div className="md max-w-[550px] p-4 md:w-1/2">
+    <div className="md max-w-[580px] p-4 md:w-1/2">
       <div
         className={`${
           imgSrc && 'h-full'
