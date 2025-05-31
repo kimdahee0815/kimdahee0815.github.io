@@ -35,7 +35,7 @@ export default async function Projects() {
           <h3 className="mb-4 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100">
             Work
           </h3>
-          <div className="-m-4 flex flex-wrap">
+          <div className="-m-4 flex mt-8 flex-wrap">
             {workProjects.map((project) => (
               <ProjectCard key={project.title} project={project} />
             ))}
@@ -46,7 +46,7 @@ export default async function Projects() {
           <h3 className="mb-4 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100">
             Side projects
           </h3>
-          <div className="-m-4 flex flex-wrap">
+          <div className="-m-4 mt-8 flex flex-wrap">
             {sideProjects.map((project) => (
               <ProjectCard key={project.title} project={project} />
             ))}
