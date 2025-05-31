@@ -12,14 +12,15 @@ export default async function Projects() {
     PROJECTS.map(async (p) => {
       if (p.repo && typeof p.repo === 'string') {
         const repoData = await fetchRepoData(p.repo as string)
+        
         if (repoData) {
           return { ...p, repoData }
         }
       }
-      return p
+      return p;
     })
   )
-
+  console.log(projectsWithRepoData);
   const workProjects = projectsWithRepoData.filter(({ type }) => type === 'work')
   const sideProjects = projectsWithRepoData.filter(({ type }) => type === 'self')
 

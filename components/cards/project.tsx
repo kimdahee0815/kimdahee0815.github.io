@@ -9,7 +9,7 @@ import { Image } from '~/components/ui/Image'
 import GithubRepo from '~/components/projects/GithubRepo'
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
-  const { title, description, imgSrc, url, repo, builtWith } = project
+  const { title, description, imgSrc, url, repo, builtWith, repoData } = project
 
   const repository = repo as GithubRepository | undefined
 
@@ -70,7 +70,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             })}
           </div>
           {repository ? (
-            <GithubRepo repo={repository} />
+            <GithubRepo repo={repoData? repoData: repository} />
           ) : (
             href && (
               <Link
