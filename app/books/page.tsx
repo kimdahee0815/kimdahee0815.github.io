@@ -9,6 +9,7 @@ import { SITE_METADATA } from '~/data/site-metadata'
 import books from '~/json/books.json' assert { type: 'json' }
 import type { GoodreadsBook } from '~/types/data'
 import { BooksList } from './books-list'
+import { ExternalLink } from 'lucide-react'
 
 export let metadata = genPageMetadata({ title: 'My bookshelf' })
 
@@ -26,12 +27,13 @@ export default async function BooksPage() {
               <br />
               This is where I keep track of what I’ve read and what’s on my reading list.
             </p>
-            <p className="mt-3 italic">
+            <p className="mt-3 italic flex">
               *Data pulled from my{' '}
               <Link href={SITE_METADATA.goodreadsBookshelfUrl} className="font-medium">
                 <GrowingUnderline data-umami-event="goodreads-feed" active>
                   Goodreads bookshelf
                 </GrowingUnderline>
+                {SITE_METADATA.goodreadsBookshelfUrl.startsWith('http') && <ExternalLink className="ml-2 mt-2" size={18} strokeWidth={1.5} />}
               </Link>
               .
             </p>
@@ -48,7 +50,7 @@ export default async function BooksPage() {
           }
         />
       </Suspense>
-      <div className="mt-6 border-t border-gray-200 py-5 dark:border-gray-700 md:mt-10 md:py-10">
+      {/* <div className="mt-6 border-t border-gray-200 py-5 dark:border-gray-700 md:mt-10 md:py-10">
         <h3 className="mb-6 text-2xl font-bold leading-9 tracking-tight text-gray-900 dark:text-gray-100 md:text-3xl">
           FYI
         </h3>
@@ -64,7 +66,7 @@ export default async function BooksPage() {
             />
           </Zoom>
         </div>
-      </div>
+      </div> */}
     </Container>
   )
 }

@@ -8,6 +8,7 @@ import { SITE_METADATA } from '~/data/site-metadata'
 import movies from '~/json/movies.json' assert { type: 'json' }
 import { MoviesList } from './movies-list'
 import type { ImdbMovie } from '~/types/data'
+import { ExternalLink } from 'lucide-react'
 
 export let metadata = genPageMetadata({ title: 'My movies list' })
 
@@ -26,20 +27,21 @@ export default async function MoviesPage() {
               probably rewatched many times (highly recommended). Take a look and maybe find your
               next favorite film!
             </p>
-            <p className="mt-3 italic">
-              *Data is exported from my{' '}
-              <Link href={SITE_METADATA.imdbRatingsList} className="font-medium">
+            <p className="mt-3 italic flex">
+              *Data is exported from my {' '}
+              <Link href={SITE_METADATA.imdbRatingsList} className="font-medium ml-1">
                 <GrowingUnderline data-umami-event="goodreads-feed" active>
                   IMDB ratings list
                 </GrowingUnderline>
+                {SITE_METADATA.imdbRatingsList.startsWith('http') && <ExternalLink className="ml-2 mt-2" size={18} strokeWidth={1.5} />}
               </Link>
               , with extra details pulled in from the{' '}
-              <Link href="https://www.omdbapi.com/" className="font-medium">
+              <Link href="https://www.omdbapi.com/" className="font-medium ml-1">
                 <GrowingUnderline data-umami-event="goodreads-feed" active>
                   OMDB API
                 </GrowingUnderline>
-              </Link>{' '}
-              for a more complete look at each movie.
+                {<ExternalLink className="ml-2 mt-2" size={18} strokeWidth={1.5} />}
+              </Link>{'. '}
             </p>
           </>
         }
