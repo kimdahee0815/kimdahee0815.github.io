@@ -29,7 +29,7 @@ export function Header() {
   }, [])
 
   let headerClass =
-    'mx-auto w-full max-w-[90rem] supports-backdrop-blur fixed left-0 right-0 top-0 z-10 bg-white/75 py-8 backdrop-blur dark:bg-dark/75 md:rounded-2xl'
+    'mx-auto w-full max-w-[80rem] supports-backdrop-blur fixed left-0 right-0 top-0 z-10 bg-white/75 py-8 backdrop-blur dark:bg-dark/75 md:rounded-2xl'
 
   if (SITE_METADATA.stickyNav) {
     headerClass += ' sticky top-0 z-50'
@@ -37,7 +37,7 @@ export function Header() {
 
   return (
     <Container as="header" className={headerClass}>
-      <div className="mx-auto flex max-w-[90rem] items-center justify-between px-3 xl:max-w-[90rem] xl:px-0">
+      <div className="mx-auto flex max-w-[80rem] items-center justify-between px-3 xl:max-w-[80rem] xl:px-0">
         <Link href="/" aria-label={SITE_METADATA.headerTitle} className="flex items-center">
           <div className="animate-wave">
             <Logo
