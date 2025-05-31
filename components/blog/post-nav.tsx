@@ -14,7 +14,7 @@ export function PostNav({
 }) {
   if (next || prev) {
     return (
-      <div className="flex flex-col gap-2 py-4 md:flex-row md:justify-between md:gap-12 xl:py-8">
+      <div className="text-xl flex flex-col gap-2 py-4 md:flex-row md:justify-between md:gap-12 xl:py-8">
         {prev && prev.path ? (
           <div className="flex flex-col gap-1">
             <NavLabel label={`←  ${prevLabel}`} />
@@ -26,7 +26,7 @@ export function PostNav({
           <div />
         )}
         {next && next.path && (
-          <div className="flex flex-col items-end gap-1 text-right">
+          <div className="text-xl flex flex-col items-end gap-1 text-right">
             <NavLabel label={`${nextLabel}  →`} />
             <Link href={`/${next.path}`}>
               <GrowingUnderline data-umami-event="post-nav-next">{next.title}</GrowingUnderline>
