@@ -159,6 +159,7 @@ module.exports = {
         'solarized-light': '#fdfaf6',
         'github-dark-dimmed': '#22272e',
         'code-block': '#36313d',
+        'dark-mode-yellow': '#ffe880',
       },
       width: {
         4.5: '1.125rem',

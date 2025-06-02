@@ -27,7 +27,8 @@ export function GrowingUnderline({
           'relative z-20 inline gap-1 transition-all duration-200',
           'group-hover:font-semibold group-hover:tracking-wide',
           'group-hover:animate-textBounce',
-          'multiline-underline'
+          'multiline-underline',
+          'group-hover:dark:text-dark-mode-yellow',
         )}
         style={{ whiteSpace: 'pre-line' }}
       >
