@@ -1,6 +1,24 @@
+"use client"
+
 import type { SVGProps } from 'react'
+import { useEffect, useState } from "react"
+import { useTheme } from "next-themes"
 
 export function Signature(props: SVGProps<SVGSVGElement>) {
+  const { theme } = useTheme();
+
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return null
+  }
+
+  const isDark = theme === "dark"
+
   return (
     <svg
       version="1.0"
@@ -12,7 +30,7 @@ export function Signature(props: SVGProps<SVGSVGElement>) {
     >
       <g
         transform="translate(0.000000,315.000000) scale(0.100000,-0.100000)"
-        fill="#000000"
+        fill={isDark ? "#ffffff" : "#000000"}
         stroke="none"
       >
         <path
