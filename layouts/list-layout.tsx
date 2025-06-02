@@ -94,7 +94,17 @@ export function ListLayout({
     <Container className="pt-4 lg:pt-12">
       <PageHeader
         title={title}
-        description="I like to write about stuff I'm into. You'll find a mix of web dev articles, tech news, and random thoughts from my life. Use the search below to filter by title."
+        description={
+            <>
+            Join me as I explore the world of software development! 😄
+            <br />
+            I share posts on:
+            <br/>
+            fixing common errors🐞, core programming concepts✅, latest tech news📫, practical tutorials and how-tos🔦, tool reviews and recommendations⚒️, learning resources✒️.
+            <br/>
+            🔍Use the search below to filter by title.
+          </>
+        }
         className="border-b border-gray-200 dark:border-gray-700"
       >
         <SearchArticles label="Search articles" onChange={(e) => setSearchValue(e.target.value)} />
