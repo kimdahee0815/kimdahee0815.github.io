@@ -18,12 +18,10 @@ export default function Snippets() {
         description={
           <>
             <p>
-              My personal stash of code snippets that make my life easier. They’re simple and
-              reusable. Feel free to copy, tweak, and use them as you like.
+              This is where I keep my favorite, easy-to-use code snippets. They're all about efficiency and reusability. Go ahead and take what you need, customize it, and put it to work. 
             </p>
             <p className="mt-3 italic">
-              *Some snippets written by me, some are from the internet (Thanks to the open source
-              community).
+              Credit goes to both my own coding sessions and the collaborative spirit of the internet's open-source contributors.
             </p>
           </>
         }

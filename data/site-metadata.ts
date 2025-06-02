@@ -3,7 +3,7 @@ export const SITE_METADATA = {
   author: 'DAHEE KIM',
   headerTitle: `Let's Hack The Moon`,
   description:
-    'A personal space on the cloud where I document my programming journey, sharing lessons, insights, and resources for fellow developers.',
+    'My online notebook documenting the ups and downs of learning to code, with tips and discoveries for other developers.',
   language: 'en-us',
   theme: 'system',
   siteUrl: 'https://letshackthemoon.com',

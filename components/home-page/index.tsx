@@ -27,11 +27,11 @@ export function Home({
             <div className="mb-6 mt-6 md:mb-8">
               <p>I began coding in 2017, the year I started college.</p>
               <p>
-                While majoring in English Literature, I found myself curious about how computers
+                Through an unexpected turn of events, I found myself curious about how computers
                 work at a fundamental level.
               </p>
               <p>
-                That curiosity led me to pursue Electronics Engineering and Computer Science
+                That curiosity led me to pursue Computer Science
                 alongside my main field of study.
               </p>
               <p>In 2023, I landed my first job as a Full-Stack Developer!</p>

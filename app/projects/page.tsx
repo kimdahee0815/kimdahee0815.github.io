@@ -32,11 +32,11 @@ export default async function Projects() {
         title="Projects"
         description={
           <div className="flex flex-wrap items-center gap-4">
-            <p className="text-lg">
+            <p className="text-xl">
               This is a showcase of full-stack / frontend web applications I built. Each project is either fully deployed or presented with a preview and source code.
             </p>
             <Button as="a" href="https://daheekim.app" target="_blank">
-              <span>View Full Portfolio</span>
+              <span className="text-xl">View Full Portfolio</span>
               <Twemoji emoji="laptop" />
             </Button>
           </div>
@@ -44,22 +44,22 @@ export default async function Projects() {
         className="border-b border-gray-200 dark:border-gray-700"
       />
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
-        <div className="container py-12">
-          <h3 className="mb-4 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100">
+        <div className="py-12 max-w-full">
+          <h3 className="mb-4 text-4xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100">
             Work
           </h3>
-          <div className="-m-4 flex mt-8 flex-wrap">
+          <div className="-m-4 flex mt-8 flex-wrap mx-auto">
             {workProjects.map((project) => (
               <ProjectCard key={project.title} project={project} />
             ))}
           </div>
         </div>
 
-        <div className="container py-12">
-          <h3 className="mb-4 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100">
+        <div className="py-12 max-w-full">
+          <h3 className="mb-4 text-4xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100">
             Side projects
           </h3>
-          <div className="-m-4 mt-8 flex flex-wrap">
+          <div className="-m-4 mt-8 flex flex-wrap mx-auto">
             {sideProjects.map((project) => (
               <ProjectCard key={project.title} project={project} />
             ))}

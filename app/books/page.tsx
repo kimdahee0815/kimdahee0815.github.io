@@ -21,11 +21,9 @@ export default async function BooksPage() {
         description={
           <>
             <p>
-              Reading has been my hobby since childhood, starting with comics, magazines, and
-              textbooks. Today, I strive to keep reading daily, exploring topics such as science,
-              technology, nonfiction, business, education, productivity, and history.
+              A lifelong love for books drives my daily reading habit. I'm also a long-time member of a weekly book club 📚. While novels were once my main focus, I now appreciate a wide array of genres, with a particular fondness for nonfiction, technology, science, productivity, philosophy, psychology, history, art these days.
               <br />
-              This is where I keep track of what I’ve read and what’s on my reading list.
+              Here, you'll find my reading log and my ever-growing "to-read" list.
             </p>
             <p className="mt-3 italic flex">
               *Data pulled from my{' '}

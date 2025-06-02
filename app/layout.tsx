@@ -9,10 +9,13 @@ import {
   JetBrains_Mono,
   Tilt_Neon,
   Gowun_Batang,
-  Averia_Serif_Libre,
+  Balsamiq_Sans,
+  Jura,
   Playpen_Sans,
   Platypi,
   Fredoka,
+  Ribeye,
+  REM
 } from 'next/font/google'
 import { UmamiAnalytics } from '~/components/analytics/umami'
 import { Footer } from '~/components/footer'
@@ -23,11 +26,11 @@ import { SITE_METADATA } from '~/data/site-metadata'
 import { ThemeProviders } from './theme-providers'
 import { BackgroundEffects } from '~/components/ui/background-effects'
 
-const FONT_PLAYPEN_SANS = Playpen_Sans({
+const FONT_RIBEYE = Ribeye({
   subsets: ['latin'],
   display: 'swap',
-  weight: ['800'],
-  variable: '--font-playpen-sans',
+  weight: ['400'],
+  variable: '--font-ribeye',
 })
 
 const FONT_GOWUN_BATANG = Gowun_Batang({
@@ -36,11 +39,11 @@ const FONT_GOWUN_BATANG = Gowun_Batang({
   variable: '--font-gowun-batang',
 })
 
-const FONT_TILT_NEON = Fredoka({
+const FONT_REM = REM({
   subsets: ['latin'],
   display: 'swap',
   weight: ['400'],
-  variable: '--font-tilt-neon',
+  variable: '--font-rem',
 })
 
 const FONT_JETBRAINS_MONO = JetBrains_Mono({
@@ -99,9 +102,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang={SITE_METADATA.language}
       className={clsx(
         'w-full overflow-x-hidden scroll-smooth',
-        FONT_TILT_NEON.variable,
+        FONT_REM.variable,
         FONT_JETBRAINS_MONO.variable,
-        FONT_PLAYPEN_SANS.variable,
+        FONT_RIBEYE.variable,
         FONT_GOWUN_BATANG.variable
       )}
       suppressHydrationWarning

@@ -167,8 +167,8 @@ module.exports = {
         14: '3.5rem',
       },
       fontFamily: {
-        sans: ['var(--font-tilt-neon)', ...fontFamily.sans],
-        greeting: ['var(--font-playpen-sans)'],
+        sans: ['var(--font-rem)', ...fontFamily.sans],
+        greeting: ['var(--font-ribeye)'],
         mono: ['var(--font-jetbrains-mono)', ...fontFamily.mono],
         gowunbatang: ['var(--font-gowun-batang)'],
       },

@@ -20,12 +20,8 @@ export default async function MoviesPage() {
         description={
           <>
             <p>
-              This is where I log all the movies and TV series I’ve watched. I’m a huge fan of{' '}
-              <span className="font-medium">Tom Hanks</span> and{' '}
-              <span className="font-medium">Christopher Nolan</span>, so expect to see a lot of them
-              in the top spots! Anything I’ve rated 10 stars is something I absolutely love and have
-              probably rewatched many times (highly recommended). Take a look and maybe find your
-              next favorite film!
+              Welcome to my log of all the films and series I've seen. Being a big fan of Christopher Nolan and Jim Carrey, their work often tops my list! A 10-star rating means I consider it an absolute masterpiece – something I've probably seen many times and truly love (consider it a strong recommendation!).
+              <br/>My favorite genres lean towards fantasy, adventure, and detective stories, and I'm always up for sci-fi (but definitely no horror!). When I need to unwind, my go-to is usually a spontaneous trip to the cinema. Take a look, maybe you'll find your next favorite film! 🤩🎞️🍿
             </p>
             <p className="mt-3 italic flex">
               *Data is exported from my {' '}
