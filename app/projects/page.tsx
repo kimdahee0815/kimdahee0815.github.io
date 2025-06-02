@@ -4,6 +4,8 @@ import { Container } from '~/components/ui/container'
 import { PageHeader } from '~/components/ui/page-header'
 import { PROJECTS } from '~/data/projects'
 import { fetchRepoData } from '~/servers/github.server'
+import { Twemoji } from '~/components/ui/twemoji'
+import { Button } from '~/components/ui/button'
 
 export let metadata = genPageMetadata({ title: 'Projects' })
 
@@ -28,7 +30,17 @@ export default async function Projects() {
     <Container className="pt-4 lg:pt-12">
       <PageHeader
         title="Projects"
-        description="This is a showcase of full-stack / frontend web applications I built. Each project is either fully deployed or presented with a preview and source code."
+        description={
+          <div className="flex flex-wrap items-center gap-4">
+            <p className="text-lg">
+              This is a showcase of full-stack / frontend web applications I built. Each project is either fully deployed or presented with a preview and source code.
+            </p>
+            <Button as="a" href="https://daheekim.app" target="_blank">
+              <span>View Full Portfolio</span>
+              <Twemoji emoji="laptop" />
+            </Button>
+          </div>
+        }
         className="border-b border-gray-200 dark:border-gray-700"
       />
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
