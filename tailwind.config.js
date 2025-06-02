@@ -14,6 +14,9 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      backgroundImage: {
+    'gradient-flow': 'linear-gradient(-45deg, #f3f4f6, #e0f2fe, #f0fdfa)',
+  },
       keyframes: {
         // 'wave-animation': {
         //   '0%': { transform: 'rotate(0deg)' },
@@ -94,6 +97,31 @@ module.exports = {
           '60%': { transform: 'translateY(1px) scale(0.98)' },
           '100%': { transform: 'translateY(1) scale(1.02)' },
         },
+        twinkle: {
+          '0%, 100%': { opacity: '0.2', transform: 'scale(0.8)' },
+          '50%': { opacity: '1', transform: 'scale(1.2)' },
+        },
+        glint: {
+          '0%, 100%': { opacity: '0.6' },
+          '50%': { opacity: '1' },
+        },
+        meteor: {
+      '0%': {
+        transform: 'translate(0, 0) scale(1)',
+        opacity: '0',
+      },
+      '10%': {
+        opacity: '1',
+      },
+      '70%': {
+        transform: 'translate(-400px, 400px) scale(1.5)',
+        opacity: '0.8',
+      },
+      '100%': {
+        transform: 'translate(-700px, 700px) scale(0.9)',
+        opacity: '0',
+      },
+    },
       },
       animation: {
         // wave: 'wave-animation 2.5s linear infinite',
@@ -111,6 +139,9 @@ module.exports = {
         wave: 'wave 2s linear infinite',
         'bounce-stagger': 'bounceStagger 1.2s ease-in-out infinite',
         textBounce: 'textBounce 1.5s ease-in-out',
+        twinkle: 'twinkle var(--duration, 3s) ease-in-out infinite',
+        glint: 'glint 3s ease-in-out infinite',
+        meteor: 'meteor 6s ease-in-out infinite',
       },
       boxShadow: {
         demure: 'rgba(0, 0, 0, 0.3) 0 35px 60px -15px',
