@@ -20,7 +20,7 @@ export default async function Projects() {
       return p;
     })
   )
-  console.log(projectsWithRepoData);
+
   const workProjects = projectsWithRepoData.filter(({ type }) => type === 'work')
   const sideProjects = projectsWithRepoData.filter(({ type }) => type === 'self')
 

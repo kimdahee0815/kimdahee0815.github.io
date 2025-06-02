@@ -17,7 +17,6 @@ async function main() {
 })
 
   const data = await res.json()
-  console.log(data)
 }
 
 main()
