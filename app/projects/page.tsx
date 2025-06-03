@@ -45,7 +45,7 @@ export default async function Projects() {
       />
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="py-12 max-w-full">
-          <h3 className="mb-4 text-4xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100">
+          <h3 className="mb-4 text-4xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-slate-300">
             Work
           </h3>
           <div className="-m-4 flex mt-8 flex-wrap mx-auto">
@@ -56,7 +56,7 @@ export default async function Projects() {
         </div>
 
         <div className="py-12 max-w-full">
-          <h3 className="mb-4 text-4xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100">
+          <h3 className="mb-4 text-4xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-slate-300">
             Side projects
           </h3>
           <div className="-m-4 mt-8 flex flex-wrap mx-auto">

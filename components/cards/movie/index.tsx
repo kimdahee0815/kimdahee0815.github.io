@@ -52,7 +52,7 @@ export function MovieCard({ movie }: { movie: ImdbMovie }) {
             </Link>
           </div>
           <div className="grow">
-            <div className="flex flex-wrap items-center gap-1 text-gray-500 dark:text-gray-400">
+            <div className="flex flex-wrap items-center gap-1 text-gray-500 dark:text-slate-400">
               <span>
                 {year}
                 {title_type === 'Movie' && ` - ${formatRuntime(runtime)}`}

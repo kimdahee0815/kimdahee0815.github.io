@@ -47,16 +47,21 @@ export function PostCardListView({
         <div className="space-y-4 md:space-y-5">
           <div className="space-y-4 md:space-y-6">
             <div className="space-y-3">
-              <dl className="text-lg">
+              <dl className="xs480:text-sm sm768:text-lg text-xl">
                 <dt className="sr-only">Published on</dt>
-                <dd className="font-medium leading-6 text-gray-500 dark:text-gray-400">
+                <dd className="font-medium leading-6 text-gray-500 dark:text-slate-400">
                   <time dateTime={date}>{formatDate(date)}</time>
                   <span className="mx-2">{` • `}</span>
                   <span>{Math.ceil(readingTime.minutes)} mins read</span>
                 </dd>
               </dl>
-              <h2 className="pb-1 text-[1.6rem] font-bold tracking-tight md:text-[1.8rem]">
-                <Link href={`/blog/${slug}`} className="text-gray-900 dark:text-gray-100">
+              <h2 className="pb-1 text-[1.5rem] leading-[1.9rem]
+                      sm768:text-[1.6rem]
+                      lg900:text-[1.7rem]
+                      xl1080:text-[1.8rem] xl1080:leading-[2.1rem]
+                      2xl1280:text-[1.9rem] 2xl1280:leading-[2.3rem]
+                      text-gray-700 dark:text-slate-300">
+                <Link href={`/blog/${slug}`} className="text-gray-900 dark:text-slate-100">
                   <GrowingUnderline data-umami-event="latest-post-title" duration={500}>
                     {title}
                   </GrowingUnderline>
@@ -64,14 +69,27 @@ export function PostCardListView({
               </h2>
               <TagsList tags={tags} />
             </div>
-            <div className="line-clamp-2 text-[1.3rem] text-gray-500 dark:text-gray-400 md:line-clamp-3">
+            <div className="line-clamp-2
+            text-[1.05rem] leading-[1.6rem]
+            sm768:text-[1.1rem]
+            lg900:text-[1.15rem]
+            xl1080:text-[1.2rem] xl1080:leading-[1.8rem]
+            2xl1280:text-[1.25rem] 2xl1280:leading-[2rem]
+            text-gray-600 dark:text-slate-400
+            md:line-clamp-3">
               {summary}
             </div>
           </div>
           <div className="text-2xl font-medium leading-6">
             <Link
               href={`/blog/${slug}`}
-              className="inline-flex items-center gap-2 text-gray-600 dark:text-gray-300"
+              className="inline-flex items-center gap-2
+              text-[1rem]
+              sm768:text-[1.3rem]
+              lg900:text-[1.4rem]
+              xl1080:text-[1.45rem]
+              2xl1280:text-[1.5rem]
+              text-gray-600 dark:text-slate-300"
               aria-label={`Read "${title}"`}
             >
               <GrowingUnderline data-umami-event="latest-post-read-more">

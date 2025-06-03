@@ -33,7 +33,7 @@ export function SocialShare({ postUrl, filePath, title, className }: SocialButto
       <MenuButton
         aria-label="More links"
         className={clsx(
-          'flex items-center gap-1 px-3 py-1 font-medium text-gray-500 dark:text-gray-400',
+          'flex items-center gap-1 px-3 py-1 font-medium text-gray-500 dark:text-slate-400',
           className
         )}
         data-umami-event="social-share"
@@ -63,7 +63,7 @@ export function SocialShare({ postUrl, filePath, title, className }: SocialButto
           <div className="px-4 py-2">
             <button
               onClick={handleCopyLink}
-              className="flex items-center gap-2.5 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
+              className="flex items-center gap-2.5 text-gray-600 hover:text-gray-900 dark:text-slate-400 dark:hover:text-gray-100"
             >
               <Link strokeWidth={1.5} size={18} />
               <span>{copied ? 'Copied' : 'Copy link'}</span>

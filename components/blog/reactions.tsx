@@ -86,7 +86,7 @@ const Reaction = (props: ReactionProps) => {
         <span
           className={clsx(
             'absolute inset-0',
-            'font-semibold text-gray-600 dark:text-gray-300',
+            'font-semibold text-gray-600 dark:text-slate-300',
             'transition-all',
             reacting ? '-translate-y-6 opacity-0' : 'translate-y-0 opacity-100'
           )}
@@ -97,7 +97,7 @@ const Reaction = (props: ReactionProps) => {
           ref={countRef}
           className={clsx(
             'absolute inset-0',
-            'text-gray-500 dark:text-gray-400',
+            'text-gray-500 dark:text-slate-400',
             'transition-all',
             reacting ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
           )}

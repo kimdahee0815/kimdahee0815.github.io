@@ -41,14 +41,14 @@ export function FooterMeta() {
   let { data: repo } = useSWR<GithubRepository>(`/api/github?repo=${siteRepo}`, fetcher)
 
   return (
-    <div className="space-y-2 py-1.5 text-gray-800 dark:text-gray-200">
+    <div className="space-y-2 py-1.5 text-gray-800 dark:text-slate-200">
       <div className="flex items-center gap-1 font-medium">
         <Github className="h-5 w-5" />
         <Link href={SITE_METADATA.siteRepo} className="ml-1">
           <GrowingUnderline data-umami-event="view-repo">{repoName}</GrowingUnderline>
         </Link>
         <span>-</span>
-        <span className="inline-flex items-center text-gray-500 dark:text-gray-400">
+        <span className="inline-flex items-center text-gray-500 dark:text-slate-400">
           <Star className="mr-1 h-4 w-4" />
           {repo ? <span>{repo.stargazerCount}</span> : '---'}
         </span>
@@ -63,7 +63,7 @@ export function FooterMeta() {
         <Clock className="h-5 w-5" />
         <Link href={TIME_IS}>
           <GrowingUnderline className="font-medium" data-umami-event="footer-time">
-            {time} <span className="text-gray-500 dark:text-gray-400">- {diff}</span>
+            {time} <span className="text-gray-500 dark:text-slate-400">- {diff}</span>
           </GrowingUnderline>
         </Link>
       </div>

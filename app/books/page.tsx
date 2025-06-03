@@ -21,8 +21,8 @@ export default async function BooksPage() {
         description={
           <>
             <p>
-              A lifelong love for books drives my daily reading habit. I'm also a long-time member of a weekly book club 📚. While novels were once my main focus, I now appreciate a wide array of genres, with a particular fondness for nonfiction, technology, science, productivity, philosophy, psychology, history, art these days.
-              <br />
+              A lifelong love for books drives my daily reading habit. I'm also a long-time member of a weekly book club 📚. <br/><br/>While novels were once my main focus, I now appreciate a wide array of genres, with a particular fondness for nonfiction, technology, science, productivity, philosophy, psychology, history, art these days.
+              <br /><br/>
               Here, you'll find my reading log and my ever-growing "to-read" list.
             </p>
             <p className="mt-3 italic flex">
@@ -49,7 +49,7 @@ export default async function BooksPage() {
         />
       </Suspense>
       {/* <div className="mt-6 border-t border-gray-200 py-5 dark:border-gray-700 md:mt-10 md:py-10">
-        <h3 className="mb-6 text-2xl font-bold leading-9 tracking-tight text-gray-900 dark:text-gray-100 md:text-3xl">
+        <h3 className="mb-6 text-2xl font-bold leading-9 tracking-tight text-gray-900 dark:text-slate-100 md:text-3xl">
           FYI
         </h3>
         <div className="space-y-4">

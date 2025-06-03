@@ -27,7 +27,7 @@ export function LatestPosts({
               'underline-offset-4 transition-colors',
               view === 'posts'
                 ? 'underline'
-                : 'text-gray-300 hover:text-gray-900 dark:text-gray-500 dark:hover:text-gray-200'
+                : 'text-gray-300 hover:text-gray-900 dark:text-slate-500 dark:hover:text-slate-200'
             )}
             onClick={() => setView('posts')}
           >
@@ -39,7 +39,7 @@ export function LatestPosts({
               'underline-offset-4 transition-colors',
               view === 'snippets'
                 ? 'underline'
-                : 'text-gray-300 hover:text-gray-900 dark:text-gray-500 dark:hover:text-gray-200'
+                : 'text-gray-300 hover:text-gray-900 dark:text-slate-500 dark:hover:text-slate-200'
             )}
             onClick={() => setView('snippets')}
           >

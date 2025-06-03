@@ -138,7 +138,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           'relative min-h-screen pl-[calc(100vw-100%)]',
           'flex flex-col',
           'bg-white text-neutral-900',
-          'dark:bg-dark dark:text-gray-100',
+          'dark:bg-dark dark:text-slate-300',
         ])}
       >
         <TiltedGridBackground className="inset-x-0 top-0 z-[-1] h-[50vh]" />

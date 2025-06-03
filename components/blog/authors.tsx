@@ -27,7 +27,7 @@ export function Authors({ authors, className }: AuthorsProps) {
               )}
               <dl className="whitespace-nowrap text-sm font-medium leading-5">
                 <dt className="sr-only">Name</dt>
-                <dd className="text-gray-900 dark:text-gray-100">{name}</dd>
+                <dd className="text-gray-900 dark:text-slate-100">{name}</dd>
                 <dt className="sr-only">Twitter</dt>
                 <dd>
                   {x && (

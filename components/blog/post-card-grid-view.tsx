@@ -37,18 +37,18 @@ export function PostCardGridView({ post }: { post: CoreContent<Blog> }) {
           />
         </Link>
         <div className="w-full space-y-3">
-          <div className="flex items-center gap-x-1.5 text-lg text-gray-600 dark:text-gray-400">
+          <div className="flex items-center gap-x-1.5 xs480:text-sm sm768:text-lg text-xl text-gray-600 dark:text-slate-400">
             <time dateTime={date}>{formatDate(date)}</time>
             <span className="mx-2">{` • `}</span>
             <span>{Math.ceil(readingTime.minutes)} mins read</span>
           </div>
           <div className="group relative">
-            <h3 className="text-2xl font-semibold leading-10">
+            <h3 className="text-xl sm768:text-2xl font-semibold leading-10">
               <Link href={`/${path}`}>
                 <GrowingUnderline>{title}</GrowingUnderline>
               </Link>
             </h3>
-            {/* <p className="mt-2 line-clamp-2 text-sm leading-6 text-gray-600 dark:text-gray-500 md:mt-3">
+            {/* <p className="mt-2 line-clamp-2 text-sm leading-6 text-gray-600 dark:text-slate-500 md:mt-3">
               {summary}
             </p> */}
           </div>

@@ -15,8 +15,15 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-    'gradient-flow': 'linear-gradient(-45deg, #f3f4f6, #e0f2fe, #f0fdfa)',
-  },
+        'gradient-flow': 'linear-gradient(-45deg, #f3f4f6, #e0f2fe, #f0fdfa)',
+      },
+      screens: {
+        'xs480': '480px',
+        'sm768': '768px',    
+        'lg900': '900px',   
+        'xl1080': '1080px',
+        '2xl1280': '1280px'
+      },
       keyframes: {
         // 'wave-animation': {
         //   '0%': { transform: 'rotate(0deg)' },

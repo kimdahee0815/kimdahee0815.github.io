@@ -40,7 +40,7 @@ export function MoviesList({ movies }: { movies: ImdbMovie[] }) {
       <div className="flex flex-col-reverse items-center justify-between gap-5 md:flex-row md:gap-4">
         <div className="flex items-center gap-2 text-xl font-medium">
           <Twemoji emoji={emoji} /> {description}{' '}
-          <span className="font-normal text-gray-600 dark:text-gray-400">
+          <span className="font-normal text-gray-600 dark:text-slate-300">
             ({displayMovies.length} titles)
           </span>
         </div>

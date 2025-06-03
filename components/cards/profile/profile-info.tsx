@@ -33,11 +33,11 @@ export function ProfileCardInfo() {
   return (
     <div className="hidden py-4 md:block md:px-5">
       <h3 className="text-3xl font-semibold text-gray-800 dark:text-white">Dahee Kim</h3>
-      <h5 className="py-2 text-xl text-gray-500 dark:text-gray-400">
+      <h5 className="py-2 text-xl text-gray-500 dark:text-slate-400">
         Self-Taught Developer | Learner | Creator
       </h5>
       <div className="mb-2 mt-4 space-y-4">
-        <div className="flex items-center text-gray-700 dark:text-gray-200">
+        <div className="flex items-center text-gray-700 dark:text-slate-200">
           <BriefcaseBusiness strokeWidth={1.5} size={20} />
           <p className="flex items-center px-2 text-lg">
             Full-Stack Developer @{' '}
@@ -51,7 +51,7 @@ export function ProfileCardInfo() {
             </a>
           </p>
         </div>
-        <div className="flex items-center text-gray-700 dark:text-gray-200">
+        <div className="flex items-center text-gray-700 dark:text-slate-200">
           <MapPin strokeWidth={1.5} size={20} />
           <p className="px-2 text-lg">
             South Korea - Incheon
@@ -60,7 +60,7 @@ export function ProfileCardInfo() {
             </span>
           </p>
         </div>
-        <div className="flex items-center text-gray-700 dark:text-gray-200">
+        <div className="flex items-center text-gray-700 dark:text-slate-200">
           <Mail strokeWidth={1.5} size={20} />
           <Link
             className="flex items-center gap-1 px-2 text-lg hover:underline"
@@ -70,7 +70,7 @@ export function ProfileCardInfo() {
             {SITE_METADATA.email}
           </Link>
         </div>
-        <div className="flex items-center gap-2.5 text-lg text-gray-700 dark:text-gray-200">
+        <div className="flex items-center gap-2.5 text-lg text-gray-700 dark:text-slate-200">
           {SOCIALS.map(({ platform, handle, href, Icon, umamiEvent }, idx) => (
             <Fragment key={platform}>
               <a
@@ -86,7 +86,7 @@ export function ProfileCardInfo() {
                 <span className="ml-1 truncate">{handle}</span>
               </a>
               {idx !== SOCIALS.length - 1 && (
-                <span className="text-gray-400 dark:text-gray-500">|</span>
+                <span className="text-gray-400 dark:text-slate-500">|</span>
               )}
             </Fragment>
           ))}

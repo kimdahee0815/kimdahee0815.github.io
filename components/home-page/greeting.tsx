@@ -7,7 +7,7 @@ export function Greeting() {
       <span
         className={clsx(
           'font-greeting font-extrabold tracking-tight',
-          'text-[40px] leading-[60px] md:text-[68px] md:leading-[100px]',
+          'text-[40px] leading-[60px] sm768:text-[45px] lg900:text-[50px] xl1080:text-[55px] 2xl1280:text-[68px] leading-[100px] md:leading-[100px]',
           'bg-clip-text text-transparent',
           'animate-gradient-x bg-[length:200%_200%]',
           'bg-[linear-gradient(90deg,#ff7e5f,#feb47b,#6daf22,#86a8e7,#7f7fd5)]',
@@ -22,7 +22,7 @@ export function Greeting() {
         className={clsx(
           'inline-block origin-bottom animate-wave',
           'font-greeting font-extrabold tracking-tight',
-          'text-[40px] leading-[60px] md:text-[68px] md:leading-[100px]'
+          'text-[40px] leading-[60px] sm768:text-[45px] lg900:text-[50px] xl1080:text-[55px] 2xl1280:text-[68px] leading-[100px] md:leading-[100px]'
         )}
         size="base"
       />

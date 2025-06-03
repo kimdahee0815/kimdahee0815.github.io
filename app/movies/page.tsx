@@ -20,10 +20,10 @@ export default async function MoviesPage() {
         description={
           <>
             <p>
-              Welcome to my log of all the films and series I've seen. Being a big fan of Christopher Nolan and Jim Carrey, their work often tops my list! A 10-star rating means I consider it an absolute masterpiece – something I've probably seen many times and truly love (consider it a strong recommendation!).
-              <br/>My favorite genres lean towards fantasy, adventure, and detective stories, and I'm always up for sci-fi (but definitely no horror!). When I need to unwind, my go-to is usually a spontaneous trip to the cinema. Take a look, maybe you'll find your next favorite film! 🤩🎞️🍿
+              This is where I log of all the films and series I've seen. Being a big fan of Christopher Nolan and Jim Carrey, their work often tops my list! <br/>A 10-star rating means I consider it an absolute masterpiece, something I've probably seen many times or truly love (consider it a strong recommendation!).
+              <br/><br/>My favorite genres lean towards fantasy, adventure, and detective stories, and I'm always up for sci-fi (but definitely no horror!). When I need to unwind, my go-to is usually a spontaneous trip to the cinema. <br/><br/>Take a look, maybe you'll find your next favorite film! 🤩🎞️🍿
             </p>
-            <p className="mt-3 italic flex">
+            <p className="mt-3 italic flex-none lg900:flex">
               *Data is exported from my {' '}
               <Link href={SITE_METADATA.imdbRatingsList} className="font-medium ml-1">
                 <GrowingUnderline data-umami-event="goodreads-feed" active>
@@ -37,7 +37,7 @@ export default async function MoviesPage() {
                   OMDB API
                 </GrowingUnderline>
                 {<ExternalLink className="ml-2 mt-2" size={18} strokeWidth={1.5} />}
-              </Link>{'. '}
+              </Link>
             </p>
           </>
         }

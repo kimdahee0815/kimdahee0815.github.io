@@ -37,7 +37,7 @@ export default function GithubRepo({ repo }: { repo: GithubRepository }) {
             >
               <ExternalLink size={20} strokeWidth={1} />
             </a>
-            <span className="text-gray-400 dark:text-gray-500">|</span>
+            <span className="text-gray-400 dark:text-slate-500">|</span>
           </>
         )}
         <a

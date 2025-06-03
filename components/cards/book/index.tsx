@@ -43,7 +43,7 @@ export function BookCard({ book }: { book: GoodreadsBook }) {
 
 function BookMeta({ book }: { book: GoodreadsBook }) {
   return (
-    <div className="flex items-center gap-1 text-gray-600 dark:text-gray-400">
+    <div className="flex items-center gap-1 text-gray-600 dark:text-slate-400">
       <div className="flex items-center gap-1">
         <Twemoji emoji="writing-hand" /> by{' '}
         <span className="font-semibold">{book.author_name}</span>
@@ -59,7 +59,7 @@ function GoodreadsLink({ url, className }: { url?: string | null; className?: st
   if (url) {
     return (
       <Link href={url} className={className}>
-        <GoodreadsLogo className="h-5 text-goodreads dark:text-gray-100" />
+        <GoodreadsLogo className="h-5 text-goodreads dark:text-slate-100" />
       </Link>
     )
   }

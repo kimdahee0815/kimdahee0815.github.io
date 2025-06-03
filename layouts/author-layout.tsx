@@ -29,7 +29,7 @@ export function AuthorLayout({ children }: Props) {
         </div>
         <div className="md:col-span-2 md:pl-12 xl:pl-16">
           <div className="prose prose-lg dark:prose-invert">
-            <div className="text-[1.35rem] leading-10">
+            <div className="min-[1080px]:text-[1.2rem] min-[1280px]:text-[1.35rem] leading-10">
               <h2 className="mt-0">
                 Hey, Everyone! <Twemoji emoji="waving-hand" /> I'm Dahee Kim
               </h2>
@@ -57,7 +57,11 @@ export function AuthorLayout({ children }: Props) {
               </p>
             </div>
             <div>
-              <div className="mb-[1em] mt-[2em] flex items-center justify-between text-[1.35rem] [&>h2]:my-0">
+              <div className="mt-2 mb-2 flex items-center justify-between
+                text-[1.1rem] leading-[1.9rem] text-gray-700 dark:text-slate-400
+                sm:text-[1.15rem] sm:leading-[2rem]
+                md:text-[1.25rem] md:leading-[2.2rem]
+                lg:text-[1.4rem] lg:leading-[2.4rem]">
                 <h2>My career</h2>
                 <Button as="a" href="/static/resume.pdf" target="_blank">
                   <span>Resume</span>
@@ -66,7 +70,10 @@ export function AuthorLayout({ children }: Props) {
               </div>
               <CareerTimeline />
             </div>
-            <div className="text-[1.35rem]">
+            <div className="text-[1.1rem] leading-[1.9rem] text-gray-700 dark:text-slate-400
+                sm:text-[1.15rem] sm:leading-[2rem]
+                md:text-[1.25rem] md:leading-[2.2rem]
+                lg:text-[1.4rem] lg:leading-[2.4rem]">
               <h2>Tech stack</h2>
               <p>
                 This blog is hosted on{' '}
@@ -149,7 +156,10 @@ export function AuthorLayout({ children }: Props) {
                 for this blog.
               </p>
             </div>
-            <div className="text-[1.35rem]">
+            <div className="text-[1.1rem] leading-[1.9rem] text-gray-700 dark:text-slate-400
+                sm:text-[1.15rem] sm:leading-[2rem]
+                md:text-[1.25rem] md:leading-[2.2rem]
+                lg:text-[1.4rem] lg:leading-[2.4rem]">
               <h2>Assets</h2>
               <p>
                 Most of the images in my blog are from{' '}
@@ -170,7 +180,10 @@ export function AuthorLayout({ children }: Props) {
                 Thanks for the free resources <Twemoji emoji="folded-hands" />.
               </p>
             </div>
-            <div className="text-[1.35rem]">
+            <div className="text-[1.1rem] leading-[1.9rem] text-gray-700 dark:text-slate-400
+                sm:text-[1.15rem] sm:leading-[2rem]
+                md:text-[1.25rem] md:leading-[2.2rem]
+                lg:text-[1.4rem] lg:leading-[2.4rem]">
               <h2>Contact</h2>
               <p>
                 Reach out to me at{' '}

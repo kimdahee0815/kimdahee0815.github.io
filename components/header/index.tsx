@@ -49,19 +49,19 @@ export function Header() {
               ])}
             />
           </div>
-          <div className="group ml-2 text-4xl font-bold transition duration-300">
+          <div className="group ml-2 text-4xl font-bold transition duration-300 max-[636px]:text-[1.3rem] min-[636px]:text-[1.3rem] min-[960px]:text-2xl min-[1080px]:text-3xl min-[1280px]:text-4xl">
             <GrowingUnderline>Let's Hack The Moon</GrowingUnderline>
             {/* <span className="block h-0.5 max-w-0 bg-black transition-all duration-500 group-hover:max-w-[100%] dark:bg-white"></span> */}
           </div>
         </Link>
         <div className="flex items-center gap-4">
-          <div className="hidden gap-1.5 sm:flex">
+          <div className="hidden gap-1.5 lg900:flex">
             {HEADER_NAV_LINKS.map(({ title, href }) => {
               let isActive = pathname.startsWith(href)
               return (
                 <Link key={title} href={href} className="px-3 py-1 font-medium">
                   <GrowingUnderline
-                    className={clsx('text-xl', isActive && 'bg-[length:100%_50%]')}
+                    className={clsx('max-[636px]:text-sm min-[636px]:text-base min-[930px]:text-lg min-[1080px]:text-xl', isActive && 'bg-[length:100%_50%]')}
                     data-umami-event={`nav-${href.replace('/', '')}`}
                   >
                     {title}
@@ -74,7 +74,7 @@ export function Header() {
           <div
             data-orientation="vertical"
             role="separator"
-            className="hidden h-4 w-px shrink-0 bg-gray-200 dark:bg-gray-600 md:block"
+            className="hidden h-4 w-px shrink-0 bg-gray-200 dark:bg-gray-600 lg900:block"
           />
           <div className="flex items-center gap-2">
             <ThemeSwitcher />

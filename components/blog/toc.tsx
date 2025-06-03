@@ -23,7 +23,7 @@ export function TableOfContents({ toc, className }: { toc: TocItem[]; className?
         {toc.map(({ value, depth, url }) => (
           <li
             key={url}
-            className="leading-2 font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200"
+            className="leading-2 font-medium text-gray-500 hover:text-gray-900 dark:text-slate-400 dark:hover:text-gray-200"
             style={{ paddingLeft: (depth - 2) * 16 }}
           >
             <Link href={url} className="text-xl leading-8">

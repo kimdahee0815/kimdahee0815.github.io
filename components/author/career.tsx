@@ -271,7 +271,7 @@ function TimelineItem({ exp, last }: { exp: (typeof EXPERIENCES)[0]; last?: bool
               'group-hover/timeline-item:visible md:invisible',
               'absolute right-1 top-1',
               'transition-transform duration-300 ease-in-out',
-              'text-gray-600 dark:text-gray-500',
+              'text-gray-600 dark:text-slate-500',
             ])}
             data-umami-event={`${event}-expand`}
           />
@@ -281,27 +281,36 @@ function TimelineItem({ exp, last }: { exp: (typeof EXPERIENCES)[0]; last?: bool
               'minus hidden',
               'absolute right-1 top-1',
               'transition-transform duration-300 ease-in-out',
-              'text-gray-600 dark:text-gray-500',
+              'text-gray-600 dark:text-slate-500',
             ])}
             data-umami-event={`${event}-collapse`}
           />
           <div className="flex flex-col">
-            <div className="line-clamp-1 text-sm tabular-nums text-gray-500 dark:text-gray-400">
+            <div className="line-clamp-1 text-sm tabular-nums text-gray-500 dark:text-slate-400">
               <span>{start}</span> – <span>{end}</span>
             </div>
             <Link
               href={url}
-              className="line-clamp-1 w-fit text-[1.3rem] font-semibold leading-10 text-gray-900 no-underline hover:text-gray-900 dark:text-white dark:hover:text-white"
+              className="line-clamp-1 w-fit text-[1.1rem] leading-[1.9rem] text-gray-700 dark:text-slate-400
+                              sm:text-[1.1rem] sm:leading-[2rem]
+                              md:text-[1.2rem] md:leading-[2.2rem]
+                              lg:text-[1.3rem] lg:leading-[2.4rem] font-semibold leading-10 text-gray-900 no-underline hover:text-gray-900 dark:text-white dark:hover:text-white"
             >
               <GrowingUnderline data-umami-event={event}>{org}</GrowingUnderline>
             </Link>
-            <div className="flex items-center gap-1 pt-1 text-[1.2rem] text-gray-700 dark:text-gray-200">
+            <div className="flex items-center gap-1 pt-1 text-[1.1rem] leading-[1.9rem] text-gray-700
+                              sm:text-[1.05rem] sm:leading-[2rem]
+                              md:text-[1.15rem] md:leading-[2.2rem]
+                              lg:text-[1.1rem] lg:leading-[2.4rem] text-gray-700 dark:text-slate-400">
               <Twemoji emoji={icon} className="!-mt-1" />
               <span>{title}</span>
             </div>
           </div>
         </summary>
-        <div className="pt-1 text-[1.15rem] leading-8">
+        <div className="pt-1 text-[1.1rem] leading-[1.9rem] text-gray-700 dark:text-slate-400
+                              sm:text-[1.1rem] sm:leading-[2rem]
+                              md:text-[1.15rem] md:leading-[2.2rem]
+                              lg:text-[1.2rem] lg:leading-[2.4rem] leading-8">
           <Details />
         </div>
       </details>

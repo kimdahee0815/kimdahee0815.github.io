@@ -42,11 +42,11 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
               title
             )}
           </h2>
-          <p className="prose mb-3 max-w-none text-xl text-gray-500 dark:text-gray-400">
+          <p className="prose mb-3 max-w-none text-xl text-gray-500 dark:text-slate-400">
             {repository?.description || description}
           </p>
           <div className="space-y-1.5">
-            <div className="text-xs text-gray-600 dark:text-gray-400">Stack</div>
+            <div className="text-xs text-gray-600 dark:text-slate-400">Stack</div>
             <div className="flex h-6 flex-wrap items-center gap-1.5">
               {builtWith?.map((tool) => {
                 return (
@@ -62,7 +62,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           <div className="mb-3 flex flex-wrap space-x-1.5">
             {builtWith?.map((tool, index) => {
               return (
-                <span key={index} className="font-semibold text-gray-600 dark:text-gray-300">
+                <span key={index} className="font-semibold text-gray-600 dark:text-slate-300">
                   {tool}
                   {index !== builtWith.length - 1 && ', '}
                 </span>

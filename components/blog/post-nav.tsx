@@ -41,7 +41,7 @@ export function PostNav({
 
 function NavLabel({ label }: { label?: string }) {
   if (label) {
-    return <span className="tracking-wide text-gray-500 dark:text-gray-400">{label}</span>
+    return <span className="tracking-wide text-gray-500 dark:text-slate-400">{label}</span>
   }
   return null
 }

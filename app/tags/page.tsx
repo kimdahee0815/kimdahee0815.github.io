@@ -13,7 +13,7 @@ export default async function Page() {
     <Container className="pt-4 md:pt-0">
       <div className="flex flex-col items-start justify-start divide-y divide-gray-200 dark:divide-gray-700 md:mt-24 md:flex-row md:items-center md:justify-center md:space-x-6 md:divide-y-0">
         <div className="space-x-2 pt-6">
-          <h1 className="text-3xl font-bold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:border-r-2 md:px-6 md:text-6xl md:leading-14">
+          <h1 className="text-3xl font-bold leading-9 tracking-tight text-gray-900 dark:text-slate-300 sm:text-4xl sm:leading-10 md:border-r-2 md:px-6 md:text-6xl md:leading-14">
             Tags
           </h1>
         </div>
@@ -23,7 +23,7 @@ export default async function Page() {
             return (
               <div key={t} className="flex items-center gap-0.5">
                 <Tag text={t} size="md" />
-                <span className="text-gray-600 dark:text-gray-300">({tagCounts[t]})</span>
+                <span className="text-gray-600 dark:text-slate-300">({tagCounts[t]})</span>
               </div>
             )
           })}

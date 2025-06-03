@@ -21,7 +21,12 @@ export function Home({
       <div className="py-6 md:pb-8 xl:grid xl:grid-cols-11">
         <div className="space-y-4 md:space-y-6 md:pr-8 xl:col-span-7">
           <Greeting />
-          <div className="text-base leading-7 text-gray-600 dark:text-gray-400 md:text-[1.5rem] md:leading-10">
+          <div className="text-[1.1rem] leading-[1.9rem]
+            sm768:text-[1.2rem] sm768:leading-[2.1rem]
+            lg900:text-[1.3rem] lg900:leading-[2.2rem]
+            xl1080:text-[1.4rem] xl1080:leading-[2.3rem]
+            2xl1280:text-[1.5rem] 2xl1280:leading-[2.5rem]
+            text-gray-600 dark:text-slate-300">
             <Intro />
             <TypedBios />
             <div className="mb-6 mt-6 md:mb-8">

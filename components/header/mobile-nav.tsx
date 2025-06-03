@@ -36,7 +36,7 @@ export function MobileNav() {
       <div
         className={clsx([
           'rounded p-1.5 hover:bg-gray-200 dark:hover:bg-gray-700',
-          'flex items-center justify-center sm:hidden',
+          'flex items-center justify-center lg900:hidden',
         ])}
         data-umami-event="mobile-nav-toggle"
       >
@@ -81,7 +81,7 @@ export function MobileNav() {
                   <Link
                     key={link.title}
                     href={link.href}
-                    className="py-1 text-xl font-bold tracking-widest text-gray-900 outline outline-0 hover:text-primary-500 dark:text-gray-100 dark:hover:text-primary-400"
+                    className="py-1 text-xl font-bold tracking-widest text-gray-900 outline outline-0 hover:text-primary-500 dark:text-slate-100 dark:hover:text-primary-400"
                     onClick={onToggleNav}
                   >
                     <Twemoji emoji={link.emoji} />
@@ -90,7 +90,7 @@ export function MobileNav() {
                 ))}
               </nav>
               <button
-                className="fixed right-4 top-5 z-80 h-16 w-16 p-4 text-gray-900 hover:text-primary-500 dark:text-gray-100 dark:hover:text-primary-400"
+                className="fixed right-4 top-5 z-80 h-16 w-16 p-4 text-gray-900 hover:text-primary-500 dark:text-slate-100 dark:hover:text-primary-400"
                 aria-label="Toggle Menu"
                 onClick={onToggleNav}
               >
