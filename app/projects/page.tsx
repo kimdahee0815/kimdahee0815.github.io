@@ -32,11 +32,17 @@ export default async function Projects() {
         title="Projects"
         description={
           <div className="flex flex-wrap items-center gap-4">
-            <p className="text-xl">
+            <p className="text-[1.1rem] leading-[1.9rem] text-gray-700 dark:text-slate-400
+      sm:text-[1.15rem] sm:leading-[2rem]
+      md:text-[1.25rem] md:leading-[2.2rem]
+      lg:text-[1.3rem] lg:leading-[2.4rem]">
               This is a showcase of full-stack / frontend web applications I built. Each project is either fully deployed or presented with a preview and source code.
             </p>
             <Button as="a" href="https://daheekim.app" target="_blank">
-              <span className="text-xl">View Full Portfolio</span>
+              <span className="text-[1rem] leading-[1.9rem] text-white
+      sm:text-[1rem] sm:leading-[2rem]
+      md:text-[1.1rem] md:leading-[2.2rem]
+      lg:text-[1.2rem] lg:leading-[2.4rem]">View Full Portfolio</span>
               <Twemoji emoji="laptop" />
             </Button>
           </div>
