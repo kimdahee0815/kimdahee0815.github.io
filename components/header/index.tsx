@@ -49,7 +49,7 @@ export function Header() {
               ])}
             />
           </div>
-          <div className="group ml-2 text-4xl font-bold transition duration-300 max-[406px]:text-[1.3rem] xs480:text-[1.4rem] min-[636px]:text-2xl lg900:text-[1.5rem] min-[1080px]:text-3xl min-[1280px]:text-4xl">
+          <div className="group ml-2 font-bold transition duration-300 text-[0.9rem] xs480:text-[1.1rem] min-[636px]:text-2xl lg900:text-[1.5rem] min-[1080px]:text-3xl min-[1280px]:text-4xl">
             <GrowingUnderline>Let's Hack The Moon</GrowingUnderline>
             {/* <span className="block h-0.5 max-w-0 bg-black transition-all duration-500 group-hover:max-w-[100%] dark:bg-white"></span> */}
           </div>
