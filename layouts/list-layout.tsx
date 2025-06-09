@@ -83,6 +83,7 @@ export function ListLayout({
   let [searchValue, setSearchValue] = useState('')
   let filteredBlogPosts = posts.filter((post) => {
     let searchContent = post.title + post.summary + post.tags?.join(' ')
+    console.log(post.tags?.join(' '))
     return searchContent.toLowerCase().includes(searchValue.toLowerCase())
   })
 

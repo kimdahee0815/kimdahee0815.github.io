@@ -25,7 +25,7 @@ export default async function BooksPage() {
               <br /><br/>
               Here, you'll find my reading log and my ever-growing "to-read" list.
             </p>
-            <p className="mt-3 italic flex">
+            <p className="mt-3 italic flex-none lg900:flex">
               *Data pulled from my{' '}
               <Link href={SITE_METADATA.goodreadsBookshelfUrl} className="font-medium ml-1">
                 <GrowingUnderline data-umami-event="goodreads-feed" active>
