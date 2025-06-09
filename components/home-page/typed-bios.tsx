@@ -42,29 +42,16 @@ export function TypedBios() {
     >
       <ul id="bios" className="hidden">
         <li>
-          I'm a developer who values
-          <b className="font-medium"> curiosity, clarity, and compassion</b>.
-        </li>
-        <li>
           I started to write my first code in <b className="font-medium">C</b>.
-        </li>
-        <li>
-          I'm passionate about <b className="font-medium">how computers work</b> from the ground up.
-        </li>
-        <li>
-          I dream of building software that <b className="font-medium">genuinely helps people</b>.
-        </li>
-        <li>
-          I love <b className="font-medium">sharing knowledge</b> and empowering others.
-        </li>
-        <li>
-          I aspire to be a <b className="font-medium">developer & writer</b>.
         </li>
         <li>
           I relieve stress by <b className="font-medium">swimming, Zumba, and modeling classes</b>.
         </li>
+        <li>I love cats, but I have cat allergies😿.</li>
+        <li>I've been in book club📚 for many years now!</li>
         <li>
-          Every day, I strive to <b className="font-medium">make a meaningful impact</b>.
+          Love learning languages. Currently learning Spanish <Twemoji emoji="flag-spain"></Twemoji>
+          .
         </li>
       </ul>
       <span ref={el} className="text-neutral-900 dark:text-neutral-200" />

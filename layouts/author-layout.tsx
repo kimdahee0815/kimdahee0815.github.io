@@ -29,7 +29,7 @@ export function AuthorLayout({ children }: Props) {
         </div>
         <div className="md:col-span-2 md:pl-12 xl:pl-16">
           <div className="prose prose-lg dark:prose-invert">
-            <div className="min-[1080px]:text-[1.2rem] min-[1280px]:text-[1.35rem] leading-10">
+            <div className="leading-10 min-[1080px]:text-[1.2rem] min-[1280px]:text-[1.35rem]">
               <h2 className="mt-0">
                 Hey, Everyone! <Twemoji emoji="waving-hand" /> I'm Dahee Kim
               </h2>
@@ -40,11 +40,16 @@ export function AuthorLayout({ children }: Props) {
                 bridges the gap between human language and computers.
               </p>
               <p>
-                I love understanding how computers work <em>from the ground up</em>, and I’m
-                constantly learning from low-level systems to high-level abstractions. I'm currently
-                working on the <strong>ThinkStorm Project</strong> while diving deeper into{' '}
-                <strong>Next.js</strong>, <strong>Nest.js</strong>, <strong>DevOps</strong>, and{' '}
-                <strong>System Design</strong>.
+                I began coding in 2017, the year I started college. Through an unexpected turn of
+                events(which can be very long to explain here 😅), I found myself curious about how
+                computers work <em>from the ground up</em>. So I decided to pursue Computer Science
+                alongside my main field of study. In 2023, I landed my first job as a Full-Stack
+                Developer!
+              </p>
+              <p>
+                I'm currently working on the <strong>ThinkStorm Project</strong> while diving deeper
+                into <strong>Next.js</strong>, <strong>Nest.js</strong>, <strong>DevOps</strong>,
+                and <strong>System Design</strong>.
               </p>
               <p>
                 This blog is my digital lab where I document things I learn, build, and break.
@@ -57,11 +62,7 @@ export function AuthorLayout({ children }: Props) {
               </p>
             </div>
             <div>
-              <div className="mt-2 mb-2 flex items-center justify-between
-                text-[1.1rem] leading-[1.9rem] text-gray-700 dark:text-slate-400
-                sm:text-[1.15rem] sm:leading-[2rem]
-                md:text-[1.25rem] md:leading-[2.2rem]
-                lg:text-[1.4rem] lg:leading-[2.4rem]">
+              <div className="mb-2 mt-2 flex items-center justify-between text-[1.1rem] leading-[1.9rem] text-gray-700 dark:text-slate-400 sm:text-[1.15rem] sm:leading-[2rem] md:text-[1.25rem] md:leading-[2.2rem] lg:text-[1.4rem] lg:leading-[2.4rem]">
                 <h2>My career</h2>
                 <Button as="a" href="/static/resume.pdf" target="_blank">
                   <span>Resume</span>
@@ -70,10 +71,7 @@ export function AuthorLayout({ children }: Props) {
               </div>
               <CareerTimeline />
             </div>
-            <div className="text-[1.1rem] leading-[1.9rem] text-gray-700 dark:text-slate-400
-                sm:text-[1.15rem] sm:leading-[2rem]
-                md:text-[1.25rem] md:leading-[2.2rem]
-                lg:text-[1.4rem] lg:leading-[2.4rem]">
+            <div className="text-[1.1rem] leading-[1.9rem] text-gray-700 dark:text-slate-400 sm:text-[1.15rem] sm:leading-[2rem] md:text-[1.25rem] md:leading-[2.2rem] lg:text-[1.4rem] lg:leading-[2.4rem]">
               <h2>Tech stack</h2>
               <p>
                 This blog is hosted on{' '}
@@ -90,76 +88,15 @@ export function AuthorLayout({ children }: Props) {
                 </a>{' '}
                 using <strong>Tailwind Nextjs Starter Blog</strong>.
               </p>
-              {/* <p>
-                A huge thanks to{' '}
-                <a href="https://twitter.com/timlrxx" target="_blank">
-                  Timothy Lin
-                </a>
-                {', '}
-                <a href="https://x.com/hta218_" target="_blank">
-                  Leo Huynh
-                </a>
-                {', '}
-                <a href="https://x.com/karhdo" target="_blank">
-                  Trong Khanh
-                </a>{' '}
-                for the minimal, lightweight, and super easy-to-customize blog starter.
-              </p> */}
-              {/* <p>A few major over-engineering-changes from the original repo:</p>
-              <ul>
-                <li>
-                  <Twemoji emoji="atom-symbol" /> Upgrading to <strong>React v18</strong>,{' '}
-                  <strong>Next v14</strong>
-                  (Using App router)
-                </li>
-                <li>
-                  <Twemoji emoji="party-popper" /> Adopting <strong>Typescript</strong>, committing
-                  with{' '}
-                  <a href="https://www.conventionalcommits.org/" target="_blank">
-                    Conventional Commits
-                  </a>
-                </li>
-                <li>
-                  <Twemoji emoji="bar-chart" /> Monitoring site with{' '}
-                  <a href="https://umami.is/" target="_blank">
-                    Umami
-                  </a>{' '}
-                  website analytics
-                </li>
-                <li>
-                  <Twemoji emoji="eyes" /> Theming in dark mode with{' '}
-                  <a
-                    href="https://github.blog/changelog/2021-04-14-dark-and-dimmed-themes-are-now-generally-available/"
-                    target="_blank"
-                  >
-                    Github dark dimmed
-                  </a>{' '}
-                  colors for better contrast
-                </li>
-                <li>
-                  <Twemoji emoji="man-technologist" /> Making a lot of changes to the UI, new
-                  homepage design, adding <code>ProfileCard</code>, <code>CareerTimeline</code>{' '}
-                  components, adding <code>/snippets</code>, <code>/books</code>,{' '}
-                  <code>/movies</code> page, etc.
-                </li> */}
-              {/* <li>
-                  <Twemoji emoji="inbox-tray" /> Bumping up <code>mdx-bundler</code>,{' '}
-                  <code>rehype</code>/<code>remark</code> plugins and dependencies to the latest
-                  version
-                </li> */}
-              {/* </ul> */}
               <p>
                 See my{' '}
-                <a href="https://github.com/kimdahee0815/blog" target="_blank">
+                <a href="https://github.com/kimdahee0815/kimdahee0815.github.io" target="_blank">
                   Github repository
                 </a>{' '}
                 for this blog.
               </p>
             </div>
-            <div className="text-[1.1rem] leading-[1.9rem] text-gray-700 dark:text-slate-400
-                sm:text-[1.15rem] sm:leading-[2rem]
-                md:text-[1.25rem] md:leading-[2.2rem]
-                lg:text-[1.4rem] lg:leading-[2.4rem]">
+            <div className="text-[1.1rem] leading-[1.9rem] text-gray-700 dark:text-slate-400 sm:text-[1.15rem] sm:leading-[2rem] md:text-[1.25rem] md:leading-[2.2rem] lg:text-[1.4rem] lg:leading-[2.4rem]">
               <h2>Assets</h2>
               <p>
                 Most of the images in my blog are from{' '}
@@ -180,10 +117,7 @@ export function AuthorLayout({ children }: Props) {
                 Thanks for the free resources <Twemoji emoji="folded-hands" />.
               </p>
             </div>
-            <div className="text-[1.1rem] leading-[1.9rem] text-gray-700 dark:text-slate-400
-                sm:text-[1.15rem] sm:leading-[2rem]
-                md:text-[1.25rem] md:leading-[2.2rem]
-                lg:text-[1.4rem] lg:leading-[2.4rem]">
+            <div className="text-[1.1rem] leading-[1.9rem] text-gray-700 dark:text-slate-400 sm:text-[1.15rem] sm:leading-[2rem] md:text-[1.25rem] md:leading-[2.2rem] lg:text-[1.4rem] lg:leading-[2.4rem]">
               <h2>Contact</h2>
               <p>
                 Reach out to me at{' '}

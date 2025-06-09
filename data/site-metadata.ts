@@ -8,7 +8,7 @@ export const SITE_METADATA = {
   theme: 'system',
   siteUrl: 'https://letshackthemoon.com',
   analyticsURL: 'https://cloud.umami.is/share/UQkiuQnS5MhhzuMz/letshackthemoon.com',
-  siteRepo: 'https://github.com/kimdahee0815/blog',
+  siteRepo: 'https://github.com/kimdahee0815/kimdahee0815.github.io',
   siteLogo: `${process.env.BASE_PATH || ''}/static/images/logo.svg`,
   avatar: `${process.env.BASE_PATH || ''}/static/images/avatar.jpg`,
   socialBanner: `${process.env.BASE_PATH || ''}/static/images/twitter-card.jpeg`,
