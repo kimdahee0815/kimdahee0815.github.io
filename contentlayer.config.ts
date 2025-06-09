@@ -207,11 +207,12 @@ export default makeSource({
       // [rehypePrismPlus, { defaultLanguage: 'js', ignoreMissing: true }],
       [
         rehypePrettyCode,
-        {
+                {
           theme: {
-            dark: 'github-dark-dimmed',
-            light: 'solarized-light',
+            dark: 'solarized-light',
+            light: 'night-owl',
           },
+          keepBackground: true,
         },
       ],
       rehypePresetMinify,

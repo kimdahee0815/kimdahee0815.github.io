@@ -37,7 +37,9 @@ export function CopyCodeButton({
       aria-label="Copy code"
       className={clsx([
         'copy-code',
-        'bg-solarized-light p-2 dark:bg-github-dark-dimmed',
+        'p-2 rounded-md transition-colors',
+        'bg-gray-100 text-gray-700 hover:bg-gray-200', 
+        'dark:bg-[#011627] dark:text-white dark:hover:bg-[#1e2b4a]',
         className,
       ])}
       onClick={handleCopy}

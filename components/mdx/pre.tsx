@@ -10,8 +10,10 @@ export function Pre({ children }: { children: ReactNode }) {
         parent="code-block"
         className="absolute right-3 top-3 hidden lg:inline-block"
       />
-      <pre className="bg-solarized-light text-code-block dark:bg-github-dark-dimmed">
-        {children}
+      <pre className="dark:bg-solarized-light">
+        <code className="text-code-block">
+          {children}
+        </code>
       </pre>
     </div>
   )
