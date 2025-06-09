@@ -18,6 +18,7 @@ export function FooterBottom() {
         className="w-full justify-center truncate [--artist-color:theme(colors.gray.500)] md:max-w-[50%] md:justify-start"
         songEffect="underline"
         showCover
+        show={true}
       />
       <div className="flex items-center">
         <Link href={SITE_METADATA.siteRepo}>

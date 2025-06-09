@@ -10,77 +10,80 @@ import { ProfileCardInfo } from './profile-info'
 export function ProfileCard() {
   let ref = useRef<HTMLDivElement>(null)
   let [style, setStyle] = useState<React.CSSProperties>({})
- let [disableTilt, setDisableTilt] = useState(false)
+  let [disableTilt, setDisableTilt] = useState(false)
 
-let onMouseMove = useCallback((e: MouseEvent) => {
-  if (!ref.current || window.innerWidth < 1280 || disableTilt) return
+  let onMouseMove = useCallback(
+    (e: MouseEvent) => {
+      if (!ref.current || window.innerWidth < 1280 || disableTilt) return
 
-  const { clientX, clientY } = e
-  const { width, height, x, y } = ref.current.getBoundingClientRect()
-  const mouseX = clientX - x
-  const mouseY = clientY - y
-  const rotateMin = -6
-  const rotateMax = 6
+      const { clientX, clientY } = e
+      const { width, height, x, y } = ref.current.getBoundingClientRect()
+      const mouseX = clientX - x
+      const mouseY = clientY - y
+      const rotateMin = -6
+      const rotateMax = 6
 
-  const rotate = {
-    x: rotateMax - (mouseY / height) * (rotateMax - rotateMin),
-    y: rotateMin + (mouseX / width) * (rotateMax - rotateMin),
-  }
+      const rotate = {
+        x: rotateMax - (mouseY / height) * (rotateMax - rotateMin),
+        y: rotateMin + (mouseX / width) * (rotateMax - rotateMin),
+      }
 
-  setStyle({
-    transform: `rotateX(${rotate.x}deg) rotateY(${rotate.y}deg)`,
-  })
-}, [disableTilt])
+      setStyle({
+        transform: `rotateX(${rotate.x}deg) rotateY(${rotate.y}deg)`,
+      })
+    },
+    [disableTilt]
+  )
 
-let onMouseLeave = useCallback(() => {
-  setStyle({ transform: 'rotateX(0deg) rotateY(0deg)' })
-}, [])
-
-useEffect(() => {
-  const el = ref.current
-  if (!el) return
-
-  el.addEventListener('mousemove', onMouseMove)
-  el.addEventListener('mouseleave', onMouseLeave)
-
-  const links = el.querySelectorAll('a, [data-disable-tilt]')
-  const handleEnter = () => setDisableTilt(true)
-  const handleLeave = () => setDisableTilt(false)
-
-  links.forEach((link) => {
-    link.addEventListener('mouseenter', handleEnter)
-    link.addEventListener('mouseleave', handleLeave)
-  })
-
-  return () => {
-    el.removeEventListener('mousemove', onMouseMove)
-    el.removeEventListener('mouseleave', onMouseLeave)
-    links.forEach((link) => {
-      link.removeEventListener('mouseenter', handleEnter)
-      link.removeEventListener('mouseleave', handleLeave)
-    })
-  }
-}, [onMouseMove, onMouseLeave])
+  let onMouseLeave = useCallback(() => {
+    setStyle({ transform: 'rotateX(0deg) rotateY(0deg)' })
+  }, [])
 
   useEffect(() => {
-  const links = ref.current?.querySelectorAll('a, [data-disable-tilt]')
-  if (!links) return
+    const el = ref.current
+    if (!el) return
 
-  const disable = () => setDisableTilt(true)
-  const enable = () => setDisableTilt(false)
+    el.addEventListener('mousemove', onMouseMove)
+    el.addEventListener('mouseleave', onMouseLeave)
 
-  links.forEach((el) => {
-    el.addEventListener('mouseenter', disable)
-    el.addEventListener('mouseleave', enable)
-  })
+    const links = el.querySelectorAll('a, [data-disable-tilt]')
+    const handleEnter = () => setDisableTilt(true)
+    const handleLeave = () => setDisableTilt(false)
 
-  return () => {
-    links.forEach((el) => {
-      el.removeEventListener('mouseenter', disable)
-      el.removeEventListener('mouseleave', enable)
+    links.forEach((link) => {
+      link.addEventListener('mouseenter', handleEnter)
+      link.addEventListener('mouseleave', handleLeave)
     })
-  }
-}, [])
+
+    return () => {
+      el.removeEventListener('mousemove', onMouseMove)
+      el.removeEventListener('mouseleave', onMouseLeave)
+      links.forEach((link) => {
+        link.removeEventListener('mouseenter', handleEnter)
+        link.removeEventListener('mouseleave', handleLeave)
+      })
+    }
+  }, [onMouseMove, onMouseLeave])
+
+  useEffect(() => {
+    const links = ref.current?.querySelectorAll('a, [data-disable-tilt]')
+    if (!links) return
+
+    const disable = () => setDisableTilt(true)
+    const enable = () => setDisableTilt(false)
+
+    links.forEach((el) => {
+      el.addEventListener('mouseenter', disable)
+      el.addEventListener('mouseleave', enable)
+    })
+
+    return () => {
+      links.forEach((el) => {
+        el.removeEventListener('mouseenter', disable)
+        el.removeEventListener('mouseleave', enable)
+      })
+    }
+  }, [])
 
   return (
     <div
