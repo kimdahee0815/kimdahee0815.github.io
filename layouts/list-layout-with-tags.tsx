@@ -84,23 +84,38 @@ export function ListLayoutWithTags({ title, description, posts, snippets }: List
 }
 
 function TagsList() {
-  let tagCounts = tagData as Record<string, number>
-  let tagKeys = Object.keys(tagCounts)
-  let sortedTags = tagKeys.sort((a, b) => tagCounts[b] - tagCounts[a])
+  const tagCounts = tagData as Record<string, number>
+  const tagKeys = Object.keys(tagCounts)
+  const sortedTags = tagKeys.sort((a, b) => a.localeCompare(b))
+
+  // 그룹화: A-Z 기준
+  const groupedTags: Record<string, string[]> = {}
+  sortedTags.forEach((tag) => {
+    const firstLetter = tag[0].toUpperCase()
+    if (!groupedTags[firstLetter]) {
+      groupedTags[firstLetter] = []
+    }
+    groupedTags[firstLetter].push(tag)
+  })
 
   return (
     <div className="hidden max-h-screen w-[300px] shrink-0 py-5 md:flex md:py-10">
-      <div className="h-full overflow-auto rounded bg-gray-50 dark:bg-gray-900/70 dark:shadow-gray-800/40">
-        <ul className="flex flex-wrap items-center gap-x-5 gap-y-2 px-6 py-4">
-          {sortedTags.map((t) => {
-            return (
-              <li key={t} className="flex items-center gap-0.5">
-                <Tag text={t} size="md" />
-                <span className="text-gray-600 dark:text-slate-300">({tagCounts[t]})</span>
-              </li>
-            )
-          })}
-        </ul>
+      <div className="h-full overflow-auto rounded bg-gray-50 dark:bg-gray-900/70 dark:shadow-gray-800/40 px-6 py-4">
+        {Object.keys(groupedTags)
+          .sort()
+          .map((letter) => (
+            <div key={letter} className="mb-6">
+              <h3 className="mb-2 text-lg font-semibold text-gray-700 dark:text-slate-200">{letter}</h3>
+              <ul className="space-y-1">
+                {groupedTags[letter].map((tag) => (
+                  <li key={tag} className="flex items-center gap-0.5">
+                    <Tag text={tag} size="md" />
+                    <span className="text-gray-600 dark:text-slate-300">({tagCounts[tag]})</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
       </div>
     </div>
   )
