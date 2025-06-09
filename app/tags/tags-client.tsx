@@ -30,7 +30,7 @@ export default function TagsClient({ tagCounts }: { tagCounts: Record<string, nu
             <>
             You can find all the tags here! 😄
             <br/>
-            🔍Use the search below to filter by title, contents, tags.
+            🔍Use the search below to filter by tags.
           </>
         }
         className="border-b border-gray-200 dark:border-gray-700"
