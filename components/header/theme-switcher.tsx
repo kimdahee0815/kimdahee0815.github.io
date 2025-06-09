@@ -33,10 +33,16 @@ const THEMES = [
 
 export function ThemeSwitcher() {
   let [mounted, setMounted] = useState(false)
-  let { theme, setTheme, resolvedTheme } = useTheme()
+  let { theme, setTheme, resolvedTheme, systemTheme } = useTheme()
 
   // When mounted on client, now we can show the UI
   useEffect(() => setMounted(true), [])
+
+  useEffect(() => {
+    if (mounted && theme === 'system' && systemTheme) {
+      setTheme(systemTheme)
+    }
+  }, [mounted, theme, systemTheme, setTheme])
 
   return (
     <div className="flex items-center">
