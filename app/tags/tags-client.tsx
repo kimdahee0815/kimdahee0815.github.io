@@ -43,7 +43,11 @@ export default function TagsClient({ tagCounts }: { tagCounts: Record<string, nu
 
       <div className="w-full space-y-8">
         {filteredTags.length === 0 ? (
-          <p className="text-center text-gray-500 dark:text-gray-400">No tags found.</p>
+          <p className="mt-10 text-left text-gray-500 dark:text-slate-400 text-[0.8rem] leading-[0.5rem] font-extrabold tracking-tight
+        sm:text-[0.9rem]
+        md:text-[1rem] md:leading-[0.7rem]
+        lg:text-[1.1rem] lg:leading-[0.8rem]
+        xl:text-[1.28rem] xl:leading-[1rem]">No tags found.</p>
         ) : (
           Object.entries(grouped)
             .sort(([a], [b]) => a.localeCompare(b))
