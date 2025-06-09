@@ -23,7 +23,7 @@ export function Tag({ text, size = 'sm' }: { text: string; size?: 'sm' | 'md' })
       href={`/tags/${slug(text)}`}
       className={clsx([
         'rounded-lg px-2 py-0.5 font-semibold',
-        'bg-slate-100 text-gray-600 hover:text-gray-800',
+        'bg-slate-100 text-gray-600 hover:text-black hover:dark:text-dark-mode-yellow',
         'dark:bg-gray-700 dark:text-slate-300',
         'sm768:text-[1.2rem]',
         'xs480:text-[0.9rem]',
