@@ -102,7 +102,7 @@ export function ListLayout({
             <br/>
             fixing common errors🐞, core programming concepts✅, latest tech news📫, practical tutorials and how-tos🔦, tool reviews and recommendations⚒️, learning resources✒️.
             <br/>
-            🔍Use the search below to filter by title.
+            🔍Use the search below to filter by title, contents, tags.
           </>
         }
         className="border-b border-gray-200 dark:border-gray-700"
