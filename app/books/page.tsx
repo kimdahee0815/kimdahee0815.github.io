@@ -33,7 +33,6 @@ export default async function BooksPage() {
                 </GrowingUnderline>
                 {SITE_METADATA.goodreadsBookshelfUrl.startsWith('http') && <ExternalLink className="ml-2 mt-2" size={18} strokeWidth={1.5} />}
               </Link>
-              .
             </p>
           </>
         }
