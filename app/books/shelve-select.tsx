@@ -3,26 +3,37 @@ import clsx from 'clsx'
 import { ChevronDown } from 'lucide-react'
 import { Fragment } from 'react'
 import Link from '~/components/ui/Link'
+import { Twemoji } from '~/components/ui/twemoji'
 
 export const SHELVES: {
   label: string
+  description: string
   value: ShelfType
+  emoji: string
 }[] = [
   {
     label: 'All',
     value: 'all',
+    description: 'All the books',
+    emoji: 'books'
   },
   {
     label: 'Reading',
     value: 'currently-reading',
+    description: 'Reading...',
+    emoji: 'open-book'
   },
   {
     label: 'Read',
     value: 'read',
+    description: 'Complete',
+    emoji: 'check-mark-button'
   },
   {
     label: 'Abandoned',
     value: 'abandoned',
+    description: 'Abandoned',
+    emoji: 'wastebasket'
   },
 ]
 
@@ -54,13 +65,14 @@ export function ShelveSelect({ shelf }: { shelf: ShelfType }) {
           <MenuItems
             className={clsx([
               'absolute right-0 z-50',
-              'mt-2 w-32 origin-top-right rounded-md text-right shadow-lg',
+              'mt-2 origin-top-right rounded-md text-right shadow-lg',
               'bg-white dark:bg-black',
               'ring-1 ring-black ring-opacity-5 focus:outline-none',
+              'w-[170px]'
             ])}
           >
             <div className="space-y-1 p-1">
-              {SHELVES.map(({ label, value }) => (
+              {SHELVES.map(({ label, value, description, emoji }) => (
                 <MenuItem key={value} as="div">
                   {({ close }) => (
                     <Link
@@ -73,7 +85,8 @@ export function ShelveSelect({ shelf }: { shelf: ShelfType }) {
                       href={`/books?shelf=${value}`}
                       onClick={close}
                     >
-                      <span data-umami-event="books-shelf-select">{label}</span>
+                      <span data-umami-event="books-shelf-select">{description}</span>
+                      <Twemoji emoji={emoji} />
                     </Link>
                   )}
                 </MenuItem>
