@@ -18,11 +18,12 @@ module.exports = {
         'gradient-flow': 'linear-gradient(-45deg, #f3f4f6, #e0f2fe, #f0fdfa)',
       },
       screens: {
-        'xs480': '480px',
-        'sm768': '768px',    
-        'lg900': '900px',   
-        'xl1080': '1080px',
-        '2xl1280': '1280px'
+        xs480: '480px',
+        sm768: '768px',
+        lg900: '900px',
+        xl1080: '1080px',
+        '2xl1280': '1280px',
+        '3xl': '1920px',
       },
       keyframes: {
         // 'wave-animation': {
@@ -113,22 +114,22 @@ module.exports = {
           '50%': { opacity: '1' },
         },
         meteor: {
-      '0%': {
-        transform: 'translate(0, 0) scale(1)',
-        opacity: '0',
-      },
-      '10%': {
-        opacity: '1',
-      },
-      '70%': {
-        transform: 'translate(-400px, 400px) scale(1.5)',
-        opacity: '0.8',
-      },
-      '100%': {
-        transform: 'translate(-700px, 700px) scale(0.9)',
-        opacity: '0',
-      },
-    },
+          '0%': {
+            transform: 'translate(0, 0) scale(1)',
+            opacity: '0',
+          },
+          '10%': {
+            opacity: '1',
+          },
+          '70%': {
+            transform: 'translate(-400px, 400px) scale(1.5)',
+            opacity: '0.8',
+          },
+          '100%': {
+            transform: 'translate(-700px, 700px) scale(0.9)',
+            opacity: '0',
+          },
+        },
       },
       animation: {
         // wave: 'wave-animation 2.5s linear infinite',

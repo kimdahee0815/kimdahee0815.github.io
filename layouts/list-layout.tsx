@@ -1,21 +1,33 @@
 'use client'
 
-import type { Blog } from 'contentlayer/generated'
-import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { usePathname } from 'next/navigation'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
+import {
+  ArrowLeft,
+  ArrowRight,
+  Filter,
+  X,
+  ChevronDown,
+  ChevronUp,
+  Folder,
+  FolderMinus,
+  FolderPlus,
+} from 'lucide-react'
 import { PostCardGridView } from '~/components/blog/post-card-grid-view'
 import { SearchArticles } from '~/components/blog/search-articles'
 import { Container } from '~/components/ui/container'
 import { GrowingUnderline } from '~/components/ui/growing-underline'
 import Link from '~/components/ui/Link'
 import { PageHeader } from '~/components/ui/page-header'
+import type { Blog } from 'contentlayer/generated'
 import type { CoreContent } from '~/types/data'
 
 interface PaginationProps {
   totalPages: number
   currentPage: number
 }
+
 interface ListLayoutProps {
   posts: CoreContent<Blog>[]
   title: string
@@ -23,11 +35,40 @@ interface ListLayoutProps {
   pagination?: PaginationProps
 }
 
+const categories = {
+  'Programming Language': ['javascript', 'typescript', 'java'],
+  Frontend: ['react', 'nextjs', 'tailwind-css', 'css', 'scss', 'redux', 'zustand'],
+  Backend: ['nodejs', 'express', 'nestjs', 'spring-boot', 'auth', 'rest', 'graphql'],
+  Database: ['postgresql', 'mysql', 'redis', 'prisma', 'mongodb'],
+  'DevOps & Infra': ['docker', 'github-actions', 'aws', 'vercel', 'netlify', 'nginx', 'monitoring'],
+  Testing: ['jest', 'vitest', 'cypress', 'eslint', 'prettier', 'test-coverage'],
+  'CS & Fundamentals': [
+    'data-structure',
+    'algorithm',
+    'operating-system',
+    'network',
+    'design-pattern',
+    'architecture',
+    'clean-code',
+  ],
+  'Tools & Env': [
+    'vscode',
+    'git',
+    'zsh',
+    'terminal',
+    'chrome-devtools',
+    'postman',
+    'insomnia',
+    'figma',
+  ],
+  'Tech News & Trends': ['artificial-intelligence', 'machine-learning', 'conference'],
+}
+
 function Pagination({ totalPages, currentPage }: PaginationProps) {
-  let pathname = usePathname()
-  let basePath = pathname.split('/')[1]
-  let prevPage = currentPage - 1 > 0
-  let nextPage = currentPage + 1 <= totalPages
+  const pathname = usePathname()
+  const basePath = pathname.split('/')[1]
+  const prevPage = currentPage - 1 > 0
+  const nextPage = currentPage + 1 <= totalPages
 
   return (
     <div className="space-y-2 pb-8 pt-6 md:space-y-5">
@@ -44,7 +85,7 @@ function Pagination({ totalPages, currentPage }: PaginationProps) {
             </GrowingUnderline>
           </Link>
         ) : (
-          <button className="cursor-auto disabled:opacity-50" disabled={!prevPage}>
+          <button className="cursor-auto disabled:opacity-50" disabled>
             <GrowingUnderline className="inline-flex items-center gap-2">
               <ArrowLeft className="h-4 w-4" />
               <span>Previous</span>
@@ -62,7 +103,7 @@ function Pagination({ totalPages, currentPage }: PaginationProps) {
             </GrowingUnderline>
           </Link>
         ) : (
-          <button className="cursor-auto disabled:opacity-50" disabled={!nextPage}>
+          <button className="cursor-auto disabled:opacity-50" disabled>
             <GrowingUnderline className="inline-flex items-center gap-2">
               <span>Next</span>
               <ArrowRight className="h-4 w-4" />
@@ -80,18 +121,60 @@ export function ListLayout({
   initialDisplayPosts = [],
   pagination,
 }: ListLayoutProps) {
-  let [searchValue, setSearchValue] = useState('')
-  let filteredBlogPosts = posts.filter((post) => {
-    let searchContent = post.title + post.summary + post.tags?.join(' ')
-    return searchContent.toLowerCase().includes(searchValue.toLowerCase())
+  const [searchValue, setSearchValue] = useState('')
+  const [selectedTags, setSelectedTags] = useState<string[]>([])
+  const [showFilter, setShowFilter] = useState(false)
+  const [openCategory, setOpenCategory] = useState<string | null>(null)
+
+  const toggleTag = (tag: string) => {
+    setSelectedTags((prev) => (prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]))
+  }
+
+  const toggleCategory = (category: string) => {
+    setOpenCategory((prev) => (prev === category ? null : category))
+  }
+
+  const filteredBlogPosts = posts.filter((post) => {
+    const searchContent = post.title + post.summary + post.tags?.join(' ')
+    const matchesSearch = searchContent.toLowerCase().includes(searchValue.toLowerCase())
+    const matchesTags =
+      selectedTags.length === 0 || selectedTags.every((tag) => post.tags?.includes(tag))
+    return matchesSearch && matchesTags
   })
 
-  // If initialDisplayPosts exist, display it if no searchValue is specified
-  let displayPosts =
-    initialDisplayPosts.length > 0 && !searchValue ? initialDisplayPosts : filteredBlogPosts
+  const displayPosts =
+    initialDisplayPosts.length > 0 && !searchValue && selectedTags.length === 0
+      ? initialDisplayPosts
+      : filteredBlogPosts
+
+  const [drawerDirection, setDrawerDirection] = useState<'horizontal' | 'vertical'>('vertical')
+
+  useEffect(() => {
+    const handleResize = () => {
+      setDrawerDirection(window.innerWidth <= 1920 ? 'horizontal' : 'vertical')
+    }
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  useEffect(() => {
+    if (showFilter) {
+      document.body.style.overflow = 'hidden'
+      document.documentElement.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+      document.documentElement.style.overflow = ''
+    }
+
+    return () => {
+      document.body.style.overflow = ''
+      document.documentElement.style.overflow = ''
+    }
+  }, [showFilter])
 
   return (
-    <Container className="pt-4 lg:pt-12">
+    <Container className="relative pt-4 lg:pt-12">
       <PageHeader
         title={title}
         description={
@@ -106,21 +189,154 @@ export function ListLayout({
             🔍Use the search below to filter by title, contents, tags.
           </>
         }
-        className="border-b border-gray-200 dark:border-gray-700"
+        className="relative border-b border-gray-200 dark:border-gray-700"
       >
-        <SearchArticles label="Search articles" onChange={(e) => setSearchValue(e.target.value)} />
-      </PageHeader>
-      {!filteredBlogPosts.length ? (
-        <div className="py-10">No posts found.</div>
-      ) : (
-        <div className="grid grid-cols-1 gap-x-8 gap-y-16 py-10 md:gap-y-16 lg:grid-cols-2 xl:grid-cols-3">
-          {displayPosts.map((post) => (
-            <PostCardGridView key={post.path} post={post} />
-          ))}
+        <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+          <SearchArticles
+            label="Search articles"
+            onChange={(e) => setSearchValue(e.target.value)}
+          />
+          <button
+            onClick={() => setShowFilter(true)}
+            className="flex items-center gap-2 rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-800 transition hover:bg-gray-100 dark:border-gray-600 dark:text-gray-100 dark:hover:bg-gray-800"
+            aria-label="Open filters"
+          >
+            <Filter className="h-4 w-4" /> Filter
+          </button>
         </div>
-      )}
-      {pagination && pagination.totalPages > 1 && !searchValue && (
-        <Pagination currentPage={pagination.currentPage} totalPages={pagination.totalPages} />
+      </PageHeader>
+
+      <AnimatePresence>
+        {showFilter && (
+          <>
+            {/* Overlay */}
+            <motion.div
+              key="overlay"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.4 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setShowFilter(false)}
+              className="fixed inset-0 z-40 cursor-pointer bg-black backdrop-blur-sm"
+            />
+            {/* Drawer */}
+            <motion.aside
+              key="drawer"
+              initial={
+                drawerDirection === 'vertical'
+                  ? { x: '-110%', opacity: 0 }
+                  : { y: -100, opacity: 0 }
+              }
+              animate={
+                drawerDirection === 'vertical' ? { x: '16px', opacity: 1 } : { y: 0, opacity: 1 }
+              }
+              exit={
+                drawerDirection === 'vertical'
+                  ? { x: '-110%', opacity: 0 }
+                  : { y: -100, opacity: 0 }
+              }
+              transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+              className={`z-50 overflow-y-auto rounded-2xl shadow-xl dark:bg-zinc-900 ${
+                drawerDirection === 'vertical'
+                  ? 'fixed left-4 top-[130px] h-[70vh] w-80 bg-white'
+                  : 'absolute top-[80px] h-[70vh] w-[90%] -translate-x-1/2 bg-white'
+              }`}
+            >
+              <header className="sticky top-0 flex items-center justify-between rounded-t-2xl border-b border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-zinc-900">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
+                  Filter Posts
+                </h3>
+                <button
+                  onClick={() => setShowFilter(false)}
+                  aria-label="Close filters"
+                  className="rounded-md p-2 transition hover:bg-gray-200 dark:hover:bg-gray-800"
+                >
+                  <X className="h-5 w-5 text-gray-700 dark:text-gray-300" />
+                </button>
+              </header>
+              <div className="space-y-2 p-4">
+                {Object.entries(categories).map(([category, tags]) => (
+                  <div
+                    key={category}
+                    className="rounded-lg border border-gray-300 dark:border-gray-700"
+                  >
+                    <button
+                      className="flex w-full items-center justify-between rounded-t-lg px-4 py-3 font-semibold text-gray-800 transition hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-zinc-800"
+                      onClick={() => toggleCategory(category)}
+                      aria-expanded={openCategory === category}
+                      aria-controls={`${category}-content`}
+                    >
+                      <div className="flex items-center gap-2">
+                        {openCategory === category ? (
+                          <FolderMinus className="h-5 w-5 text-blue-600" />
+                        ) : (
+                          <FolderPlus className="h-5 w-5 text-gray-600 dark:text-gray-400" />
+                        )}
+                        {category}
+                      </div>
+                      {openCategory === category ? (
+                        <ChevronUp className="h-5 w-5" />
+                      ) : (
+                        <ChevronDown className="h-5 w-5" />
+                      )}
+                    </button>
+
+                    <AnimatePresence>
+                      {openCategory === category && (
+                        <motion.ul
+                          id={`${category}-content`}
+                          initial="collapsed"
+                          animate="open"
+                          exit="collapsed"
+                          variants={{
+                            open: { height: 'auto', opacity: 1 },
+                            collapsed: { height: 0, opacity: 0 },
+                          }}
+                          transition={{ duration: 0.3, ease: 'easeInOut' }}
+                          className="space-y-1 overflow-hidden px-6 py-2"
+                        >
+                          {tags.map((tag) => {
+                            const isSelected = selectedTags.includes(tag)
+                            return (
+                              <li key={tag} className="text-sm">
+                                <button
+                                  className={`flex w-full items-center gap-2 rounded-md px-3 py-1 text-gray-700 transition hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-zinc-800 ${
+                                    isSelected ? 'bg-blue-100 text-blue-700 dark:bg-blue-900' : ''
+                                  }`}
+                                  onClick={() => toggleTag(tag)}
+                                  aria-pressed={isSelected}
+                                >
+                                  {/* 체크 아이콘 넣어도 좋음 */}
+                                  <input
+                                    type="checkbox"
+                                    checked={isSelected}
+                                    readOnly
+                                    className="pointer-events-none"
+                                  />
+                                  <span>{tag}</span>
+                                </button>
+                              </li>
+                            )
+                          })}
+                        </motion.ul>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ))}
+              </div>
+            </motion.aside>
+          </>
+        )}
+      </AnimatePresence>
+
+      <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {displayPosts.map((post) => (
+          <PostCardGridView key={post.path} post={post} />
+        ))}
+      </div>
+
+      {/* 페이징 */}
+      {pagination && (
+        <Pagination totalPages={pagination.totalPages} currentPage={pagination.currentPage} />
       )}
     </Container>
   )
