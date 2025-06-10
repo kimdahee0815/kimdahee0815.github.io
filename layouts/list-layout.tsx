@@ -158,21 +158,6 @@ export function ListLayout({
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
-  useEffect(() => {
-    if (showFilter) {
-      document.body.style.overflow = 'hidden'
-      document.documentElement.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = ''
-      document.documentElement.style.overflow = ''
-    }
-
-    return () => {
-      document.body.style.overflow = ''
-      document.documentElement.style.overflow = ''
-    }
-  }, [showFilter])
-
   return (
     <Container className="relative pt-4 lg:pt-12">
       <PageHeader
@@ -216,7 +201,7 @@ export function ListLayout({
               animate={{ opacity: 0.4 }}
               exit={{ opacity: 0 }}
               onClick={() => setShowFilter(false)}
-              className="fixed inset-0 z-40 cursor-pointer bg-black backdrop-blur-sm"
+              className="fixed inset-0 z-30 cursor-pointer bg-black backdrop-blur-sm"
             />
             {/* Drawer */}
             <motion.aside
@@ -235,10 +220,10 @@ export function ListLayout({
                   : { y: -100, opacity: 0 }
               }
               transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-              className={`z-50 overflow-y-auto rounded-2xl shadow-xl dark:bg-zinc-900 ${
+              className={`z-40 overflow-y-auto rounded-2xl shadow-xl dark:bg-zinc-900 ${
                 drawerDirection === 'vertical'
                   ? 'fixed left-4 top-[130px] h-[70vh] w-80 bg-white'
-                  : 'absolute top-[80px] h-[70vh] w-[90%] -translate-x-1/2 bg-white'
+                  : 'fixed left-[20%] top-[8rem] h-[70vh] w-[60%] -translate-x-1/2 bg-white'
               }`}
             >
               <header className="sticky top-0 flex items-center justify-between rounded-t-2xl border-b border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-zinc-900">
@@ -305,7 +290,6 @@ export function ListLayout({
                                   onClick={() => toggleTag(tag)}
                                   aria-pressed={isSelected}
                                 >
-                                  {/* 체크 아이콘 넣어도 좋음 */}
                                   <input
                                     type="checkbox"
                                     checked={isSelected}
@@ -334,7 +318,6 @@ export function ListLayout({
         ))}
       </div>
 
-      {/* 페이징 */}
       {pagination && (
         <Pagination totalPages={pagination.totalPages} currentPage={pagination.currentPage} />
       )}

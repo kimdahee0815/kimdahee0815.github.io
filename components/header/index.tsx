@@ -29,10 +29,10 @@ export function Header() {
   }, [])
 
   let headerClass =
-    'mx-auto w-full max-w-[80rem] supports-backdrop-blur fixed left-0 right-0 top-0 z-10 bg-white/75 py-8 backdrop-blur dark:bg-dark/75 md:rounded-2xl'
+    'mx-auto w-full max-w-[80rem] supports-backdrop-blur fixed left-0 right-0 top-0 bg-white/75 py-8 backdrop-blur dark:bg-dark/75 md:rounded-2xl'
 
   if (SITE_METADATA.stickyNav) {
-    headerClass += ' sticky top-0 z-50'
+    headerClass += ' sticky top-0 z-[999]'
   }
 
   return (
@@ -49,7 +49,7 @@ export function Header() {
               ])}
             />
           </div>
-          <div className="group ml-2 font-bold transition duration-300 text-[0.9rem] xs480:text-[1.1rem] min-[636px]:text-2xl lg900:text-[1.5rem] min-[1080px]:text-3xl min-[1280px]:text-4xl">
+          <div className="group ml-2 text-[0.9rem] font-bold transition duration-300 xs480:text-[1.1rem] min-[636px]:text-2xl lg900:text-[1.5rem] min-[1080px]:text-3xl min-[1280px]:text-4xl">
             <GrowingUnderline>Let's Hack The Moon</GrowingUnderline>
             {/* <span className="block h-0.5 max-w-0 bg-black transition-all duration-500 group-hover:max-w-[100%] dark:bg-white"></span> */}
           </div>
@@ -61,7 +61,10 @@ export function Header() {
               return (
                 <Link key={title} href={href} className="px-3 py-1 font-medium">
                   <GrowingUnderline
-                    className={clsx('max-[636px]:text-sm min-[636px]:text-base min-[930px]:text-lg min-[1080px]:text-xl', isActive && 'bg-[length:100%_50%]')}
+                    className={clsx(
+                      'max-[636px]:text-sm min-[636px]:text-base min-[930px]:text-lg min-[1080px]:text-xl',
+                      isActive && 'bg-[length:100%_50%]'
+                    )}
                     data-umami-event={`nav-${href.replace('/', '')}`}
                   >
                     {title}
