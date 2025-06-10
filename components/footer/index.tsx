@@ -18,9 +18,11 @@ export function Footer() {
       >
         <div className="col-span-1 space-y-4 xl:col-span-2">
           <LogoAndRepo />
-          <div className="italic text-gray-500 dark:text-slate-400">{SITE_METADATA.description}</div>
+          <div className="italic text-gray-500 dark:text-slate-400">
+            {SITE_METADATA.description}
+          </div>
           <div className="pt-4">
-            <div className="md:gap-15 flex gap-8 py-1.5">
+            <div className="md:gap-15 flex flex-col gap-8 py-1.5 xs480:flex-row">
               <div className="flex items-center">
                 <Signature className="h-20 w-32 md:w-40" />
               </div>

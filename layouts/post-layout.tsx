@@ -58,13 +58,13 @@ export function PostLayout({ content, next, prev, children }: LayoutProps) {
         <GradientDivider className="mb-2 mt-1" />
         <div className="grid grid-cols-1 gap-12 pb-10 pt-8 lg:grid-cols-12 lg:pt-10">
           <div className="divide-y divide-gray-200 dark:divide-gray-700 lg:col-span-8 xl:col-span-9">
-            <div className="prose max-w-none dark:prose-invert lg:prose-lg sm:text-xl md:text-[1.35rem] lg:pb-8">
+            <div className="prose max-w-none leading-8 dark:prose-invert lg:prose-lg sm:text-xl sm:leading-10 md:text-[1.35rem] md:leading-10 lg:pb-8 lg:leading-10">
               {children}
             </div>
           </div>
           <div className="hidden lg:col-span-4 lg:block xl:col-span-3">
             <div className="space-y-4 divide-y divide-gray-200 dark:divide-gray-700 lg:sticky lg:top-24">
-              {/* <BackToPosts label="Back to posts" /> */}
+              <BackToPosts label="Back to posts" />
               <TableOfContents toc={toc} />
               <Reactions className="pt-6" type={type.toLowerCase() as StatsType} slug={slug} />
               <div className="hidden">

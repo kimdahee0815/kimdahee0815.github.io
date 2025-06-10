@@ -21,7 +21,13 @@ const Link = ({ href, className, children, ...rest }: Props) => {
   }
 
   return (
-    <a href={href} className={clsx(mergedClassName, 'flex')} target="_blank" rel="noopener noreferrer" {...rest}>
+    <a
+      href={href}
+      className={clsx(mergedClassName, 'inline-flex whitespace-nowrap')}
+      target="_blank"
+      rel="noopener noreferrer"
+      {...rest}
+    >
       {children}
     </a>
   )

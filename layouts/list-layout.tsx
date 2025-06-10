@@ -83,7 +83,6 @@ export function ListLayout({
   let [searchValue, setSearchValue] = useState('')
   let filteredBlogPosts = posts.filter((post) => {
     let searchContent = post.title + post.summary + post.tags?.join(' ')
-    console.log(post.tags?.join(' '))
     return searchContent.toLowerCase().includes(searchValue.toLowerCase())
   })
 
@@ -96,13 +95,14 @@ export function ListLayout({
       <PageHeader
         title={title}
         description={
-            <>
+          <>
             Join me as I explore the world of software development! 😄
             <br />
             I share posts on:
-            <br/>
-            fixing common errors🐞, core programming concepts✅, latest tech news📫, practical tutorials and how-tos🔦, tool reviews and recommendations⚒️, learning resources✒️.
-            <br/>
+            <br />
+            fixing common errors🐞, core programming concepts✅, latest tech news📫, practical
+            tutorials and how-tos🔦, tool reviews and recommendations⚒️, learning resources✒️.
+            <br />
             🔍Use the search below to filter by title, contents, tags.
           </>
         }

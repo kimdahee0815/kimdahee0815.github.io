@@ -15,7 +15,7 @@ import {
   Platypi,
   Fredoka,
   Ribeye,
-  REM
+  REM,
 } from 'next/font/google'
 import { UmamiAnalytics } from '~/components/analytics/umami'
 import { Footer } from '~/components/footer'
@@ -101,7 +101,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html
       lang={SITE_METADATA.language}
       className={clsx(
-        'w-full overflow-x-hidden scroll-smooth',
+        'min-w-full overflow-x-hidden scroll-smooth',
         FONT_REM.variable,
         FONT_JETBRAINS_MONO.variable,
         FONT_RIBEYE.variable,

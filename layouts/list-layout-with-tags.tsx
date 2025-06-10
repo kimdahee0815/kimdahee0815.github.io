@@ -88,7 +88,6 @@ function TagsList() {
   const tagKeys = Object.keys(tagCounts)
   const sortedTags = tagKeys.sort((a, b) => a.localeCompare(b))
 
-  // 그룹화: A-Z 기준
   const groupedTags: Record<string, string[]> = {}
   sortedTags.forEach((tag) => {
     const firstLetter = tag[0].toUpperCase()
@@ -100,12 +99,14 @@ function TagsList() {
 
   return (
     <div className="hidden max-h-screen w-[300px] shrink-0 py-5 md:flex md:py-10">
-      <div className="h-full overflow-auto rounded bg-gray-50 dark:bg-gray-900/70 dark:shadow-gray-800/40 px-6 py-4">
+      <div className="h-full overflow-auto rounded bg-gray-50 px-6 py-4 dark:bg-gray-900/70 dark:shadow-gray-800/40">
         {Object.keys(groupedTags)
           .sort()
           .map((letter) => (
             <div key={letter} className="mb-6">
-              <h3 className="mb-2 text-lg font-semibold text-gray-700 dark:text-slate-200">{letter}</h3>
+              <h3 className="mb-2 text-lg font-semibold text-gray-700 dark:text-slate-200">
+                {letter}
+              </h3>
               <ul className="space-y-1">
                 {groupedTags[letter].map((tag) => (
                   <li key={tag} className="flex items-center gap-0.5">
