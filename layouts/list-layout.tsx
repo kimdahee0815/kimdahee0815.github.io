@@ -230,13 +230,24 @@ export function ListLayout({
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
                   Filter Posts
                 </h3>
-                <button
-                  onClick={() => setShowFilter(false)}
-                  aria-label="Close filters"
-                  className="rounded-md p-2 transition hover:bg-gray-200 dark:hover:bg-gray-800"
-                >
-                  <X className="h-5 w-5 text-gray-700 dark:text-gray-300" />
-                </button>
+                <div className="flex items-center gap-2">
+                  {selectedTags.length > 0 && (
+                    <button
+                      onClick={() => setSelectedTags([])}
+                      className="rounded px-2 py-1 text-sm text-blue-600 transition-colors duration-300 hover:bg-blue-100 hover:text-blue-800 dark:text-blue-400 dark:hover:bg-blue-700 dark:hover:text-blue-200"
+                      aria-label="Clear all filters"
+                    >
+                      Clear All
+                    </button>
+                  )}
+                  <button
+                    onClick={() => setShowFilter(false)}
+                    aria-label="Close filters"
+                    className="rounded-md p-2 transition hover:bg-gray-200 dark:hover:bg-gray-800"
+                  >
+                    <X className="h-5 w-5 text-gray-700 dark:text-gray-300" />
+                  </button>
+                </div>
               </header>
               <div className="space-y-2 p-4">
                 {Object.entries(categories).map(([category, tags]) => (
