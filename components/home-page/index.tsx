@@ -8,6 +8,7 @@ import { Intro } from './intro'
 import { LatestPosts } from './latest-posts'
 import { BlogLinks } from './links'
 import { TypedBios } from './typed-bios'
+import PopularTags from './PopularTags'
 
 export function Home({
   posts,
@@ -56,6 +57,7 @@ export function Home({
           <ProfileCard />
         </div>
       </div>
+      <PopularTags />
       <LatestPosts posts={posts} snippets={snippets} />
       {/* {SITE_METADATA.newsletter?.provider && (
         <div className="flex items-center justify-center py-4 lg:py-10">

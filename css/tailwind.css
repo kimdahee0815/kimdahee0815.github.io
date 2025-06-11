@@ -118,3 +118,39 @@ samp {
 .scrollbar-rounded::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+.popular-tags .javascript {
+  @apply bg-amber-400;
+}
+
+.popular-tags .typescript {
+  @apply bg-blue-400;
+}
+
+.popular-tags .java {
+  @apply bg-orange-400;
+}
+
+.popular-tags .nextjs {
+  @apply bg-neutral-400;
+}
+
+.popular-tags .nodejs {
+  @apply bg-green-700;
+}
+
+.popular-tags .nestjs {
+  @apply bg-rose-500;
+}
+
+.popular-tags .react {
+  @apply bg-sky-500;
+}
+
+.popular-tags .devops {
+  @apply bg-sky-600;
+}
+
+.popular-tags .mongodb {
+  @apply bg-green-900;
+}
