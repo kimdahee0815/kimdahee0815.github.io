@@ -5,12 +5,16 @@ import type { LinkProps } from 'next/link'
 import type { AnchorHTMLAttributes } from 'react'
 import clsx from 'clsx'
 
-type Props = LinkProps & AnchorHTMLAttributes<HTMLAnchorElement>
+type Props = LinkProps &
+  AnchorHTMLAttributes<HTMLAnchorElement> & {
+    inline?: boolean
+  }
 
-const Link = ({ href, className, children, ...rest }: Props) => {
+const Link = ({ href, className, children, inline = true, ...rest }: Props) => {
   const isInternalLink = typeof href === 'string' && (href.startsWith('/') || href.startsWith('#'))
 
-  const mergedClassName = clsx('break-words', className)
+  const baseClass = inline ? 'inline whitespace-nowrap' : 'break-words'
+  const mergedClassName = clsx(baseClass, className)
 
   if (isInternalLink) {
     return (
@@ -21,13 +25,7 @@ const Link = ({ href, className, children, ...rest }: Props) => {
   }
 
   return (
-    <a
-      href={href}
-      className={clsx(mergedClassName, 'inline-flex whitespace-nowrap')}
-      target="_blank"
-      rel="noopener noreferrer"
-      {...rest}
-    >
+    <a href={href} className={mergedClassName} target="_blank" rel="noopener noreferrer" {...rest}>
       {children}
     </a>
   )

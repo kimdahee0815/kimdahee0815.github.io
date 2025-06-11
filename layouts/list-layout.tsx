@@ -223,7 +223,7 @@ export function ListLayout({
               className={`z-40 overflow-y-auto rounded-2xl shadow-xl dark:bg-zinc-900 ${
                 drawerDirection === 'vertical'
                   ? 'fixed left-4 top-[130px] h-[70vh] w-80 bg-white'
-                  : 'fixed left-[9.5%] top-[8rem] h-[70vh] w-[80%] -translate-x-1/2 bg-white'
+                  : 'fixed left-[9%] top-[8rem] h-[70vh] w-[80%] -translate-x-1/2 bg-white'
               }`}
             >
               <header className="sticky top-0 flex items-center justify-between rounded-t-2xl border-b border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-zinc-900">

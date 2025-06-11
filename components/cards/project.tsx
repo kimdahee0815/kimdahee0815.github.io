@@ -33,19 +33,19 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         </Zoom>
 
         <div className="p-6">
-          <h2 className="mb-3 text-[1.6rem] font-bold leading-8 tracking-tight">
+          <h2 className="mb-3 max-w-[580px] text-[1.6rem] font-bold leading-8 tracking-tight">
             {href ? (
-              <Link href={href} aria-label={`Link to ${title}`}>
+              <Link href={href} aria-label={`Link to ${title}`} inline={false}>
                 {title}
               </Link>
             ) : (
               title
             )}
           </h2>
-          <p className="prose mb-3 max-w-none text-xl text-gray-500 dark:text-slate-400">
+          <p className="prose mb-3 max-w-[580px] max-w-none break-all text-xl text-gray-500 dark:text-slate-400">
             {repository?.description || description}
           </p>
-          <div className="space-y-1.5">
+          <div className="max-w-[580px] space-y-1.5">
             <div className="text-xs text-gray-600 dark:text-slate-400">Stack</div>
             <div className="flex h-6 flex-wrap items-center gap-1.5">
               {builtWith?.map((tool) => {
@@ -59,7 +59,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
               })}
             </div>
           </div>
-          <div className="mb-3 flex flex-wrap space-x-1.5">
+          <div className="mb-3 flex max-w-[580px] flex-wrap space-x-1.5 break-all">
             {builtWith?.map((tool, index) => {
               return (
                 <span key={index} className="font-semibold text-gray-600 dark:text-slate-300">
@@ -70,13 +70,14 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             })}
           </div>
           {repository ? (
-            <GithubRepo repo={repoData? repoData: repository} />
+            <GithubRepo repo={repoData ? repoData : repository} />
           ) : (
             href && (
               <Link
                 href={href}
-                className="text-primary text-base font-medium leading-6 hover:text-sky-600 dark:hover:text-sky-400"
+                className="text-primary max-w-[580px] text-base font-medium leading-6 hover:text-sky-600 dark:hover:text-sky-400"
                 aria-label={`Link to ${title}`}
+                inline={false}
               >
                 Learn more &rarr;
               </Link>

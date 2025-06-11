@@ -147,7 +147,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <UmamiAnalytics websiteId={SITE_METADATA.analytics.umamiAnalytics.websiteId} />
           <KBarSearchProvider configs={SITE_METADATA.search.kbarConfigs}>
             <Header />
-            <main className="mb-auto grow">{children}</main>
+            <main className="mb-auto mt-[6rem] grow">{children}</main>
           </KBarSearchProvider>
           <Footer />
         </ThemeProviders>

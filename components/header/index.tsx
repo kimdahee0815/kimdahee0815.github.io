@@ -29,10 +29,10 @@ export function Header() {
   }, [])
 
   let headerClass =
-    'mx-auto w-screen max-w-[80rem] supports-backdrop-blur fixed left-0 right-0 top-0 bg-white/75 py-8 backdrop-blur dark:bg-dark/75 md:rounded-2xl'
+    'mx-auto w-full max-w-[80rem] supports-backdrop-blur fixed left-0 right-0 top-0 bg-white/75 py-8 backdrop-blur dark:bg-dark/75 md:rounded-2xl'
 
   if (SITE_METADATA.stickyNav) {
-    headerClass += ' sticky top-0 z-[999]'
+    headerClass += ' top-0 z-[999]'
   }
 
   return (
