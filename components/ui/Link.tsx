@@ -13,7 +13,7 @@ type Props = LinkProps &
 const Link = ({ href, className, children, inline = true, ...rest }: Props) => {
   const isInternalLink = typeof href === 'string' && (href.startsWith('/') || href.startsWith('#'))
 
-  const baseClass = inline ? 'inline whitespace-nowrap' : 'break-words'
+  const baseClass = inline ? 'inline whitespace-nowrap' : 'break-all'
   const mergedClassName = clsx(baseClass, className)
 
   if (isInternalLink) {
