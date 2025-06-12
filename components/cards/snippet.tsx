@@ -15,6 +15,7 @@ export function SnippetCard({ snippet }: { snippet: CoreContent<Snippet> }) {
       <Link
         href={`/${path}`}
         title={title}
+        inline={false}
         className={clsx([
           'relative flex h-full rounded-2xl',
           'bg-zinc-50 dark:bg-white/5',
