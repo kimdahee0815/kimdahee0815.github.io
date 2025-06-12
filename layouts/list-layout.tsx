@@ -1,7 +1,7 @@
 'use client'
 
-import { usePathname, useSearchParams } from 'next/navigation'
-import { useState, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
+import { useState, useEffect, Suspense } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import {
   ArrowLeft,
@@ -22,6 +22,7 @@ import Link from '~/components/ui/Link'
 import { PageHeader } from '~/components/ui/page-header'
 import type { Blog } from 'contentlayer/generated'
 import type { CoreContent } from '~/types/data'
+import { ClientOnlySearchParams } from './list-searchparams'
 
 interface PaginationProps {
   totalPages: number
@@ -121,9 +122,7 @@ export function ListLayout({
   initialDisplayPosts = [],
   pagination,
 }: ListLayoutProps) {
-  const searchParams = useSearchParams()
-  const initialTag = searchParams?.get('tag') || ''
-  const [searchValue, setSearchValue] = useState(initialTag)
+  const [searchValue, setSearchValue] = useState('')
   const [selectedTags, setSelectedTags] = useState<string[]>([])
   const [showFilter, setShowFilter] = useState(false)
   const [openCategory, setOpenCategory] = useState<string | null>(null)
@@ -160,13 +159,11 @@ export function ListLayout({
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
-  useEffect(() => {
-    const tag = searchParams?.get('tag')
-    if (tag) setSearchValue(tag)
-  }, [searchParams])
-
   return (
     <Container className="relative pt-4 lg:pt-12">
+      <Suspense>
+        <ClientOnlySearchParams onTagChange={(tag) => setSearchValue(tag)} />
+      </Suspense>
       <PageHeader
         title={title}
         description={
