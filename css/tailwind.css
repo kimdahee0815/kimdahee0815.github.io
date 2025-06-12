@@ -154,3 +154,15 @@ samp {
 .popular-tags .mongodb {
   @apply bg-green-900;
 }
+
+.popular-tags .springboot {
+  @apply bg-green-600;
+}
+
+.popular-tags .postgresql {
+  @apply bg-blue-600;
+}
+
+.popular-tags .aws {
+  @apply bg-slate-600;
+}

@@ -45,6 +45,12 @@ const popularTags: PopularTag[] = [
     title: 'NodeJS',
   },
   {
+    href: '/tags/springboot',
+    iconType: 'SpringBoot',
+    slug: 'springboot',
+    title: 'SpringBoot',
+  },
+  {
     href: '/tags/nestjs',
     iconType: 'NestJS',
     slug: 'nestjs',
@@ -57,10 +63,22 @@ const popularTags: PopularTag[] = [
     title: 'MongoDB',
   },
   {
+    href: '/tags/postgresql',
+    iconType: 'PostgreSQL',
+    slug: 'postgresql',
+    title: 'PostgreSQL',
+  },
+  {
     href: '/tags/devops',
     iconType: 'Docker',
     slug: 'devops',
     title: 'Devops',
+  },
+  {
+    href: '/tags/aws',
+    iconType: 'AWS',
+    slug: 'aws',
+    title: 'AWS',
   },
 ]
 

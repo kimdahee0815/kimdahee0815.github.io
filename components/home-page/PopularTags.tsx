@@ -19,7 +19,7 @@ const PopularTags = () => {
         {map(popularTags, (popularTag) => {
           const { slug, iconType, href, title } = popularTag
 
-          const className = `${slug} pl-5 flex w-[210px] min-h-[60px] items-center justify-center space-x-2 rounded-lg py-3 text-white text-sm font-medium shadow transition-transform duration-200 hover:scale-[1.02]`
+          const className = `${slug} flex w-[210px] min-h-[60px] items-center justify-center space-x-2 rounded-lg py-3 text-white text-sm font-medium shadow transition-transform duration-200 hover:scale-[1.02]`
 
           return (
             <Link key={slug} href={href} className={className}>

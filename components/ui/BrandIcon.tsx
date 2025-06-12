@@ -90,6 +90,8 @@ export const BrandIconsMap = {
   Docker,
   PostgreSQL,
   MongoDB,
+  SpringBoot,
+  AWS,
 }
 
 export type BrandIconType = keyof typeof BrandIconsMap
