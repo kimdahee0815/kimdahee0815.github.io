@@ -1,6 +1,6 @@
 'use client'
 
-import { usePathname } from 'next/navigation'
+import { usePathname, useSearchParams } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import {
@@ -121,7 +121,9 @@ export function ListLayout({
   initialDisplayPosts = [],
   pagination,
 }: ListLayoutProps) {
-  const [searchValue, setSearchValue] = useState('')
+  const searchParams = useSearchParams()
+  const initialTag = searchParams?.get('tag') || ''
+  const [searchValue, setSearchValue] = useState(initialTag)
   const [selectedTags, setSelectedTags] = useState<string[]>([])
   const [showFilter, setShowFilter] = useState(false)
   const [openCategory, setOpenCategory] = useState<string | null>(null)
@@ -157,6 +159,11 @@ export function ListLayout({
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
   }, [])
+
+  useEffect(() => {
+    const tag = searchParams?.get('tag')
+    if (tag) setSearchValue(tag)
+  }, [searchParams])
 
   return (
     <Container className="relative pt-4 lg:pt-12">
