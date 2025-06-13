@@ -26,7 +26,7 @@ export function TableOfContents({ toc, className }: { toc: TocItem[]; className?
             className="leading-2 font-medium text-gray-500 hover:text-black dark:text-slate-400 hover:dark:text-dark-mode-yellow"
             style={{ paddingLeft: (depth - 2) * 16 }}
           >
-            <Link href={url} className="text-xl leading-8">
+            <Link inline={false} href={url} className="text-xl leading-8">
               {value}
             </Link>
           </li>
