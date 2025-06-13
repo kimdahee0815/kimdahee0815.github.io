@@ -48,6 +48,7 @@ export const SITE_METADATA = {
     },
   },
   search: {
+    provider: 'kbar', // supported options: kbar, algolia, meilisearch, typesense
     kbarConfigs: {
       // path to load documents to search
       searchDocumentsPath: `${process.env.BASE_PATH || ''}/search.json`,

@@ -20,7 +20,7 @@ import {
 import { UmamiAnalytics } from '~/components/analytics/umami'
 import { Footer } from '~/components/footer'
 import { Header } from '~/components/header'
-import { KBarSearchProvider } from '~/components/search/kbar-provider'
+import { SearchProvider } from '~/components/search/kbar-custom-provider'
 import { TiltedGridBackground } from '~/components/ui/tilted-grid-background'
 import { SITE_METADATA } from '~/data/site-metadata'
 import { ThemeProviders } from './theme-providers'
@@ -145,10 +145,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ThemeProviders>
           <BackgroundEffects />
           <UmamiAnalytics websiteId={SITE_METADATA.analytics.umamiAnalytics.websiteId} />
-          <KBarSearchProvider configs={SITE_METADATA.search.kbarConfigs}>
+          <SearchProvider configs={SITE_METADATA.search.kbarConfigs}>
             <Header />
             <main className="mb-auto mt-[6rem] grow">{children}</main>
-          </KBarSearchProvider>
+          </SearchProvider>
           <Footer />
         </ThemeProviders>
       </body>

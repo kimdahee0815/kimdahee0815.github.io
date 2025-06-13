@@ -77,15 +77,27 @@ function createTagCount(documents) {
 }
 
 function createSearchIndex(allBlogs) {
-  let searchDocsPath = SITE_METADATA.search.kbarConfigs.searchDocumentsPath
-  if (searchDocsPath) {
+  if (
+    SITE_METADATA?.search?.provider === 'kbar' &&
+    SITE_METADATA.search.kbarConfigs.searchDocumentsPath
+  ) {
     writeFileSync(
-      `public/${path.basename(searchDocsPath)}`,
-      JSON.stringify(allCoreContent(sortPosts(allBlogs)))
+      `public/${SITE_METADATA.search.kbarConfigs.searchDocumentsPath}`,
+      JSON.stringify(sortPosts(allBlogs))
     )
     console.log('🔍 Local search index generated.')
   }
 }
+// function createSearchIndex(allBlogs) {
+//   let searchDocsPath = SITE_METADATA.search.kbarConfigs.searchDocumentsPath
+//   if (searchDocsPath) {
+//     writeFileSync(
+//       `public/${path.basename(searchDocsPath)}`,
+//       JSON.stringify(allCoreContent(sortPosts(allBlogs)))
+//     )
+//     console.log('🔍 Local search index generated.')
+//   }
+// }
 
 export let Blog = defineDocumentType(() => ({
   name: 'Blog',
@@ -207,7 +219,7 @@ export default makeSource({
       // [rehypePrismPlus, { defaultLanguage: 'js', ignoreMissing: true }],
       [
         rehypePrettyCode,
-                {
+        {
           theme: {
             dark: 'solarized-light',
             light: 'night-owl',
