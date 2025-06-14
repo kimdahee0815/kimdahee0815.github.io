@@ -145,7 +145,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ThemeProviders>
           <BackgroundEffects />
           <UmamiAnalytics websiteId={SITE_METADATA.analytics.umamiAnalytics.websiteId} />
-          <SearchProvider configs={SITE_METADATA.search.kbarConfigs}>
+          <SearchProvider>
             <Header />
             <main className="mb-auto mt-[6rem] grow">{children}</main>
           </SearchProvider>

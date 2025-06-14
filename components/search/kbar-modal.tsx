@@ -8,10 +8,11 @@ import {
   useRegisterActions,
   type Action,
 } from 'kbar'
+import { useEffect } from 'react'
 
 export function KBarModal({ actions, isLoading }: { actions: Action[]; isLoading: boolean }) {
   useRegisterActions(actions, [actions])
-
+  console.log(actions)
   return (
     <KBarPortal>
       <KBarPositioner className="z-50 bg-gray-300/50 p-4 backdrop-blur backdrop-filter dark:bg-black/50">

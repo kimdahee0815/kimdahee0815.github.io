@@ -10,7 +10,7 @@ import { KBarModal } from './kbar-modal'
 
 export interface KBarSearchProps {
   searchDocumentsPath: string | false
-  defaultActions?: Action[]
+  defaultActions: Action[]
   onSearchDocumentsLoad?: (json: any) => Action[]
 }
 
@@ -67,8 +67,8 @@ export function KBarSearchProvider({
   }, [defaultActions, dataLoaded, router, searchDocumentsPath, onSearchDocumentsLoad])
 
   return (
-    <KBarProvider actions={defaultActions}>
-      <KBarModal actions={searchActions} isLoading={!dataLoaded} />
+    <KBarProvider actions={[...defaultActions, ...searchActions]}>
+      <KBarModal actions={[...defaultActions, ...searchActions]} isLoading={!dataLoaded} />
       {children}
     </KBarProvider>
   )
