@@ -224,7 +224,7 @@ export function ListLayout({
                   : { y: -100, opacity: 0 }
               }
               transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-              className={`z-40 overflow-y-auto rounded-2xl shadow-xl dark:bg-zinc-900 ${
+              className={`z-40 overflow-hidden rounded-2xl shadow-xl dark:bg-zinc-900 ${
                 drawerDirection === 'vertical'
                   ? 'fixed left-4 top-[130px] h-[70vh] w-80 bg-white'
                   : 'fixed left-[9%] top-[8rem] h-[70vh] w-[80%] -translate-x-1/2 bg-white'
@@ -253,7 +253,7 @@ export function ListLayout({
                   </button>
                 </div>
               </header>
-              <div className="scrollbar-rounded space-y-2 p-4">
+              <div className="scrollbar-rounded scrollbar-thin scrollbar-gutter-stable scrollbar-track-transparent max-h-[calc(70vh-4.8rem)] space-y-2 overflow-y-auto p-4 pb-4">
                 {Object.entries(categories).map(([category, tags]) => (
                   <div
                     key={category}
