@@ -75,7 +75,7 @@ export function LatestPosts({
       </div>
       {view === 'Posts' ? (
         <ul className="space-y-12 divide-gray-200 pt-6 dark:divide-gray-700 md:space-y-20 md:pt-10">
-          {!posts.length && 'No posts found.'}
+          {!posts.length && t('home.noPostsFound')}
           {posts.map((post, idx) => (
             <li key={post.slug}>
               <PostCardListView post={post} loading={idx === 0 ? 'eager' : 'lazy'} />
@@ -85,7 +85,7 @@ export function LatestPosts({
       ) : (
         <div className="py-10">
           <div className="grid-cols-2 gap-x-6 gap-y-10 space-y-10 md:grid md:space-y-0">
-            {!snippets.length && 'No Snippets Found.'}
+            {!snippets.length && t('home.noSnippetsFound')}
             {snippets.map((snippet) => (
               <SnippetCard snippet={snippet} key={snippet.path} />
             ))}

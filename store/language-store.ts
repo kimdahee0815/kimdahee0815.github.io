@@ -62,6 +62,8 @@ export const useLanguageStore = create<LanguageStore>()(
             latestPosts2: '게시글',
             latestPosts3: '코드 스니펫',
             latestPosts4: '모든 ',
+            noPostsFound: '아직 작성된 게시글이 없어요.',
+            noSnippetsFound: '아직 작성된 코드 스니펫이 없어요.',
           },
           navbar: {
             more: '더 보기',
@@ -224,7 +226,7 @@ export const useLanguageStore = create<LanguageStore>()(
             searchTags: '태그 찾기...',
             blogs: '게시글',
             snippets: '스니펫',
-            notagsFound: '검색 결과 없음.',
+            notagsFound: '아직 작성된 태그가 없어요.',
             searchDescription: '관련 검색 결과 ',
           },
           notFound: {
@@ -261,6 +263,8 @@ export const useLanguageStore = create<LanguageStore>()(
             latestPosts2: 'Posts',
             latestPosts3: 'Snippets',
             latestPosts4: 'View all ',
+            noPostsFound: 'No Posts Found.',
+            noSnippetsFound: 'No Snippets Found.',
           },
           navbar: {
             more: 'More',
