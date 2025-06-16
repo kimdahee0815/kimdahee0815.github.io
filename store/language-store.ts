@@ -227,6 +227,18 @@ export const useLanguageStore = create<LanguageStore>()(
             notagsFound: '검색 결과 없음.',
             searchDescription: '관련 검색 결과 ',
           },
+          notFound: {
+            message1: '음... 길을 잃으신 것 같아요.',
+            message2: '하지만 걱정 마세요. 제 홈페이지엔 다른 흥미로운 것들이 가득해요!',
+            message3: '홈페이지로 돌아가기',
+          },
+          profile: {
+            name: '김다희',
+            intro: '스스로 길을 찾는 개발자 | 배움이 일상인 사람 | 호기심 많은 크리에이터',
+            title: '소프트웨어 엔지니어 @',
+            company: 'Thinkstorm',
+            location: '인천, 대한민국',
+          },
         },
         en: {
           greeting: 'Hey, Everyone!',
@@ -413,6 +425,18 @@ export const useLanguageStore = create<LanguageStore>()(
             snippets: 'Snippets',
             notagsFound: 'No Tags Found.',
             searchDescription: "Things I've written about ",
+          },
+          notFound: {
+            message1: "Hmm... it looks like you're lost.",
+            message2: "But don't worry, you can find plenty of other things on my homepage.",
+            message3: 'Back to homepage',
+          },
+          profile: {
+            name: 'Dahee Kim',
+            intro: 'Self-Taught Developer | Learner | Creator',
+            title: 'Full-Stack Developer @',
+            company: 'Thinkstorm',
+            location: 'Incheon, South Korea',
           },
         },
       },
