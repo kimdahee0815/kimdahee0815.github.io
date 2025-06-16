@@ -10,9 +10,11 @@ import {
   Tilt_Neon,
   Hahmlet,
   IBM_Plex_Sans_KR,
+  Song_Myung,
   Noto_Serif_KR,
   Balsamiq_Sans,
   Jura,
+  Jua,
   Playpen_Sans,
   Platypi,
   Fredoka,
@@ -49,12 +51,12 @@ const FONT_REM = REM({
   variable: '--font-rem',
 })
 
-const FONT_JETBRAINS_MONO = JetBrains_Mono({
-  weight: ['400', '500', '600'],
+const FONT_JUA = Jua({
+  weight: ['400'],
   subsets: ['latin'],
-  style: ['normal', 'italic'],
+  style: ['normal'],
   display: 'swap',
-  variable: '--font-jetbrains-mono',
+  variable: '--font-jua',
 })
 
 export let metadata: Metadata = {
@@ -105,7 +107,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={clsx(
         'min-w-full overflow-x-hidden scroll-smooth',
         FONT_REM.variable,
-        FONT_JETBRAINS_MONO.variable,
+        FONT_JUA.variable,
         FONT_RIBEYE.variable,
         FONT_IBM_PLEX_SANS_KR.variable
       )}

@@ -178,7 +178,7 @@ module.exports = {
         ko: ['var(--font-ibm-plex-sans-kr)'],
         en: ['var(--font-rem)'],
         greeting: ['var(--font-ribeye)'],
-        mono: ['var(--font-jetbrains-mono)', ...fontFamily.mono],
+        'greeting-kr': ['var(--font-jua)', ...fontFamily.mono],
       },
       colors: {
         primary: {
