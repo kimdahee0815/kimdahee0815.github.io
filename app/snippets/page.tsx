@@ -1,30 +1,24 @@
-import { genPageMetadata } from 'app/seo'
+'use client'
+
 import { allSnippets } from 'contentlayer/generated'
 import { SnippetCard } from '~/components/cards/snippet'
 import { Container } from '~/components/ui/container'
 import { PageHeader } from '~/components/ui/page-header'
 import { allCoreContent } from '~/utils/contentlayer'
 import { sortPosts } from '~/utils/misc'
-
-export let metadata = genPageMetadata({ title: 'Snippets' })
+import { useLanguageStore, getTranslation } from '~/store/language-store'
+import parse from 'html-react-parser'
 
 export default function Snippets() {
-  let snippets = allCoreContent(sortPosts(allSnippets))
+  const { language, translations } = useLanguageStore()
+  const t = (key: string) => getTranslation(translations[language], key)
+  const snippets = allCoreContent(sortPosts(allSnippets))
 
   return (
     <Container className="pt-4 lg:pt-12">
       <PageHeader
-        title="Snippets"
-        description={
-          <>
-            <p>
-              This is where I keep my favorite, easy-to-use code snippets. They're all about efficiency and reusability. Go ahead and take what you need, customize it, and put it to work. 
-            </p>
-            <p className="mt-3 italic">
-              Credit goes to both my own coding sessions and the collaborative spirit of the internet's open-source contributors.
-            </p>
-          </>
-        }
+        title={t('snippets.title')}
+        description={parse(t('snippets.description'))}
         className="border-b border-gray-200 dark:border-gray-700"
       />
       <div className="py-10">

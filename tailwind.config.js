@@ -175,10 +175,10 @@ module.exports = {
         14: '3.5rem',
       },
       fontFamily: {
-        sans: ['var(--font-rem)', ...fontFamily.sans],
+        ko: ['var(--font-ibm-plex-sans-kr)'],
+        en: ['var(--font-rem)'],
         greeting: ['var(--font-ribeye)'],
         mono: ['var(--font-jetbrains-mono)', ...fontFamily.mono],
-        gowunbatang: ['var(--font-gowun-batang)'],
       },
       colors: {
         primary: {

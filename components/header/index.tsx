@@ -7,12 +7,14 @@ import { KbarSearchTrigger } from '~/components/search/kbar-trigger'
 import { Container } from '~/components/ui/container'
 import { GrowingUnderline } from '~/components/ui/growing-underline'
 import Link from '~/components/ui/Link'
-import { HEADER_NAV_LINKS } from '~/data/navigation'
 import { SITE_METADATA } from '~/data/site-metadata'
 import Logo from 'public/static/images/logo.svg'
 import { MobileNav } from './mobile-nav'
 import { MoreLinks } from './more-links'
 import { ThemeSwitcher } from './theme-switcher'
+import { LanguageSwitcher } from './language-switcher'
+import { useLanguageStore, getTranslation } from '~/store/language-store'
+import parse from 'html-react-parser'
 
 let logged = false
 function logASCIItext() {
@@ -23,6 +25,9 @@ function logASCIItext() {
 
 export function Header() {
   const pathname = usePathname()
+  const { language, translations } = useLanguageStore()
+
+  const t = (key: string) => getTranslation(translations[language], key)
 
   useEffect(() => {
     logASCIItext()
@@ -34,6 +39,13 @@ export function Header() {
   if (SITE_METADATA.stickyNav) {
     headerClass += ' top-0 z-60'
   }
+
+  const HEADER_NAV_LINKS = [
+    { href: '/blog', title: t('footer.sitemap1'), emoji: 'writing-hand' },
+    { href: '/snippets', title: t('footer.sitemap2'), emoji: 'dna' },
+    { href: '/projects', title: t('footer.sitemap3'), emoji: 'man-technologist' },
+    { href: '/about', title: t('footer.personal1'), emoji: 'teacup-without-handle' },
+  ]
 
   return (
     <Container as="header" className={headerClass}>
@@ -82,6 +94,7 @@ export function Header() {
           <div className="flex items-center gap-2">
             <ThemeSwitcher />
             <KbarSearchTrigger />
+            <LanguageSwitcher />
             <MobileNav />
           </div>
         </div>

@@ -8,6 +8,7 @@ import { Twemoji } from '~/components/ui/twemoji'
 import { SITE_METADATA } from '~/data/site-metadata'
 import type { GithubRepository } from '~/types/data'
 import { fetcher } from '~/utils/misc'
+import { useLanguageStore, getTranslation } from '~/store/language-store'
 
 const TIME_IS = 'https://time.is/South_Korea'
 const MY_TIMEZONE = 'Asia/Seoul'
@@ -35,6 +36,9 @@ function getTime() {
 }
 
 export function FooterMeta() {
+  const { language, translations } = useLanguageStore()
+
+  const t = (key: string) => getTranslation(translations[language], key)
   let { time, diff } = getTime()
   let siteRepo = SITE_METADATA.siteRepo.replace('https://github.com/', '')
   let repoName = siteRepo.split('/')[1]
@@ -56,7 +60,7 @@ export function FooterMeta() {
       <div className="flex items-center gap-2">
         <Map className="h-5 w-5" />
         <span className="font-medium">
-          Incheon - South Korea <Twemoji emoji="flag-south-korea" className="!h-4.5" />
+          {t('footer.location')} <Twemoji emoji="flag-south-korea" className="!h-4.5" />
         </span>
       </div>
       <div className="flex items-center gap-2">

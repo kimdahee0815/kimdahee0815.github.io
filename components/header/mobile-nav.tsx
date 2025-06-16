@@ -7,13 +7,18 @@ import { Menu, X } from 'lucide-react'
 import { Fragment, useEffect, useRef, useState } from 'react'
 import Link from '~/components/ui/Link'
 import { Twemoji } from '~/components/ui/twemoji'
-import { HEADER_NAV_LINKS, MORE_NAV_LINKS } from '~/data/navigation'
 import { SITE_METADATA } from '~/data/site-metadata'
 import { Logo } from './logo'
+import { useLanguageStore, getTranslation } from '~/store/language-store'
+import parse from 'html-react-parser'
 
 export function MobileNav() {
   let [navShow, setNavShow] = useState(false)
   let navRef = useRef(null)
+
+  const { language, translations } = useLanguageStore()
+
+  const t = (key: string) => getTranslation(translations[language], key)
 
   let onToggleNav = () => {
     setNavShow((status) => {
@@ -30,6 +35,19 @@ export function MobileNav() {
   useEffect(() => {
     return clearAllBodyScrollLocks
   })
+
+  const HEADER_NAV_LINKS = [
+    { href: '/blog', title: t('footer.sitemap1'), emoji: 'writing-hand' },
+    { href: '/snippets', title: t('footer.sitemap2'), emoji: 'dna' },
+    { href: '/projects', title: t('footer.sitemap3'), emoji: 'man-technologist' },
+    { href: '/about', title: t('footer.personal1'), emoji: 'teacup-without-handle' },
+  ]
+
+  const MORE_NAV_LINKS = [
+    { href: '/books', title: t('footer.personal3'), emoji: 'books' },
+    { href: '/movies', title: t('footer.personal4'), emoji: 'film-frames' },
+    { href: '/tags', title: t('footer.sitemap4'), emoji: 'label' },
+  ]
 
   return (
     <>

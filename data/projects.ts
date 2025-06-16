@@ -3,9 +3,8 @@ import type { Project } from '~/types/data'
 export const PROJECTS: Project[] = [
   {
     type: 'self',
-    title: 'ThinkStorm (Work In Progress)',
-    description:
-      'Full-stack collaboration platform empowering global developers to team up, build real projects, and grow skills.',
+    title: 'thinkstormTitle',
+    description: 'thinkstormDescription',
     imgSrc: '/static/images/projects/thinkstorm.png',
     url: 'https://thinkstorm.app/',
     builtWith: [
@@ -25,9 +24,8 @@ export const PROJECTS: Project[] = [
   },
   {
     type: 'self',
-    title: 'Natours',
-    description:
-      'Eco-tour booking system with payments, map-based exploration, admin dashboard, and transactional email support.',
+    title: 'natoursTitle',
+    description: 'natoursDescription',
     imgSrc: '/static/images/projects/natours.png',
     url: 'https://helpful-prawn-natours-dh-777b7d7d.koyeb.app/',
     repo: 'kimdahee0815/natours',
@@ -47,9 +45,8 @@ export const PROJECTS: Project[] = [
   },
   {
     type: 'self',
-    title: 'Wedding You',
-    description:
-      'Wedding planning platform with client-planner matching, secure payments, real-time updates, and cloud hosting.',
+    title: 'weddingyouTitle',
+    description: 'weddingyouDescription',
     imgSrc: '/static/images/projects/wedding-you.png',
     url: 'https://weddingyou-dahee-kim.netlify.app/',
     repo: 'kimdahee0815/weddingYou',
@@ -69,9 +66,8 @@ export const PROJECTS: Project[] = [
   },
   {
     type: 'self',
-    title: 'Netflix And Chill',
-    description:
-      'Netflix-inspired streaming platform with role-based auth, admin dashboard, dockerized backend, and movie discovery.',
+    title: 'netflixTitle',
+    description: 'netflixDescription',
     imgSrc: '/static/images/projects/netflix project.png',
     url: 'https://net-flix-clone-dahee-kim.netlify.app/',
     repo: 'kimdahee0815/netflix',
@@ -90,9 +86,8 @@ export const PROJECTS: Project[] = [
   },
   {
     type: 'self',
-    title: 'Wetube',
-    description:
-      'YouTube-style video sharing site with video upload/playback, GitHub OAuth login, real-time commenting, and AWS S3 storage.',
+    title: 'wetubeTitle',
+    description: 'wetubeDescription',
     imgSrc: '/static/images/projects/wetube.png',
     url: 'https://wetube-reloaded-2024-daheekim.fly.dev/',
     repo: 'kimdahee0815/wetube',
@@ -111,9 +106,8 @@ export const PROJECTS: Project[] = [
   },
   {
     type: 'self',
-    title: 'Forkify',
-    description:
-      'Minimalist frontend recipe finder with real-time search, bookmarks, and dynamic serving adjustments.',
+    title: 'forkifyTitle',
+    description: 'forkifyDescription',
     imgSrc: '/static/images/projects/forkify.png',
     url: 'https://forkify-daheekim.netlify.app/',
     repo: 'kimdahee0815/forkify',

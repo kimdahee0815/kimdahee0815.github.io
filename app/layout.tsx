@@ -2,13 +2,15 @@ import 'css/tailwind.css'
 import 'css/twemoji.css'
 import 'react-medium-image-zoom/dist/styles.css'
 import 'remark-github-blockquote-alert/alert.css'
-
 import clsx from 'clsx'
+
 import type { Metadata } from 'next'
 import {
   JetBrains_Mono,
   Tilt_Neon,
-  Gowun_Batang,
+  Hahmlet,
+  IBM_Plex_Sans_KR,
+  Noto_Serif_KR,
   Balsamiq_Sans,
   Jura,
   Playpen_Sans,
@@ -25,6 +27,7 @@ import { TiltedGridBackground } from '~/components/ui/tilted-grid-background'
 import { SITE_METADATA } from '~/data/site-metadata'
 import { ThemeProviders } from './theme-providers'
 import { BackgroundEffects } from '~/components/ui/background-effects'
+import { ClientFontWrapper } from '~/components/home-page/client-font-wrapper'
 
 const FONT_RIBEYE = Ribeye({
   subsets: ['latin'],
@@ -33,10 +36,10 @@ const FONT_RIBEYE = Ribeye({
   variable: '--font-ribeye',
 })
 
-const FONT_GOWUN_BATANG = Gowun_Batang({
-  weight: ['400', '700'],
+const FONT_IBM_PLEX_SANS_KR = IBM_Plex_Sans_KR({
+  weight: ['400'],
   preload: false,
-  variable: '--font-gowun-batang',
+  variable: '--font-ibm-plex-sans-kr',
 })
 
 const FONT_REM = REM({
@@ -96,7 +99,6 @@ export let metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   let basePath = process.env.BASE_PATH || ''
-
   return (
     <html
       lang={SITE_METADATA.language}
@@ -105,7 +107,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         FONT_REM.variable,
         FONT_JETBRAINS_MONO.variable,
         FONT_RIBEYE.variable,
-        FONT_GOWUN_BATANG.variable
+        FONT_IBM_PLEX_SANS_KR.variable
       )}
       suppressHydrationWarning
     >
@@ -141,16 +143,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           'dark:bg-dark dark:text-slate-300',
         ])}
       >
-        <TiltedGridBackground className="inset-x-0 top-0 z-[-1] h-[50vh]" />
-        <ThemeProviders>
-          <BackgroundEffects />
-          <UmamiAnalytics websiteId={SITE_METADATA.analytics.umamiAnalytics.websiteId} />
-          <SearchProvider>
-            <Header />
-            <main className="mb-auto mt-[6rem] grow">{children}</main>
-          </SearchProvider>
-          <Footer />
-        </ThemeProviders>
+        <ClientFontWrapper>
+          <TiltedGridBackground className="inset-x-0 top-0 z-[-1] h-[50vh]" />
+          <ThemeProviders>
+            <BackgroundEffects />
+            <UmamiAnalytics websiteId={SITE_METADATA.analytics.umamiAnalytics.websiteId} />
+            <SearchProvider>
+              <Header />
+              <main className="mb-auto mt-[6rem] grow">{children}</main>
+            </SearchProvider>
+            <Footer />
+          </ThemeProviders>
+        </ClientFontWrapper>
       </body>
     </html>
   )

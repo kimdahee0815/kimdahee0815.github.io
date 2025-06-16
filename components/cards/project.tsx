@@ -1,3 +1,5 @@
+'use client'
+
 import type { GithubRepository } from '~/types/data'
 import type { ProjectCardProps } from '~/types/components'
 import clsx from 'clsx'
@@ -7,8 +9,11 @@ import type { BrandsMap } from '~/components/ui/brand'
 import { Brand } from '~/components/ui/brand'
 import { Image } from '~/components/ui/Image'
 import GithubRepo from '~/components/projects/GithubRepo'
+import { useLanguageStore, getTranslation } from '~/store/language-store'
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
+  const { language, translations } = useLanguageStore()
+  const t = (key: string) => getTranslation(translations[language], key)
   const { title, description, imgSrc, url, repo, builtWith, repoData } = project
 
   const repository = repo as GithubRepository | undefined
@@ -46,7 +51,9 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             {repository?.description || description}
           </p>
           <div className="max-w-[580px] space-y-1.5">
-            <div className="text-xs text-gray-600 dark:text-slate-400">Stack</div>
+            <div className="text-xs text-gray-600 dark:text-slate-400">
+              {t('projects.builtWith')}
+            </div>
             <div className="flex h-6 flex-wrap items-center gap-1.5">
               {builtWith?.map((tool) => {
                 return (
@@ -79,7 +86,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
                 aria-label={`Link to ${title}`}
                 inline={false}
               >
-                Learn more &rarr;
+                {t('projects.learnMore')} &rarr;
               </Link>
             )
           )}

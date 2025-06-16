@@ -5,9 +5,9 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { SITE_METADATA } from '~/data/site-metadata'
 import tagData from '~/json/tag-data.json'
-import { ListLayoutWithTags } from '~/layouts/list-layout-with-tags'
 import { allCoreContent } from '~/utils/contentlayer'
 import { sortPosts } from '~/utils/misc'
+import { ListLayoutWithTagsClient } from './_components/ListLayoutWithTagsClient'
 
 export async function generateMetadata(props: {
   params: Promise<{ tag: string }>
@@ -51,16 +51,5 @@ export default async function TagPage(props: { params: Promise<{ tag: string }> 
   if (filteredPosts.length === 0 && filteredSnippets.length === 0) {
     return notFound()
   }
-  return (
-    <ListLayoutWithTags
-      title={title}
-      description={
-        <>
-          Things I've written about <span className="ml-1 font-semibold">#{tag}</span>
-        </>
-      }
-      posts={filteredPosts}
-      snippets={filteredSnippets}
-    />
-  )
+  return <ListLayoutWithTagsClient tag={tag} posts={filteredPosts} snippets={filteredSnippets} />
 }

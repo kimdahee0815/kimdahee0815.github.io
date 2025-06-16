@@ -1,10 +1,16 @@
+'use client'
+
 import { Twemoji } from '~/components/ui/twemoji'
+import { useLanguageStore, getTranslation } from '~/store/language-store'
+import parse from 'html-react-parser'
 
 export function Intro() {
+  const { language, translations } = useLanguageStore()
+
+  const t = (key: string) => getTranslation(translations[language], key)
   return (
     <h1 className="text-neutral-900 dark:text-neutral-200">
-      I'm <span className="font-medium">Dahee Kim</span> - a self-taught Software Engineer
-      <span className="hidden font-medium">South Korea</span>
+      {parse(t('home.intro1'))}
       <span className="absolute ml-1.5 inline-flex pt-[3px]">
         <Twemoji emoji="flag-south-korea" />
       </span>

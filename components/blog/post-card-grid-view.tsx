@@ -1,3 +1,5 @@
+'use client'
+
 import { clsx } from 'clsx'
 import type { Blog } from 'contentlayer/generated'
 import { GritBackground } from '~/components/ui/grit-background'
@@ -7,8 +9,13 @@ import Link from '~/components/ui/Link'
 import { SITE_METADATA } from '~/data/site-metadata'
 import type { CoreContent } from '~/types/data'
 import { formatDate } from '~/utils/misc'
+import { useLanguageStore, getTranslation } from '~/store/language-store'
+import parse from 'html-react-parser'
 
 export function PostCardGridView({ post }: { post: CoreContent<Blog> }) {
+  const { language, translations } = useLanguageStore()
+
+  const t = (key: string) => getTranslation(translations[language], key)
   let { path, date, title, summary, images, readingTime } = post
   return (
     <article>
@@ -37,13 +44,15 @@ export function PostCardGridView({ post }: { post: CoreContent<Blog> }) {
           />
         </Link>
         <div className="w-full space-y-3">
-          <div className="flex items-center gap-x-1.5 xs480:text-sm sm768:text-lg text-xl text-gray-600 dark:text-slate-400">
+          <div className="flex items-center gap-x-1.5 text-xl text-gray-600 dark:text-slate-400 xs480:text-sm sm768:text-lg">
             <time dateTime={date}>{formatDate(date)}</time>
             <span className="mx-2">{` • `}</span>
-            <span>{Math.ceil(readingTime.minutes)} mins read</span>
+            <span>
+              {Math.ceil(readingTime.minutes)} {t('books.readingTime')}
+            </span>
           </div>
           <div className="group relative">
-            <h3 className="text-xl sm768:text-2xl font-semibold leading-10">
+            <h3 className="text-xl font-semibold leading-10 sm768:text-2xl">
               <Link href={`/${path}`}>
                 <GrowingUnderline>{title}</GrowingUnderline>
               </Link>

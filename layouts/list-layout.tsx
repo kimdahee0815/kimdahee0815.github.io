@@ -23,6 +23,8 @@ import { PageHeader } from '~/components/ui/page-header'
 import type { Blog } from 'contentlayer/generated'
 import type { CoreContent } from '~/types/data'
 import { ClientOnlySearchParams } from './list-searchparams'
+import { useLanguageStore, getTranslation } from '~/store/language-store'
+import parse from 'html-react-parser'
 
 interface PaginationProps {
   totalPages: number
@@ -36,36 +38,10 @@ interface ListLayoutProps {
   pagination?: PaginationProps
 }
 
-const categories = {
-  'Programming Language': ['javascript', 'typescript', 'java'],
-  Frontend: ['react', 'nextjs', 'tailwind-css', 'css', 'scss', 'redux', 'zustand'],
-  Backend: ['nodejs', 'express', 'nestjs', 'spring-boot', 'auth', 'rest', 'graphql'],
-  Database: ['postgresql', 'mysql', 'redis', 'prisma', 'mongodb'],
-  'DevOps & Infra': ['docker', 'github-actions', 'aws', 'vercel', 'netlify', 'nginx', 'monitoring'],
-  Testing: ['jest', 'vitest', 'cypress', 'eslint', 'prettier', 'test-coverage'],
-  'CS & Fundamentals': [
-    'data-structure',
-    'algorithm',
-    'operating-system',
-    'network',
-    'design-pattern',
-    'architecture',
-    'clean-code',
-  ],
-  'Tools & Env': [
-    'vscode',
-    'git',
-    'zsh',
-    'terminal',
-    'chrome-devtools',
-    'postman',
-    'insomnia',
-    'figma',
-  ],
-  'Tech News & Trends': ['artificial-intelligence', 'machine-learning', 'conference'],
-}
-
 function Pagination({ totalPages, currentPage }: PaginationProps) {
+  const { language, translations } = useLanguageStore()
+
+  const t = (key: string) => getTranslation(translations[language], key)
   const pathname = usePathname()
   const basePath = pathname.split('/')[1]
   const prevPage = currentPage - 1 > 0
@@ -82,14 +58,14 @@ function Pagination({ totalPages, currentPage }: PaginationProps) {
           >
             <GrowingUnderline className="inline-flex items-center gap-2">
               <ArrowLeft className="h-4 w-4" />
-              <span>Previous</span>
+              <span>{t('blog.previous')}</span>
             </GrowingUnderline>
           </Link>
         ) : (
           <button className="cursor-auto disabled:opacity-50" disabled>
             <GrowingUnderline className="inline-flex items-center gap-2">
               <ArrowLeft className="h-4 w-4" />
-              <span>Previous</span>
+              <span>{t('blog.previous')}</span>
             </GrowingUnderline>
           </button>
         )}
@@ -99,14 +75,14 @@ function Pagination({ totalPages, currentPage }: PaginationProps) {
         {nextPage ? (
           <Link className="cursor-pointer" href={`/${basePath}/page/${currentPage + 1}`} rel="next">
             <GrowingUnderline className="inline-flex items-center gap-2">
-              <span>Next</span>
+              <span>{t('blog.next')}</span>
               <ArrowRight className="h-4 w-4" />
             </GrowingUnderline>
           </Link>
         ) : (
           <button className="cursor-auto disabled:opacity-50" disabled>
             <GrowingUnderline className="inline-flex items-center gap-2">
-              <span>Next</span>
+              <span>{t('blog.next')}</span>
               <ArrowRight className="h-4 w-4" />
             </GrowingUnderline>
           </button>
@@ -122,6 +98,10 @@ export function ListLayout({
   initialDisplayPosts = [],
   pagination,
 }: ListLayoutProps) {
+  const { language, translations } = useLanguageStore()
+
+  const t = (key: string) => getTranslation(translations[language], key)
+
   const [searchValue, setSearchValue] = useState('')
   const [selectedTags, setSelectedTags] = useState<string[]>([])
   const [showFilter, setShowFilter] = useState(false)
@@ -159,30 +139,63 @@ export function ListLayout({
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
+  const categories = {
+    [t('blog.categories1')]: ['javascript', 'typescript', 'java'],
+    [t('blog.categories2')]: ['react', 'nextjs', 'tailwind-css', 'css', 'scss', 'redux', 'zustand'],
+    [t('blog.categories3')]: [
+      'nodejs',
+      'express',
+      'nestjs',
+      'spring-boot',
+      'auth',
+      'rest',
+      'graphql',
+    ],
+    [t('blog.categories4')]: ['postgresql', 'mysql', 'redis', 'prisma', 'mongodb'],
+    [t('blog.categories5')]: [
+      'docker',
+      'github-actions',
+      'aws',
+      'vercel',
+      'netlify',
+      'nginx',
+      'monitoring',
+    ],
+    [t('blog.categories6')]: ['jest', 'vitest', 'cypress', 'eslint', 'prettier', 'test-coverage'],
+    [t('blog.categories7')]: [
+      'data-structure',
+      'algorithm',
+      'operating-system',
+      'network',
+      'design-pattern',
+      'architecture',
+      'clean-code',
+    ],
+    [t('blog.categories8')]: [
+      'vscode',
+      'git',
+      'zsh',
+      'terminal',
+      'chrome-devtools',
+      'postman',
+      'insomnia',
+      'figma',
+    ],
+    [t('blog.categories9')]: ['artificial-intelligence', 'machine-learning', 'conference'],
+  }
   return (
     <Container className="relative pt-4 lg:pt-12">
       <Suspense>
         <ClientOnlySearchParams onTagChange={(tag) => setSearchValue(tag)} />
       </Suspense>
       <PageHeader
-        title={title}
-        description={
-          <>
-            Join me as I explore the world of software development! 😄
-            <br />
-            I share posts on:
-            <br />
-            fixing common errors🐞, core programming concepts✅, latest tech news📫, practical
-            tutorials and how-tos🔦, tool reviews and recommendations⚒️, learning resources✒️.
-            <br />
-            🔍Search by title, content, or tags, or browse categories below to find what you need.
-          </>
-        }
+        title={t('blog.title')}
+        description={parse(t('blog.detail'))}
         className="relative border-b border-gray-200 dark:border-gray-700"
       >
         <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
           <SearchArticles
-            label="Search articles"
+            label={t('blog.searchArticles')}
             onChange={(e) => setSearchValue(e.target.value)}
           />
           <button
@@ -190,7 +203,7 @@ export function ListLayout({
             className="flex items-center gap-2 rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-800 transition hover:bg-gray-100 dark:border-gray-600 dark:text-gray-100 dark:hover:bg-gray-800"
             aria-label="Open categories"
           >
-            <Filter className="h-4 w-4" /> Categories
+            <Filter className="h-4 w-4" /> {t('blog.categories')}
           </button>
         </div>
       </PageHeader>
@@ -232,7 +245,7 @@ export function ListLayout({
             >
               <header className="sticky top-0 flex items-center justify-between rounded-t-2xl border-b border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-zinc-900">
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
-                  Categories
+                  {t('blog.categories')}
                 </h3>
                 <div className="flex items-center gap-2">
                   {selectedTags.length > 0 && (
@@ -241,7 +254,7 @@ export function ListLayout({
                       className="rounded px-2 py-1 text-sm text-blue-600 transition-colors duration-300 hover:bg-blue-100 hover:text-blue-800 dark:text-blue-400 dark:hover:bg-blue-700 dark:hover:text-blue-200"
                       aria-label="Clear all categories"
                     >
-                      Clear All
+                      {t('blog.categoriesClearAll')}
                     </button>
                   )}
                   <button

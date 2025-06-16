@@ -1,17 +1,23 @@
+'use client'
+
 import { map } from 'lodash'
-
 import popularTags from '~/data/popularTags'
-
 import Link from '~/components/ui/Link'
 import BrandIcon from '~/components/ui/BrandIcon'
+import { useLanguageStore, getTranslation } from '~/store/language-store'
 
 const PopularTags = () => {
+  const { language, translations } = useLanguageStore()
+
+  const t = (key: string) => getTranslation(translations[language], key)
   return (
     <div className="divide-y divide-gray-200 dark:divide-gray-700">
       <div className="space-y-2 py-6 md:space-y-5">
-        <h1 className="text-2xl font-bold sm:text-2xl sm:leading-10 md:text-4xl">Popular Tags</h1>
+        <h1 className="text-2xl font-bold sm:text-2xl sm:leading-10 md:text-4xl">
+          {t('home.popularTags')}
+        </h1>
         <p className="mt-5 pb-1 text-[1.2rem] leading-[2rem] text-gray-700 dark:text-slate-300 sm768:text-[1.3rem] lg900:text-[1.4rem] xl1080:text-[1.4rem] xl1080:leading-[2.2rem] 2xl1280:text-[1.5rem] 2xl1280:leading-[2.4rem]">
-          Popular tags feature the most widely favored topics 🤠
+          {t('home.popularTagsIntro')}
         </p>
       </div>
 

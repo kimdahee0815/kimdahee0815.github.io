@@ -4,6 +4,8 @@ import { clsx } from 'clsx'
 import { useEffect, useRef } from 'react'
 import Typed from 'typed.js'
 import { Twemoji } from '~/components/ui/twemoji'
+import { useLanguageStore, getTranslation } from '~/store/language-store'
+import parse from 'html-react-parser'
 
 function createTypedInstance(el: HTMLElement) {
   return new Typed(el, {
@@ -16,6 +18,10 @@ function createTypedInstance(el: HTMLElement) {
 }
 
 export function TypedBios() {
+  const { language, translations } = useLanguageStore()
+
+  const t = (key: string) => getTranslation(translations[language], key)
+
   let el = useRef(null)
   let typed = useRef<Typed | null>(null)
 
@@ -24,7 +30,7 @@ export function TypedBios() {
       typed.current?.destroy()
       typed.current = createTypedInstance(el.current)
     }
-  }, [])
+  }, [language, translations])
 
   return (
     <div
@@ -41,18 +47,18 @@ export function TypedBios() {
       ])}
     >
       <ul id="bios" className="hidden">
-        <li>
-          I started to write my first code in <b className="font-medium">C</b>.
-        </li>
-        <li>
-          I relieve stress by <b className="font-medium">swimming, Zumba, and modeling classes</b>.
-        </li>
-        <li>I love cats, but I have cat allergies😿.</li>
-        <li>I've been in book club📚 for many years now!</li>
-        <li>
-          Love learning languages. Currently learning Spanish <Twemoji emoji="flag-spain"></Twemoji>
-          .
-        </li>
+        {parse(t('home.typedbios'))}
+        {language === 'ko' ? (
+          <li>
+            언어 배우는 것을 매우 좋아해요. 현재 스페인어<Twemoji emoji="flag-spain"></Twemoji>를
+            배우고 있어요.
+          </li>
+        ) : (
+          <li>
+            Love learning languages. Currently learning Spanish
+            <Twemoji emoji="flag-spain"></Twemoji>.
+          </li>
+        )}
       </ul>
       <span ref={el} className="text-neutral-900 dark:text-neutral-200" />
     </div>

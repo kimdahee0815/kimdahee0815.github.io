@@ -4,230 +4,120 @@ import { Image } from '~/components/ui/Image'
 import Link from '~/components/ui/Link'
 import { Twemoji } from '~/components/ui/twemoji'
 import { GrowingUnderline } from '~/components/ui/growing-underline'
+import { useLanguageStore, getTranslation } from '~/store/language-store'
+import parse from 'html-react-parser'
+import type { JSX } from 'react'
 
-const EXPERIENCES = [
-  {
-    org: 'Thinkstorm',
-    url: 'https://thinkstorm.app',
-    logo: '/static/images/think_storm_logo.jpg',
-    start: 'Mar 2024',
-    end: 'Present',
-    title: 'Full-Stack Developer',
-    icon: 'briefcase',
-    event: 'career-Thinkstorm',
-    details: () => {
-      return (
-        <ul className="[&>li]:my-2 [&>li]:pl-0">
-          <li>
-            Designed and implemented <strong>Redis-based rate-limiting and caching systems</strong>,
-            enhancing application security and performance.
-          </li>
-          <li>
-            Configured <strong>CI/CD pipelines</strong> incorporating <strong>Jest testing</strong>{' '}
-            for streamlined deployment processes.
-          </li>
-          <li>
-            Built <strong>JWT authentication systems</strong> to secure application endpoints.
-          </li>
-          <li>
-            <strong>Led developer onboarding</strong> processes and mentored new team members.
-          </li>
-          <li>
-            <strong>Rapidly learned and implemented unfamiliar technologies</strong> to meet project
-            requirements.
-          </li>
-        </ul>
-      )
-    },
-  },
-  {
-    org: 'Sherpasoft',
-    url: 'https://sherpasoft.com/',
-    logo: '/static/images/sherpasoft_logo.jpg',
-    start: 'Jul 2023',
-    end: 'Mar 2024',
-    title: 'Full-Stack Developer',
-    icon: 'man-technologist',
-    event: 'career-Sherpasoft',
-    details: () => {
-      return (
-        <ul className="[&>li]:my-2 [&>li]:pl-0">
-          <li>
-            <strong>Spearheaded internal system improvements</strong>, reducing weekly meeting time
-            from 4 to 1 hour and saving <strong>210 person-hours monthly</strong>.
-          </li>
-          <li>
-            Researched and presented <strong>Kafka implementation</strong> for large scale data
-            processing, resulting in adoption of <strong>ActiveMQ</strong>.
-          </li>
-          <li>
-            Collaborated with cross-functional teams to resolve{' '}
-            <strong>conflicting requirements</strong> and facilitate consensus based solutions.
-          </li>
-          <li>
-            Developed <strong>database monitoring systems</strong> using{' '}
-            <strong>Java, Spring Boot, and JSP</strong> for enterprise clients.
-          </li>
-          <li>
-            Worked with <strong>PostgreSQL, Oracle, MySQL, MongoDB, MariaDB, SAP HANA</strong>.
-          </li>
-          <li>
-            Managed <strong>Linux server environments</strong> for database monitoring and
-            performance optimization.
-          </li>
-        </ul>
-      )
-    },
-  },
-  {
-    org: 'Allra Fin-Tech',
-    url: 'https://www.allra.co.kr/',
-    logo: '/static/images/allra_logo.jpg',
-    start: 'Jun 2023',
-    end: 'Jul 2024',
-    title: 'Full-Stack Developer Intern',
-    icon: 'man-technologist',
-    event: 'career-Allra',
-    details: () => {
-      return (
-        <ul className="[&>li]:my-2 [&>li]:pl-0">
-          <li>
-            Contributed to <strong>fintech payment processing systems</strong> within a professional
-            development environment.
-          </li>
-          <li>
-            Practiced <strong>behavior-driven development</strong> using <strong>JUnit 5</strong>.
-          </li>
-          <li>
-            <strong>Incorporated feedback from senior developers</strong> to improve code quality
-            and grow professional practices.
-          </li>
-          <li>
-            <strong>Quickly adapted</strong> to the company's tech stack and development workflows
-            within one month.
-          </li>
-          <li>
-            Worked with <strong>JSP, JavaScript, HTML/CSS</strong> (frontend) and{' '}
-            <strong>Java, Spring Data JPA, MariaDB</strong> (backend).
-          </li>
-          <li>
-            Observed how <strong>financial solutions</strong> help online retailers solve{' '}
-            <strong>cash flow challenges</strong>.
-          </li>
-        </ul>
-      )
-    },
-  },
-  {
-    org: 'MultiCampus - Full Stack Developer Bootcamp',
-    url: 'https://www.multicampus.com',
-    logo: '/static/images/multicampus-logo.png',
-    start: 'Jan 2023',
-    end: 'Jun 2023',
-    title: 'Student at Multicampus',
-    icon: 'man-technologist',
-    event: 'career-Multicampus',
-    details: () => {
-      return (
-        <ul className="[&>li]:my-2 [&>li]:pl-0">
-          <li>
-            Built{' '}
-            <a target="_blank" href="https://net-flix-clone-dahee-kim.netlify.app/">
-              <strong>Netflix And Chill</strong>
-            </a>{' '}
-            (Full-Stack Developer)
-          </li>
-          <li>
-            Built{' '}
-            <a target="_blank" href="https://weddingyou-dahee-kim.netlify.app/">
-              <strong>Wedding You</strong>
-            </a>{' '}
-            (Full-Stack Developer)
-          </li>
-          <li>
-            Refactored both applications by <strong>integrating newly gained knowledge</strong> and{' '}
-            <strong>applying best practices</strong> (Recent).
-          </li>
-          <li>
-            <strong>Led two team projects</strong> as team leader, ensuring timely delivery and
-            collaboration.
-          </li>
-          <li>
-            <strong>Mentored team members</strong> in <strong>React, Java, and Spring</strong>,
-            boosting team performance.
-          </li>
-        </ul>
-      )
-    },
-  },
-  {
-    org: 'Samsung SDS',
-    url: 'https://www.samsungsds.com/',
-    logo: '/static/images/samsung_sds_logo.jpg',
-    start: 'Mar 2022',
-    end: 'Apr 2022',
-    title: 'Global Software Logistics Intern',
-    icon: 'man-technologist',
-    event: 'career-SDS',
-    details: () => {
-      return (
-        <ul className="[&>li]:my-2 [&>li]:pl-0">
-          <li>
-            Researched and analyzed <strong>IT-driven logistics and e-commerce trends</strong> in
-            Australia.
-          </li>
-          <li>
-            Explored <strong>AI and logistics solutions</strong> for supply chain optimization.
-          </li>
-          <li>
-            Developed insights on <strong>warehouse management systems</strong> at Samsung SDS.
-          </li>
-          <li>
-            Analyzed data on <strong>consumer behavior</strong>, online platforms, and fulfillment
-            services.
-          </li>
-          <li>
-            Studied <strong>automation in warehouse management</strong> and real-time tracking
-            systems.
-          </li>
-        </ul>
-      )
-    },
-  },
-  {
-    org: 'Incheon National University',
-    url: 'https://www.inu.ac.kr/',
-    logo: '/static/images/incheon_national_uni_logo.jpg',
-    start: 'Mar 2017',
-    end: 'Feb 2023',
-    title: 'Student at INU (English Literature & Electronics Engineering & Computer Engineering)',
-    icon: 'man-student',
-    event: 'career-inu',
-    details: () => {
-      return (
-        <ul className="[&>li]:my-2 [&>li]:pl-0">
-          <li>
-            Graduated with a <strong>GPA of 4.2/4.5</strong> in <strong>English Literature</strong>
-          </li>
-          <li>
-            Worked as a <strong>Corpus Professor Assistant</strong> using KH Coder for{' '}
-            <strong>data analysis</strong>.
-          </li>
-          <li>
-            Completed <strong>extensive coursework in Computer Engineering</strong>, effectively
-            equivalent to a double major.
-          </li>
-          <li>
-            Won the <strong>APYE (Asia Pacific Youth Exchange)</strong> competition; developed a{' '}
-            <strong>cultural exchange app</strong> to help multicultural children in Korea.
-          </li>
-        </ul>
-      )
-    },
-  },
-]
+type ExperienceItem = {
+  org: string
+  url: string
+  logo: string
+  start: string
+  end: string
+  title: string
+  icon: string
+  event: string
+  details: () => JSX.Element
+}
 
 export function CareerTimeline() {
+  const { language, translations } = useLanguageStore()
+
+  const t = (key: string) => getTranslation(translations[language], key)
+  const EXPERIENCES = [
+    {
+      org: t('about.thinkstormCareerOrg'),
+      url: 'https://thinkstorm.app',
+      logo: '/static/images/think_storm_logo.jpg',
+      start: t('about.thinkstormCareerStart'),
+      end: t('about.thinkstormCareerEnd'),
+      title: t('about.thinkstormCareerTitle'),
+      icon: 'briefcase',
+      event: 'career-Thinkstorm',
+      details: () => {
+        return (
+          <ul className="[&>li]:my-2 [&>li]:pl-0">{parse(t('about.thinkstormCareerDetail'))}</ul>
+        )
+      },
+    },
+    {
+      org: t('about.sherpasoftCareerOrg'),
+      url: 'https://sherpasoft.com/',
+      logo: '/static/images/sherpasoft_logo.jpg',
+      start: t('about.sherpasoftCareerStart'),
+      end: t('about.sherpasoftCareerEnd'),
+      title: t('about.sherpasoftCareerTitle'),
+      icon: 'man-technologist',
+      event: 'career-Sherpasoft',
+      details: () => {
+        return (
+          <ul className="[&>li]:my-2 [&>li]:pl-0">{parse(t('about.sherpasoftCareerDetail'))}</ul>
+        )
+      },
+    },
+    {
+      org: t('about.allraFinTechCareerOrg'),
+      url: 'https://www.allra.co.kr/',
+      logo: '/static/images/allra_logo.jpg',
+      start: t('about.allraFinTechCareerStart'),
+      end: t('about.allraFinTechCareerEnd'),
+      title: t('about.allraFinTechCareerTitle'),
+      icon: 'man-technologist',
+      event: 'career-Allra',
+      details: () => {
+        return (
+          <ul className="[&>li]:my-2 [&>li]:pl-0">{parse(t('about.allraFinTechCareerDetail'))}</ul>
+        )
+      },
+    },
+    {
+      org: t('about.multiCampusCareerOrg'),
+      url: 'https://www.multicampus.com',
+      logo: '/static/images/multicampus-logo.png',
+      start: t('about.multiCampusCareerStart'),
+      end: t('about.multiCampusCareerEnd'),
+      title: t('about.multiCampusCareerTitle'),
+      icon: 'man-technologist',
+      event: 'career-Multicampus',
+      details: () => {
+        return (
+          <ul className="[&>li]:my-2 [&>li]:pl-0">{parse(t('about.multiCampusCareerDetail'))}</ul>
+        )
+      },
+    },
+    {
+      org: t('about.samsungSDSCareerOrg'),
+      url: 'https://www.samsungsds.com/',
+      logo: '/static/images/samsung_sds_logo.jpg',
+      start: t('about.samsungSDSCareerStart'),
+      end: t('about.samsungSDSCareerEnd'),
+      title: t('about.samsungSDSCareerTitle'),
+      icon: 'man-technologist',
+      event: 'career-SDS',
+      details: () => {
+        return (
+          <ul className="[&>li]:my-2 [&>li]:pl-0">{parse(t('about.samsungSDSCareerDetail'))}</ul>
+        )
+      },
+    },
+    {
+      org: t('about.incheonNationalUniversityCareerOrg'),
+      url: 'https://www.inu.ac.kr/',
+      logo: '/static/images/incheon_national_uni_logo.jpg',
+      start: t('about.incheonNationalUniversityCareerStart'),
+      end: t('about.incheonNationalUniversityCareerEnd'),
+      title: t('about.incheonNationalUniversityCareerTitle'),
+      icon: 'man-student',
+      event: 'career-inu',
+      details: () => {
+        return (
+          <ul className="[&>li]:my-2 [&>li]:pl-0">
+            {parse(t('about.incheonNationalUniversityCareerDetail'))}
+          </ul>
+        )
+      },
+    },
+  ]
   return (
     <ul className="m-0 list-none p-0">
       {EXPERIENCES.map((exp, idx) => (
@@ -239,7 +129,7 @@ export function CareerTimeline() {
   )
 }
 
-function TimelineItem({ exp, last }: { exp: (typeof EXPERIENCES)[0]; last?: boolean }) {
+function TimelineItem({ exp, last }: { exp: ExperienceItem; last?: boolean }) {
   let { org, title, icon, url, logo, start, end, event, details: Details } = exp
   return (
     <div
@@ -291,26 +181,17 @@ function TimelineItem({ exp, last }: { exp: (typeof EXPERIENCES)[0]; last?: bool
             </div>
             <Link
               href={url}
-              className="line-clamp-1 w-fit text-[1.1rem] leading-[1.9rem] text-gray-700 dark:text-slate-400
-                              sm:text-[1.1rem] sm:leading-[2rem]
-                              md:text-[1.2rem] md:leading-[2.2rem]
-                              lg:text-[1.3rem] lg:leading-[2.4rem] font-semibold leading-10 text-gray-900 no-underline hover:text-gray-900 dark:text-white dark:hover:text-white"
+              className="line-clamp-1 w-fit text-[1.1rem] font-semibold leading-10 leading-[1.9rem] text-gray-700 text-gray-900 no-underline hover:text-gray-900 dark:text-slate-400 dark:text-white dark:hover:text-white sm:text-[1.1rem] sm:leading-[2rem] md:text-[1.2rem] md:leading-[2.2rem] lg:text-[1.3rem] lg:leading-[2.4rem]"
             >
               <GrowingUnderline data-umami-event={event}>{org}</GrowingUnderline>
             </Link>
-            <div className="flex items-center gap-1 pt-1 text-[1.1rem] leading-[1.9rem] text-gray-700
-                              sm:text-[1.05rem] sm:leading-[2rem]
-                              md:text-[1.15rem] md:leading-[2.2rem]
-                              lg:text-[1.1rem] lg:leading-[2.4rem] text-gray-700 dark:text-slate-400">
+            <div className="flex items-center gap-1 pt-1 text-[1.1rem] leading-[1.9rem] text-gray-700 dark:text-slate-400 sm:text-[1.05rem] sm:leading-[2rem] md:text-[1.15rem] md:leading-[2.2rem] lg:text-[1.1rem] lg:leading-[2.4rem]">
               <Twemoji emoji={icon} className="!-mt-1" />
               <span>{title}</span>
             </div>
           </div>
         </summary>
-        <div className="pt-1 text-[1.1rem] leading-[1.9rem] text-gray-700 dark:text-slate-400
-                              sm:text-[1.1rem] sm:leading-[2rem]
-                              md:text-[1.15rem] md:leading-[2.2rem]
-                              lg:text-[1.2rem] lg:leading-[2.4rem] leading-8">
+        <div className="pt-1 text-[1.1rem] leading-8 leading-[1.9rem] text-gray-700 dark:text-slate-400 sm:text-[1.1rem] sm:leading-[2rem] md:text-[1.15rem] md:leading-[2.2rem] lg:text-[1.2rem] lg:leading-[2.4rem]">
           <Details />
         </div>
       </details>

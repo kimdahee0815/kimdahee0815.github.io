@@ -1,3 +1,5 @@
+'use client'
+
 import { clsx } from 'clsx'
 import { Container } from '~/components/ui/container'
 import { SITE_METADATA } from '~/data/site-metadata'
@@ -6,8 +8,13 @@ import { FooterBottom } from './footer-bottom'
 import { FooterNav } from './footer-nav'
 import { LogoAndRepo } from './logo-and-repo'
 import { Signature } from './signature'
+import { useLanguageStore, getTranslation } from '~/store/language-store'
+import parse from 'html-react-parser'
 
 export function Footer() {
+  const { language, translations } = useLanguageStore()
+
+  const t = (key: string) => getTranslation(translations[language], key)
   return (
     <Container as="footer" className="mb-4 mt-8 md:mt-16">
       <div
@@ -18,9 +25,7 @@ export function Footer() {
       >
         <div className="col-span-1 space-y-4 xl:col-span-2">
           <LogoAndRepo />
-          <div className="italic text-gray-500 dark:text-slate-400">
-            {SITE_METADATA.description}
-          </div>
+          <div className="italic text-gray-500 dark:text-slate-400">{parse(t('footer.intro'))}</div>
           <div className="pt-4">
             <div className="md:gap-15 flex flex-col gap-8 py-1.5 xs480:flex-row">
               <div className="flex items-center">

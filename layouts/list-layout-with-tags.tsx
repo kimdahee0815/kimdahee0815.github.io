@@ -10,6 +10,7 @@ import { Container } from '~/components/ui/container'
 import { PageHeader } from '~/components/ui/page-header'
 import tagData from '~/json/tag-data.json'
 import type { CoreContent } from '~/types/data'
+import { useLanguageStore, getTranslation } from '~/store/language-store'
 
 interface ListLayoutProps {
   title: string
@@ -19,6 +20,9 @@ interface ListLayoutProps {
 }
 
 export function ListLayoutWithTags({ title, description, posts, snippets }: ListLayoutProps) {
+  const { language, translations } = useLanguageStore()
+
+  const t = (key: string) => getTranslation(translations[language], key)
   let hasBlogs = posts.length > 0
   let hasSnippets = snippets.length > 0
   let [view, setView] = useState<'blogs' | 'snippets'>(hasBlogs ? 'blogs' : 'snippets')
@@ -32,7 +36,7 @@ export function ListLayoutWithTags({ title, description, posts, snippets }: List
       />
       <div className="flex gap-x-12">
         <TagsList />
-        <div className="py-5 md:py-10">
+        <div className="w-[90%] py-5 md:py-10">
           <div className="mb-6 flex items-center gap-2 text-2xl font-bold leading-9 tracking-tight text-gray-900 dark:text-slate-100 md:mb-10 md:justify-end md:text-3xl">
             {hasBlogs && (
               <button
@@ -44,7 +48,7 @@ export function ListLayoutWithTags({ title, description, posts, snippets }: List
                 )}
                 onClick={() => setView('blogs')}
               >
-                Blogs
+                {t('tags.blogs')}
               </button>
             )}
             {hasBlogs && hasSnippets ? <span>/</span> : null}
@@ -58,7 +62,7 @@ export function ListLayoutWithTags({ title, description, posts, snippets }: List
                 )}
                 onClick={() => setView('snippets')}
               >
-                Snippets
+                {t('tags.snippets')}
               </button>
             )}
           </div>

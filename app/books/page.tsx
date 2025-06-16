@@ -1,8 +1,8 @@
+'use client'
+
 import { Suspense } from 'react'
-import { genPageMetadata } from '~/app/seo'
 import { Container } from '~/components/ui/container'
 import { GrowingUnderline } from '~/components/ui/growing-underline'
-import { Image, Zoom } from '~/components/ui/Image'
 import Link from '~/components/ui/Link'
 import { PageHeader } from '~/components/ui/page-header'
 import { SITE_METADATA } from '~/data/site-metadata'
@@ -10,28 +10,29 @@ import books from '~/json/books.json' assert { type: 'json' }
 import type { GoodreadsBook } from '~/types/data'
 import { BooksList } from './books-list'
 import { ExternalLink } from 'lucide-react'
+import { useLanguageStore, getTranslation } from '~/store/language-store'
+import parse from 'html-react-parser'
 
-export let metadata = genPageMetadata({ title: 'My bookshelf' })
+export default function BooksPage() {
+  const { language, translations } = useLanguageStore()
 
-export default async function BooksPage() {
+  const t = (key: string) => getTranslation(translations[language], key)
   return (
     <Container className="pt-4 lg:pt-12">
       <PageHeader
-        title="Books"
+        title={t('books.title')}
         description={
           <>
-            <p>
-              A lifelong love for books drives my daily reading habit. I'm also a long-time member of a weekly book club 📚. <br/><br/>While novels were once my main focus, I now appreciate a wide array of genres, with a particular fondness for nonfiction, technology, science, productivity, philosophy, psychology, history, art these days.
-              <br /><br/>
-              Here, you'll find my reading log and my ever-growing "to-read" list.
-            </p>
-            <p className="mt-3 italic flex-none lg900:flex">
-              *Data pulled from my{' '}
-              <Link href={SITE_METADATA.goodreadsBookshelfUrl} className="font-medium ml-1">
+            {parse(t('books.description1'))}
+            <p className="mt-3 flex-none italic lg900:flex">
+              {t('books.description2')}
+              <Link href={SITE_METADATA.goodreadsBookshelfUrl} className="ml-1 font-medium">
                 <GrowingUnderline data-umami-event="goodreads-feed" active>
-                  Goodreads bookshelf
+                  {t('books.description3')}
                 </GrowingUnderline>
-                {SITE_METADATA.goodreadsBookshelfUrl.startsWith('http') && <ExternalLink className="ml-2 mt-2" size={18} strokeWidth={1.5} />}
+                {SITE_METADATA.goodreadsBookshelfUrl.startsWith('http') && (
+                  <ExternalLink className="ml-2 mt-2" size={18} strokeWidth={1.5} />
+                )}
               </Link>
             </p>
           </>
