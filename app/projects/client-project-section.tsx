@@ -30,11 +30,13 @@ export default function ClientProjectSection({ projects }: Props) {
         title={t('projects.title')}
         description={
           <div className="flex flex-wrap items-center gap-4">
-            <p className="text-[1.1rem] text-gray-700 dark:text-slate-400">
+            <p className="text-[1.1rem] leading-[1.9rem] text-gray-700 dark:text-slate-400 sm:text-[1.15rem] sm:leading-[2rem] md:text-[1.25rem] md:leading-[2.2rem] lg:text-[1.3rem] lg:leading-[2.4rem]">
               {t('projects.description')}
             </p>
             <Button as="a" href="https://daheekim.app" target="_blank">
-              <span className="text-[1rem] text-white">{t('projects.portfolio')}</span>
+              <span className="text-[1.1rem] leading-[1.9rem] text-white sm:text-[1.15rem] sm:leading-[2rem] md:text-[1.25rem] md:leading-[2.2rem] lg:text-[1.3rem] lg:leading-[2.4rem]">
+                {t('projects.portfolio')}
+              </span>
               <Twemoji emoji="laptop" />
             </Button>
           </div>
