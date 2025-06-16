@@ -28,7 +28,7 @@ export default function MoviesPage() {
             <p className="mt-3 flex-none italic lg900:flex">
               {t('movies.description2')}
               <Link href={SITE_METADATA.imdbRatingsList} className="ml-1 font-medium">
-                <GrowingUnderline data-umami-event="goodreads-feed" active>
+                <GrowingUnderline data-umami-event="imdb-feed" active>
                   {t('movies.description3')}
                 </GrowingUnderline>
                 {SITE_METADATA.imdbRatingsList.startsWith('http') && (
@@ -37,7 +37,7 @@ export default function MoviesPage() {
               </Link>
               {t('movies.description4')}
               <Link href="https://www.omdbapi.com/" className="ml-1 font-medium">
-                <GrowingUnderline data-umami-event="goodreads-feed" active>
+                <GrowingUnderline data-umami-event="omdb-feed" active>
                   {t('movies.description5')}
                 </GrowingUnderline>
                 {<ExternalLink className="ml-2 mt-2" size={18} strokeWidth={1.5} />}

@@ -7,6 +7,7 @@ import { Fragment } from 'react'
 import Link from '~/components/ui/Link'
 import { Twemoji } from '~/components/ui/twemoji'
 import type { RateType } from './rate-filter'
+import { useLanguageStore, getTranslation } from '~/store/language-store'
 
 export const TITLE_TYPES: {
   label: string
@@ -14,17 +15,17 @@ export const TITLE_TYPES: {
   emoji: string
 }[] = [
   {
-    label: 'All',
+    label: 'types1',
     value: 'all',
     emoji: 'popcorn',
   },
   {
-    label: 'Movie',
+    label: 'types2',
     value: 'movie',
     emoji: 'movie-camera',
   },
   {
-    label: 'TV Series',
+    label: 'types3',
     value: 'tv-series',
     emoji: 'television',
   },
@@ -33,8 +34,13 @@ export const TITLE_TYPES: {
 export type TitleType = 'movie' | 'tv-series' | 'all'
 
 export function TitleTypeFilter({ type, rate }: { type: TitleType; rate: RateType }) {
+  const { language, translations } = useLanguageStore()
+  const t = (key: string) => getTranslation(translations[language], key)
+
   let { label, value: selectedValue } =
     TITLE_TYPES.find(({ value }) => value === type) || TITLE_TYPES[0]
+  label = t(`movies.${label}`)
+  console.log('label', label)
   return (
     <div className="flex items-center">
       <Menu as="div" className="relative inline-block text-left">
@@ -64,25 +70,28 @@ export function TitleTypeFilter({ type, rate }: { type: TitleType; rate: RateTyp
             ])}
           >
             <div className="space-y-1 p-1">
-              {TITLE_TYPES.map(({ label, value, emoji }) => (
-                <MenuItem key={value} as="div">
-                  {({ close }) => (
-                    <Link
-                      className={clsx([
-                        'flex w-full items-center gap-2 rounded-md px-2 py-1.5',
-                        value === selectedValue
-                          ? 'bg-gray-200 dark:bg-gray-800'
-                          : 'hover:bg-gray-200 dark:hover:bg-gray-800',
-                      ])}
-                      href={`/movies?type=${value}&rate=${rate}`}
-                      onClick={close}
-                    >
-                      <Twemoji emoji={emoji} />
-                      <span>{label}</span>
-                    </Link>
-                  )}
-                </MenuItem>
-              ))}
+              {TITLE_TYPES.map(({ label, value, emoji }) => {
+                const translatedLabel = t(`movies.${label}`)
+                return (
+                  <MenuItem key={value} as="div">
+                    {({ close }) => (
+                      <Link
+                        className={clsx([
+                          'flex w-full items-center gap-2 rounded-md px-2 py-1.5',
+                          value === selectedValue
+                            ? 'bg-gray-200 dark:bg-gray-800'
+                            : 'hover:bg-gray-200 dark:hover:bg-gray-800',
+                        ])}
+                        href={`/movies?type=${value}&rate=${rate}`}
+                        onClick={close}
+                      >
+                        <Twemoji emoji={emoji} />
+                        <span>{translatedLabel}</span>
+                      </Link>
+                    )}
+                  </MenuItem>
+                )
+              })}
             </div>
           </MenuItems>
         </Transition>

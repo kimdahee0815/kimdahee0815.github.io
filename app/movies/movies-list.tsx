@@ -6,6 +6,7 @@ import { Twemoji } from '~/components/ui/twemoji'
 import type { ImdbMovie } from '~/types/data'
 import { RateFilter, RATES, type RateType } from './rate-filter'
 import { TitleTypeFilter, type TitleType } from './title-type-filter'
+import { useLanguageStore, getTranslation } from '~/store/language-store'
 
 const MOVIES_TITLE_TYPES: Record<TitleType, string> = {
   all: 'All',
@@ -14,6 +15,9 @@ const MOVIES_TITLE_TYPES: Record<TitleType, string> = {
 }
 
 export function MoviesList({ movies }: { movies: ImdbMovie[] }) {
+  const { language, translations } = useLanguageStore()
+  const t = (key: string) => getTranslation(translations[language], key)
+
   let searchParams = useSearchParams()
   let rate = (searchParams.get('rate') as RateType) || '10'
   let type = (searchParams.get('type') as TitleType) || 'all'
@@ -33,13 +37,14 @@ export function MoviesList({ movies }: { movies: ImdbMovie[] }) {
       }
       return Number(m2.your_rating) - Number(m1.your_rating)
     })
-  let { description, emoji } = RATES.find(({ value }) => value === rate) || RATES[0]
 
+  let { description, emoji } = RATES.find(({ value }) => value === rate) || RATES[0]
+  description = t(`movies.${description}`)
   return (
     <div className="space-y-4 pt-2 md:space-y-6 md:pt-0">
       <div className="flex flex-col-reverse items-center justify-between gap-5 md:flex-row md:gap-4">
         <div className="flex items-center gap-2 text-xl font-medium">
-          <Twemoji emoji={emoji} /> {description}{' '}
+          <Twemoji emoji={emoji} /> {description}
           <span className="font-normal text-gray-600 dark:text-slate-300">
             ({displayMovies.length} titles)
           </span>

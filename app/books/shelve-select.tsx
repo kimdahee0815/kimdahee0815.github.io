@@ -4,6 +4,7 @@ import { ChevronDown } from 'lucide-react'
 import { Fragment } from 'react'
 import Link from '~/components/ui/Link'
 import { Twemoji } from '~/components/ui/twemoji'
+import { useLanguageStore, getTranslation } from '~/store/language-store'
 
 export const SHELVES: {
   label: string
@@ -14,34 +15,40 @@ export const SHELVES: {
   {
     label: 'All',
     value: 'all',
-    description: 'All the books',
-    emoji: 'books'
+    description: 'shelf1',
+    emoji: 'books',
   },
   {
     label: 'Reading',
     value: 'currently-reading',
-    description: 'Reading...',
-    emoji: 'open-book'
+    description: 'shelf2',
+    emoji: 'open-book',
   },
   {
     label: 'Read',
     value: 'read',
-    description: 'Complete',
-    emoji: 'check-mark-button'
+    description: 'shelf3',
+    emoji: 'check-mark-button',
   },
   {
     label: 'Abandoned',
     value: 'abandoned',
-    description: 'Abandoned',
-    emoji: 'wastebasket'
+    description: 'shelf4',
+    emoji: 'wastebasket',
   },
 ]
 
 export type ShelfType = 'all' | 'currently-reading' | 'read' | 'abandoned'
 
 export function ShelveSelect({ shelf }: { shelf: ShelfType }) {
-  let { label, value: selectedValue } = SHELVES.find(({ value }) => value === shelf) || SHELVES[0]
-
+  const { language, translations } = useLanguageStore()
+  const t = (key: string) => getTranslation(translations[language], key)
+  let {
+    label,
+    description,
+    value: selectedValue,
+  } = SHELVES.find(({ value }) => value === shelf) || SHELVES[0]
+  label = t(`books.${description}`)
   return (
     <div className="flex items-center">
       <Menu as="div" className="relative inline-block text-left">
@@ -68,29 +75,32 @@ export function ShelveSelect({ shelf }: { shelf: ShelfType }) {
               'mt-2 origin-top-right rounded-md text-right shadow-lg',
               'bg-white dark:bg-black',
               'ring-1 ring-black ring-opacity-5 focus:outline-none',
-              'w-[170px]'
+              'w-[170px]',
             ])}
           >
             <div className="space-y-1 p-1">
-              {SHELVES.map(({ label, value, description, emoji }) => (
-                <MenuItem key={value} as="div">
-                  {({ close }) => (
-                    <Link
-                      className={clsx([
-                        'flex w-full items-center gap-2 rounded-md px-2 py-1.5',
-                        value === selectedValue
-                          ? 'bg-gray-200 dark:bg-gray-800'
-                          : 'hover:bg-gray-200 dark:hover:bg-gray-800',
-                      ])}
-                      href={`/books?shelf=${value}`}
-                      onClick={close}
-                    >
-                      <span data-umami-event="books-shelf-select">{description}</span>
-                      <Twemoji emoji={emoji} />
-                    </Link>
-                  )}
-                </MenuItem>
-              ))}
+              {SHELVES.map(({ label, description, value, emoji }) => {
+                const translatedDescription = t(`books.${description}`)
+                return (
+                  <MenuItem key={value} as="div">
+                    {({ close }) => (
+                      <Link
+                        className={clsx([
+                          'flex w-full items-center gap-2 rounded-md px-2 py-1.5',
+                          value === selectedValue
+                            ? 'bg-gray-200 dark:bg-gray-800'
+                            : 'hover:bg-gray-200 dark:hover:bg-gray-800',
+                        ])}
+                        href={`/books?shelf=${value}`}
+                        onClick={close}
+                      >
+                        <span data-umami-event="books-shelf-select">{translatedDescription}</span>
+                        <Twemoji emoji={emoji} />
+                      </Link>
+                    )}
+                  </MenuItem>
+                )
+              })}
             </div>
           </MenuItems>
         </Transition>
