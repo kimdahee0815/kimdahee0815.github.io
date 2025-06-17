@@ -4,7 +4,11 @@ import { allAuthors } from 'contentlayer/generated'
 import { AuthorLayout } from '~/layouts/author-layout'
 import { coreContent } from '~/utils/contentlayer'
 
-export let metadata = genPageMetadata({ title: 'About' })
+export const metadata = genPageMetadata({
+  title: 'About',
+  description:
+    "I'm a full-stack developer with a background in English literature, combining creative thinking with technical expertise. Passionate about clean code, thoughtful design, and building meaningful digital experiences.",
+})
 
 export default function AboutPage() {
   let author = allAuthors.find((p) => p.slug === 'default') as Author

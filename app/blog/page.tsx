@@ -5,7 +5,11 @@ import { POSTS_PER_PAGE } from '~/utils/const'
 import { allCoreContent } from '~/utils/contentlayer'
 import { sortPosts } from '~/utils/misc'
 
-export let metadata = genPageMetadata({ title: 'Blog' })
+export const metadata = genPageMetadata({
+  title: 'Blog',
+  description:
+    'Explore the world of software development with me! 😄 I share posts on common error fixes 🐞, essential programming concepts ✅, the latest tech news 📫, practical tutorials and how-tos 🔦, tool reviews and recommendations ⚒️, and curated learning resources ✒️. 🔍 Use the search to filter by title, content, or tags—or browse the index below!',
+})
 
 export default function BlogPage() {
   let posts = allCoreContent(sortPosts(allBlogs))

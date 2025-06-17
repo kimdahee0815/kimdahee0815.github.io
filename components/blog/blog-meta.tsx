@@ -1,8 +1,11 @@
+'use client'
+
 import type readingTime from 'reading-time'
 import { formatDate, getTimeAgo } from '~/utils/misc'
 import { ViewsCounter } from './views-counter'
 import { StatsType } from '@prisma/client'
 import { Twemoji } from '~/components/ui/twemoji'
+import { useLanguageStore, getTranslation } from '~/store/language-store'
 
 type BlogMetaProps = {
   date: string
@@ -13,6 +16,9 @@ type BlogMetaProps = {
 }
 
 export function BlogMeta({ date, lastmod, type, slug, readingTime }: BlogMetaProps) {
+  const { language, translations } = useLanguageStore()
+
+  const t = (key: string) => getTranslation(translations[language], key)
   return (
     <dl>
       <dt className="sr-only">Published on</dt>
@@ -33,7 +39,9 @@ export function BlogMeta({ date, lastmod, type, slug, readingTime }: BlogMetaPro
         <span className="mx-2">{` • `}</span>
         <div className="flex items-center">
           <Twemoji emoji="hourglass-not-done" />
-          <span className="ml-1.5 md:ml-2">{Math.ceil(readingTime.minutes)} mins read</span>
+          <span className="ml-1.5 md:ml-2">
+            {Math.ceil(readingTime.minutes)} {t('books.readingTime')}
+          </span>
         </div>
         <span className="mx-2">{` • `}</span>
         <div className="flex items-center">

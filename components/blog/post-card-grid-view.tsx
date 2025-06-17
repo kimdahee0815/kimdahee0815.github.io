@@ -10,7 +10,6 @@ import { SITE_METADATA } from '~/data/site-metadata'
 import type { CoreContent } from '~/types/data'
 import { formatDate } from '~/utils/misc'
 import { useLanguageStore, getTranslation } from '~/store/language-store'
-import parse from 'html-react-parser'
 
 export function PostCardGridView({ post }: { post: CoreContent<Blog> }) {
   const { language, translations } = useLanguageStore()
