@@ -1,6 +1,6 @@
 'use client'
 
-import type { CoreContent } from 'pliny/utils/contentlayer'
+import { coreContent } from '~/utils/contentlayer'
 import type { Snippet } from 'contentlayer/generated'
 import { SnippetCard } from '~/components/cards/snippet'
 import { Container } from '~/components/ui/container'
