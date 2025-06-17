@@ -1,6 +1,5 @@
 'use client'
 
-import { coreContent } from '~/utils/contentlayer'
 import type { Snippet } from 'contentlayer/generated'
 import { SnippetCard } from '~/components/cards/snippet'
 import { Container } from '~/components/ui/container'
@@ -8,11 +7,7 @@ import { PageHeader } from '~/components/ui/page-header'
 import { useLanguageStore, getTranslation } from '~/store/language-store'
 import parse from 'html-react-parser'
 
-interface Props {
-  snippets: CoreContent<Snippet>[]
-}
-
-export function SnippetsClient({ snippets }: Props) {
+export function SnippetsClient({ snippets }) {
   const { language, translations } = useLanguageStore()
   const t = (key: string) => getTranslation(translations[language], key)
 
