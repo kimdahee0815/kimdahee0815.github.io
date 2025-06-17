@@ -6,9 +6,9 @@ import { type Stats, StatsType } from '@prisma/client'
 
 export function useBlogStats(type: StatsType, slug: string) {
   const { data, isLoading } = useSWR<Stats>(`/api/stats?slug=${slug}&type=${type}`, fetcher, {
-    revalidateIfStale: false,
-    revalidateOnFocus: false,
-    revalidateOnReconnect: false,
+    revalidateIfStale: true,
+    revalidateOnFocus: true,
+    revalidateOnReconnect: true,
   })
 
   const { views, loves, applauses, ideas, bullseye } = data || {}
