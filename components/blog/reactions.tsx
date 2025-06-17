@@ -48,16 +48,16 @@ const Reaction = (props: ReactionProps) => {
       setReacting(true)
       const newReactions = reactions + 1
       onReact(newReactions)
-      if (countRef.current) {
-        // if (reactions >= MAX_REACTIONS) {
-        //   countRef.current.classList.add('animate-scale-up')
-        //   setTimeout(() => {
-        //     if (countRef.current) {
-        //       countRef.current.classList.remove('animate-scale-up')
-        //     }
-        //   }, 150)
-        // }
-      }
+      // if (countRef.current) {
+      //   if (reactions >= MAX_REACTIONS) {
+      //     countRef.current.classList.add('animate-scale-up')
+      //     setTimeout(() => {
+      //       if (countRef.current) {
+      //         countRef.current.classList.remove('animate-scale-up')
+      //       }
+      //     }, 150)
+      //   }
+      // }
     }
   }
 
@@ -134,11 +134,7 @@ const Reactions = (props: ReactionsProps) => {
   }, [])
 
   const handleOnSave = (key: string) => {
-    const diff = reactions[key] - initialReactions[key]
-
-    if (diff !== 0) {
-      updateReaction({ slug, type, [key]: diff })
-    }
+    updateReaction({ slug, type, [key]: stats[key] + reactions[key] - initialReactions[key] })
 
     localStorage.setItem(`${type}/slug`, JSON.stringify(reactions))
   }

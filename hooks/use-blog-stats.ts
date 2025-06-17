@@ -1,6 +1,5 @@
 import useSWR from 'swr'
 import useSWRMutation from 'swr/mutation'
-import { mutate } from 'swr'
 
 import { fetcher } from '~/utils/fetcher'
 import { type Stats, StatsType } from '@prisma/client'
@@ -30,18 +29,11 @@ export function useBlogStats(type: StatsType, slug: string) {
 export function useUpdateBlogStats() {
   const { trigger } = useSWRMutation(
     '/api/stats',
-    async (url: string, { arg }: { arg: Partial<Stats> & { type: StatsType; slug: string } }) => {
-      const res = await fetch(url, {
+    async (url: string, { arg }: { arg: Partial<Stats> }) => {
+      return fetch(url, {
         method: 'POST',
         body: JSON.stringify(arg),
-        headers: { 'Content-Type': 'application/json' },
-      })
-
-      if (!res.ok) throw new Error('Failed to update stats')
-
-      mutate(`/api/stats?slug=${arg.slug}&type=${arg.type}`)
-
-      return res
+      }).catch(console.error)
     }
   )
 
