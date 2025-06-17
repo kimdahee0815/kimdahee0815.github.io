@@ -24,8 +24,6 @@ interface ReactionsProps {
   className?: string
 }
 
-const MAX_REACTIONS = 5
-
 const REACTIONS: Array<{ emoji: string; key: keyof Stats }> = [
   { emoji: 'sparkling-heart', key: 'loves' },
   { emoji: 'clapping-hands', key: 'applauses' },
@@ -48,17 +46,17 @@ const Reaction = (props: ReactionProps) => {
         clearTimeout(reactingTimeoutId)
       }
       setReacting(true)
-      const newReactions = reactions >= MAX_REACTIONS ? MAX_REACTIONS : reactions + 1
+      const newReactions = reactions + 1
       onReact(newReactions)
       if (countRef.current) {
-        if (reactions >= MAX_REACTIONS) {
-          countRef.current.classList.add('animate-scale-up')
-          setTimeout(() => {
-            if (countRef.current) {
-              countRef.current.classList.remove('animate-scale-up')
-            }
-          }, 150)
-        }
+        // if (reactions >= MAX_REACTIONS) {
+        //   countRef.current.classList.add('animate-scale-up')
+        //   setTimeout(() => {
+        //     if (countRef.current) {
+        //       countRef.current.classList.remove('animate-scale-up')
+        //     }
+        //   }, 150)
+        // }
       }
     }
   }
