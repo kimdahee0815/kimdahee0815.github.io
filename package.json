@@ -4,7 +4,7 @@
   "scripts": {
     "start": "SET PORT=3435&&next dev",
     "dev": "SET PORT=3434&&cross-env INIT_CWD=$PWD next dev",
-    "postinstall": "npx prisma generate dev",
+    "postinstall": "npx prisma generate && npx prisma db push",
     "build": "cross-env INIT_CWD=$PWD next build&&npm run postbuild",
     "postbuild": "cross-env NODE_OPTIONS='--experimental-json-modules' tsx ./scripts/post-build.ts",
     "serve": "next start",
