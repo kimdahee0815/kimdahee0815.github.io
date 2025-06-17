@@ -134,7 +134,11 @@ const Reactions = (props: ReactionsProps) => {
   }, [])
 
   const handleOnSave = (key: string) => {
-    updateReaction({ slug, type, [key]: stats[key] + reactions[key] - initialReactions[key] })
+    const diff = reactions[key] - initialReactions[key]
+
+    if (diff !== 0) {
+      updateReaction({ slug, type, [key]: diff })
+    }
 
     localStorage.setItem(`${type}/slug`, JSON.stringify(reactions))
   }

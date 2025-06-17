@@ -27,38 +27,23 @@ const updateBlogStats = async (
   slug: string,
   updates: Partial<Stats>
 ): Promise<Stats> => {
-  const currentStats = await getBlogStats(slug, type)
+  const incrementData: Record<string, any> = {}
 
-  // Safeguard against negative updates
-  for (const key in updates) {
-    if (typeof updates[key] === 'number' && updates[key] < currentStats[key]) {
-      updates[key] = currentStats[key]
+  for (const key of Object.keys(updates) as Array<keyof Stats>) {
+    const value = updates[key]
+    if (typeof value === 'number' && value !== 0) {
+      incrementData[key] = { increment: value }
     }
   }
 
-  const incrementData = Object.keys(updates).reduce(
-    (acc, key) => {
-      const value = updates[key as keyof Stats]
-      const current = currentStats[key as keyof Stats]
-      if (typeof value === 'number' && typeof current === 'number') {
-        const diff = value - current
-        if (diff !== 0) {
-          acc[key] = { increment: diff }
-        }
-      }
-      return acc
-    },
-    {} as Record<string, any>
-  )
+  if (Object.keys(incrementData).length === 0) {
+    return await getBlogStats(slug, type)
+  }
 
-  const updated = await prisma.stats.update({
-    where: {
-      type_slug: { slug, type },
-    },
+  return await prisma.stats.update({
+    where: { type_slug: { slug, type } },
     data: incrementData,
   })
-
-  return updated
 }
 
 export async function GET(request: NextRequest) {
