@@ -36,11 +36,26 @@ const updateBlogStats = async (
     }
   }
 
+  const incrementData = Object.keys(updates).reduce(
+    (acc, key) => {
+      const value = updates[key as keyof Stats]
+      const current = currentStats[key as keyof Stats]
+      if (typeof value === 'number' && typeof current === 'number') {
+        const diff = value - current
+        if (diff !== 0) {
+          acc[key] = { increment: diff }
+        }
+      }
+      return acc
+    },
+    {} as Record<string, any>
+  )
+
   const updated = await prisma.stats.update({
     where: {
       type_slug: { slug, type },
     },
-    data: updates,
+    data: incrementData,
   })
 
   return updated
