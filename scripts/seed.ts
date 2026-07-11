@@ -91,32 +91,44 @@ async function fetchImdbMovies() {
         let movies: ImdbMovie[] = []
         await Promise.all(
           imdbMovies.map(async (mv) => {
-            let res = await fetch(
-              `https://www.omdbapi.com/?apikey=${process.env.OMDB_API_KEY}&i=${mv.const}&plot=full`,
-              {
-                method: 'GET',
-                headers: {
-                  'Content-Type': 'application/json',
-                },
+            try {
+              let res = await fetch(
+                `https://www.omdbapi.com/?apikey=${process.env.OMDB_API_KEY}&i=${mv.const}&plot=full`,
+                {
+                  method: 'GET',
+                  headers: {
+                    'Content-Type': 'application/json',
+                  },
+                }
+              )
+              let omdbMovie: OmdbMovie = await res.json()
+              if (!Array.isArray(omdbMovie.Ratings)) {
+                console.error(
+                  `Error fetching OMDB data for ${mv.const}: ${(omdbMovie as any).Error ?? 'no ratings returned'}`
+                )
+                movies.push({ ...mv, ratings: [] })
+                return
               }
-            )
-            let omdbMovie: OmdbMovie = await res.json()
-            movies.push({
-              ...mv,
-              total_seasons: omdbMovie.totalSeasons,
-              year: omdbMovie.Year,
-              actors: omdbMovie.Actors,
-              plot: omdbMovie.Plot,
-              poster: omdbMovie.Poster,
-              language: omdbMovie.Language,
-              country: omdbMovie.Country,
-              awards: omdbMovie.Awards,
-              box_office: omdbMovie.BoxOffice,
-              ratings: omdbMovie.Ratings.map((r) => ({
-                source: r.Source,
-                value: r.Value,
-              })),
-            })
+              movies.push({
+                ...mv,
+                total_seasons: omdbMovie.totalSeasons,
+                year: omdbMovie.Year,
+                actors: omdbMovie.Actors,
+                plot: omdbMovie.Plot,
+                poster: omdbMovie.Poster,
+                language: omdbMovie.Language,
+                country: omdbMovie.Country,
+                awards: omdbMovie.Awards,
+                box_office: omdbMovie.BoxOffice,
+                ratings: omdbMovie.Ratings.map((r) => ({
+                  source: r.Source,
+                  value: r.Value,
+                })),
+              })
+            } catch (error) {
+              console.error(`Error fetching OMDB data for ${mv.const}: ${error.message}`)
+              movies.push({ ...mv, ratings: [] })
+            }
           })
         )
         writeFileSync(`./json/movies.json`, JSON.stringify(movies))
