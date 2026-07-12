@@ -11,9 +11,9 @@ export function Intro() {
   return (
     <h1 className="text-neutral-900 dark:text-neutral-200">
       {parse(t('home.intro1'))}
-      <span className="absolute ml-1.5 inline-flex pt-[3px]">
+      {/* <span className="absolute ml-1.5 inline-flex pt-[3px]">
         <Twemoji emoji="flag-south-korea" />
-      </span>
+      </span> */}
     </h1>
   )
 }
