@@ -45,7 +45,7 @@ export const useLanguageStore = create<LanguageStore>()(
           greeting: '안녕하세요!',
           home: {
             intro1:
-              '<p><span className="font-medium">세상 어디에서든 좋아하는 일을 하며 살아가는 것.</span></p><p>그 목표를 향해 배우고, 만들고, 기록하는 것을 좋아하는 개발자, <span className="font-medium">김다희</span>입니다.</p><p>개발은 지금의 저에게 <span className="font-medium">아이디어를 가장 빠르게 현실로 만드는 길</span>이자, 제가 가장 재미있게 몰입하고 있는 분야입니다.</p>',
+              '<p><span className="font-medium">세상 어디에서든 좋아하는 일을 하며 살아가는 것.</span></p><p>그 목표를 향해 배우고, 만들고, 기록하는 것을 좋아하는 개발자 - <span className="font-medium">김다희</span>입니다.</p><p>개발은 지금의 저에게 <span className="font-medium">아이디어를 가장 빠르게 현실로 만드는 길</span>이자, 제가 가장 재미있게 몰입하고 있는 분야입니다.</p>',
             intro2:
               '<p>저는 <b className="font-medium">좋은 개발자는 결국 좋은 문제 해결사</b>라고 생각합니다.</p><p>그래서 새로운 기술뿐 아니라 <b className="font-medium">사람, 경험, 생각</b>을 배우는 일도 중요하게 여기고 있습니다.</p><p>이 블로그는 제가 배우고, 만들고, 실패하고, 또다시 배우며 얻은 기록들을 차곡차곡 남기는 공간입니다.</p><p>제가 남긴 기록들이 누군가의 다음 시작에 작은 영감이 된다면 그것만으로도 제게는 충분히 의미가 있을 것 같습니다. ✨</p><p>그럼 천천히 둘러보시고, 편하게 읽어주세요! 😊</p>',
             intro3: '오늘도 멋진 하루 보내세요',
