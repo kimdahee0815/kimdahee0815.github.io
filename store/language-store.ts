@@ -45,13 +45,13 @@ export const useLanguageStore = create<LanguageStore>()(
           greeting: '안녕하세요!',
           home: {
             intro1:
-              '저는 <span className="font-medium">독학으로 개발을 공부한 소프트웨어 엔지니어</span> - <span className="font-medium">김다희입니다.</span>',
+              '저는 <span className="font-medium">배우고, 만들고, 기록하는 것</span>을 좋아합니다. 개발은 지금의 저에게 <span className="font-medium">아이디어를 가장 빠르게 현실로 만드는 길</span>이자, 가장 재미있게 몰입하고 있는 분야입니다.',
             intro2:
-              '<p><b className="font-medium">호기심과 명확함, 그리고 따뜻한 마음</b>을 중요하게 생각하는 개발자입니다.</p><p><b className="font-medium">컴퓨터가 어떻게 작동하는지</b> 근본부터 궁금해하고, 그 뒤에 숨겨진 논리를 탐구하는 걸 좋아해요.</p><p>논리를 생각하는 게 항상 쉽지만은 않지만, 의미 있는 무언가를 발견했을 때 느끼는 설렘은 정말 짜릿하답니다! 🤩😄</p><p>제 삶의 주된 목표는 <b className="font-medium">개발자이자 작가</b>가 되는 거예요. 그 과정에서 배운 것들을 나누고, 다른 사람들에게 도움이 되고 싶거든요.</p><p>그래서 이 블로그를 시작하게 되었어요.</p><p>제 쓴 글들이 여러분께 조금이나마 도움이 되기를 바랍니다🔮</p><p>그럼 방문해 주셔서 감사드리고🙏🏻 재미있게 읽어주세요!😊</p>',
+              '<p>저는 <b className="font-medium">좋은 개발자는 결국 좋은 문제 해결사</b>라고 생각합니다.</p><p>그래서 새로운 기술뿐 아니라 <b className="font-medium">사람, 경험, 생각</b>을 배우는 일도 중요하게 여기고 있습니다.</p><p>이 블로그는 제가 배우고, 만들고, 실패하고, 또다시 배우며 얻은 기록들을 차곡차곡 남기는 공간입니다.</p><p>언젠가 뒤돌아봤을 때 저의 성장 과정이 그대로 담겨 있는 공간이 되었으면 좋겠습니다.</p><p>저에게 도움이 될 뿐 아니라 여러분에게도 작은 아이디어나 영감을 드릴 수 있다면 더없이 기쁠 것 같습니다. ✨</p><p>천천히 둘러보시고, 편하게 읽어주세요. 😊</p>',
             intro3: '오늘도 멋진 하루 보내세요',
             typedbios:
-              '<li>제가 처음 코딩을 시작한 언어는 <b className="font-medium">C</b>예요.</li><li>저는 스트레스를 <b className="font-medium">수영, 줌바댄스, 모델 수업</b>으로 풀어요!</li><li>고양이를 사랑하지만, 고양이 알러지가 있어요😿.</li><li>책을 좋아해 독서모임📚 활동을 한지 꽤 오래되었어요!</li>',
-            links1: '나의 작품들',
+              '<li>제가 처음 코딩을 시작한 언어는 <b className="font-medium">C</b>예요.</li><li>저는 스트레스를 <b className="font-medium">수영, 폴댄스, 탱고, 여행과 같은 다양한 활동</b>으로 풀어요!</li><li>고양이를 사랑하지만, 고양이 알러지가 있어요😿.</li><li>책을 좋아해 독서모임📚 활동을 한지 꽤 오래되었어요!</li>',
+            links1: '나의 프로젝트들',
             links2: '내가 쓴 게시글들',
             links3: '코드 스니펫 모음',
             links4: '작가 및 블로그 소개',
@@ -70,7 +70,7 @@ export const useLanguageStore = create<LanguageStore>()(
           },
           footer: {
             intro:
-              '이곳은 개발을 배우며 겪은 시행착오와 배움을 담은 기록장입니다. 다른 개발자들에게 도움이 될 팁과 인사이트도 함께 공유하는 장소예요.',
+              '배우고, 만들고, 실패하고, 또다시 배우는 과정을 기록합니다. 이곳의 기록이 누군가에게 작은 도움이 되었으면 좋겠습니다.',
             location: '인천, 대한민국',
             sitemap: '사이트 맵',
             sitemap1: '블로그',
@@ -88,7 +88,7 @@ export const useLanguageStore = create<LanguageStore>()(
           blog: {
             title: '전체 게시글 목록',
             detail:
-              '저와 소프트웨어 개발의 세계를 함께 탐험해요! 😄<br />제가 공유하는 글은 다음과 같은 주제들이 담겨 있어요:<br />자주 발생하는 오류 해결법🐞, 핵심 프로그래밍 개념✅, 최신 기술 뉴스📫, 실용적인 튜토리얼과 사용법🔦, 툴 리뷰 및 추천⚒️, 학습 자료 소개✒️<br />🔍제목, 내용, 태그로 검색하거나 아래 목차를 둘러보며 원하는 정보를 찾아보세요.',
+              '저와 개발의 세계를 함께 탐험해요! 😄<br />제가 공유하는 글은 다음과 같은 주제들이 담겨 있어요:<br />자주 발생하는 오류 해결법🐞, 핵심 프로그래밍 개념✅, 최신 기술 뉴스📫, 실용적인 튜토리얼과 사용법🔦, 툴 리뷰 및 추천⚒️, 학습 자료 소개✒️<br />🔍제목, 내용, 태그로 검색하거나 아래 목차를 둘러보며 원하는 정보를 찾아보세요.',
             searchArticles: '게시글 찾기...',
             previous: '이전',
             next: '다음',
@@ -103,94 +103,108 @@ export const useLanguageStore = create<LanguageStore>()(
             categories7: '컴퓨터 과학 & 기초 지식',
             categories8: '도구 & 개발 환경',
             categories9: '기술 뉴스 & 트렌드',
+            categories10: 'AI',
           },
           snippets: {
             title: '스니펫 모음',
             description:
-              '<p>이곳은 제가 자주 사용하는, 간편하고 효율적인 코드 스니펫들을 모아놓은 공간입니다. 필요한 건 마음껏 가져가서, 여러분의 스타일에 맞게 수정하고 활용해보세요.</p><p className="mt-3 italic">이 코드들은 제 개인 프로젝트 경험과 오픈소스 커뮤니티의 멋진 협업 정신으로 만들어졌습니다.</p>',
+              '<p>이곳은 제가 자주 사용하는, 간편하고 효율적인 코드 스니펫들을 모아놓은 공간입니다. 필요한 건 마음껏 가져가서, 여러분의 스타일에 맞게 수정하고 활용해보세요.</p>',
           },
           projects: {
             title: '프로젝트',
             description:
-              '제가 직접 개발한 풀스택 / 프론트엔드 웹 애플리케이션들을 소개합니다. 각 프로젝트는 실제로 배포되어 있거나, 미리보기와 소스 코드가 함께 제공됩니다.',
+              '제가 직접 개발한 풀스택 웹 애플리케이션들을 소개합니다. 각 프로젝트는 실제로 배포되어 있거나, 미리보기와 소스 코드가 함께 제공됩니다.',
             portfolio: '포트폴리오 둘러보기',
             work: '직장',
             sideProjects: '사이드 프로젝트',
             thinkstormTitle: 'ThinkStorm (작업 진행 중)',
             thinkstormDescription:
-              '글로벌 개발자들이 팀을 이루고 실제 프로젝트를 진행하며 실력을 키울 수 있도록 돕는 풀스택 협업 플랫폼입니다.',
+              '글로벌 개발자들이 팀을 이루고 실제 프로젝트를 진행하며 실력을 키울 수 있도록 돕는 풀스택 협업 플랫폼입니다. 저는 풀스택 개발자로 참여해, 백엔드에서는 Redis 기반 캐싱/요청 제한 시스템과 JWT 인증, CI/CD 파이프라인을 설계·구축했고, 프론트엔드에서는 React/Next.js 기반 SPA를 구축하며 Redux, TanStack Query, Zustand로 상태 관리 아키텍처를 설계했습니다.',
             natoursTitle: 'Natours',
             natoursDescription:
-              '결제 기능, 지도 기반 탐색, 여행 예약 대시보드, 트랜잭션 이메일 등을 갖춘 친환경 여행 예약 시스템입니다.',
+              '결제 기능, 지도 기반 탐색, 여행 예약 대시보드, 트랜잭션 이메일 등을 갖춘 친환경 여행 예약 시스템입니다. 프론트엔드부터 백엔드까지 전체를 혼자 설계하고 구현한 개인 프로젝트입니다.',
             weddingyouTitle: 'Wedding You',
             weddingyouDescription:
-              '고객과 플래너 매칭, 안전한 결제, 실시간 업데이트, 클라우드 호스팅을 지원하는 웨딩 플래닝 플랫폼입니다.',
+              '고객과 플래너 매칭, 안전한 결제, 실시간 업데이트, 클라우드 호스팅을 지원하는 웨딩 플래닝 플랫폼입니다. 팀 프로젝트 리더이자 풀스택 개발자로 참여해 기획부터 배포까지 전 과정을 이끌었습니다.',
             netflixTitle: 'Netflix And Chill',
             netflixDescription:
-              'Netflix에서 영감을 받은 스트리밍 플랫폼으로, 역할 기반 인증, 관리자 대시보드, docker 기반 백엔드, 영화 탐색 기능을 갖추고 있습니다.',
+              'Netflix에서 영감을 받은 스트리밍 플랫폼으로, 역할 기반 인증, 관리자 대시보드, docker 기반 백엔드, 영화 탐색 기능을 갖추고 있습니다. 팀 프로젝트 리더이자 풀스택 개발자로 참여해 프론트엔드와 백엔드 전반을 직접 개발했습니다.',
             wetubeTitle: 'Wetube',
             wetubeDescription:
-              'GitHub OAuth 로그인, 실시간 댓글, AWS S3 기반의 영상 업로드 및 재생 기능을 제공하는 YouTube 스타일의 영상 공유 사이트입니다.',
+              'GitHub OAuth 로그인, 실시간 댓글, AWS S3 기반의 영상 업로드 및 재생 기능을 제공하는 YouTube 스타일의 영상 공유 사이트입니다. 프론트엔드와 백엔드를 모두 혼자 구현한 개인 프로젝트입니다.',
             forkifyTitle: 'Forkify',
             forkifyDescription:
-              '실시간 검색, 즐겨찾기, 인분 조절 기능이 있는 미니멀한 프론트엔드 레시피 검색 애플리케이션입니다.',
+              '실시간 검색, 즐겨찾기, 인분 조절 기능이 있는 미니멀한 프론트엔드 레시피 검색 애플리케이션입니다. 바닐라 자바스크립트로 UI와 상태 관리 로직을 직접 설계한 개인 프로젝트입니다.',
             learnMore: '더 알아보기',
             builtWith: '기술 스택',
           },
           about: {
             title: '소개',
             description:
-              '안녕하세요! 이곳은 제가 누구인지, 평소엔 무슨 일을 하며 지내는지, 그리고 왜 갑자기 블로그에 이런 글들을 쓰기 시작했는지를 살짝 풀어본 공간입니다. 그냥 “이 글들 뒤에 이런 사람이 있구나~” 하고 가볍게 인사하는 느낌으로 봐주세요!',
+              '안녕하세요! 이곳은 제가 어떤 사람인지, 어떤 생각을 하며 개발을 하고 있는지, 그리고 이 블로그를 시작하게 된 이야기를 담은 공간입니다. 편하게 둘러보시면서 "이런 사람이 이런 글을 쓰고 있구나." 정도로 가볍게 읽어주시면 좋겠습니다.',
             greeting1: '안녕하세요',
             greeting2: '제 이름은 김다희입니다.',
             intro1:
-              '저는 독학으로 개발을 공부한 소프트웨어 엔지니어예요. 프론트엔드랑 백엔드 개발 둘 다 정말 좋아하고, 저의 전공분야인 언어에도 관심이 많아요. 요즘에 인공지능이 매우 빠르게 발전하고 있는데, 예전에는 사람만 할 수 있다고 여겨졌던 언어 분야와 컴퓨터를 어떻게 인공지능이 연결짓는지 지켜보는 것이 흥미롭습니다.',
+              '저는 사용자에게 더 좋은 경험을 만드는 일을 좋아하는 소프트웨어 엔지니어입니다. 프론트엔드와 백엔드 모두 즐겨 개발하며, 새로운 기술을 배우고 직접 만들어보는 과정을 가장 재미있게 생각합니다. 특히 AI가 사람의 언어를 이해하고 컴퓨터와 연결하는 방식에 큰 흥미를 가지고 있습니다.',
             intro2:
-              '제가 어떻게 개발자가 되었는지 간단하게 소개해볼게요! 저는 코딩공부를 2017년에 대학교에 들어가면서 시작했어요. 여기에 개발자로의 커리어를 시작하게 된 여러가지 계기를 모두 말하기는 어렵지만, 어느 순간 컴퓨터가 어떻게 돌아가는지 정말 궁금해져서 전공과 함께 컴퓨터공학도 공부하게 됐어요. 그리고 코딩에 대한 꾸준한 관심으로 열심히 공부한 덕에 2023년에 저의 첫 직장으로 풀스택 개발자 자리를 얻게 됐답니다!',
+              '제가 개발을 시작한 계기는 조금 특별합니다. 원래 영문학을 전공하면서 언어를 배우면 세상을 바라보는 시야가 넓어지고, 더 많은 사람들과 소통할 수 있다는 점에 큰 매력을 느꼈습니다. 그러다 자연스럽게 "언어의 장벽을 기술로 줄일 수 없을까?"라는 궁금증이 생겼고, 언어와 컴퓨터를 연결하는 프로그램을 직접 만들어 보고 싶다는 생각으로 코딩을 시작하게 되었습니다. 그렇게 2017년부터 개발을 공부하기 시작했고, 지금은 사람들에게 도움이 되는 서비스를 만드는 개발자로 성장해가고 있습니다.',
             intro3:
-              '요즘은 ThinkStorm 프로젝트를 하면서 Next.js, Nest.js, DevOps, 시스템 설계 쪽 공부도 하고 있어요.',
+              '최근에는 퓨렌스에서 LG U+ 녹취 시스템 백엔드 개발에 참여하며 실무 경험을 쌓았고, MCP를 활용한 AI 서비스 개발자 양성과정에서 팀 리더와 백엔드·MCP 서버 개발을 맡아 프로젝트를 진행했습니다. AI와 웹 기술을 함께 활용하는 개발에 관심이 많으며, 지금도 Next.js, Nest.js, DevOps, 시스템 설계 등을 꾸준히 공부하며 더 나은 서비스를 만드는 방법을 고민하고 있습니다.',
             intro4:
-              '이 블로그는 제가 개발을 배우고, 코드를 만들어내고, 또 가끔은 만들어낸 것들을 망가뜨리는 과정 하나 하나를 기록하는 저만의 작은 실험실이에요. 글을 쓰면 생각도 정리되고 문제도 더 잘 풀리고, 무엇보다도 저처럼 궁금한 점이 많은 개발자분들이랑도 소통도 할 수 있을 것 같아 블로그를 시작하게 되었습니다.',
-            intro5: '제 글에 대한 댓글이나 의견은 언제나 환영입니다!',
+              '이 블로그는 제가 배우고, 만들고, 고민하고, 때로는 실패하면서 얻은 경험들을 기록하는 공간입니다. 글을 쓰는 과정에서 생각을 정리하고 배운 내용을 오래 기억할 수 있었고, 같은 고민을 하는 개발자들에게도 작은 도움이 되었으면 하는 마음으로 하나씩 기록을 남기고 있습니다.',
+            intro5:
+              '혹시 글을 읽으며 궁금한 점이나 함께 이야기하고 싶은 주제가 있다면 언제든 편하게 댓글을 남겨주세요. 😊',
             mycareer: '경력',
             resume: '이력서',
+            aiProgramCareerOrg: '디엠씨코넷',
+            aiProgramCareerStart: '4월 2026',
+            aiProgramCareerEnd: '7월 2026',
+            aiProgramCareerTitle: 'MCP를 활용한 AI 서비스 개발자 양성과정',
+            aiProgramCareerDetail:
+              '<li><strong>프롬프트 엔지니어링</strong> 학습</li><li><strong>LangChain 기반 LLM 애플리케이션</strong> 개발</li><li><strong>RAG 기반 문서 검색 챗봇</strong> 구현</li><li><strong>FastAPI 기반 AI 백엔드</strong> 개발</li>',
+            furenceCareerOrg: '퓨렌스',
+            furenceCareerStart: '11월 2025',
+            furenceCareerEnd: '1월 2026',
+            furenceCareerTitle: '백엔드 개발자',
+            furenceCareerDetail:
+              '<li><strong>백엔드 아키텍처 및 보안</strong>: LG U+ 녹취 시스템 대상 백엔드 아키텍처 설계 및 사용자/권한 검증 로직 구현으로 시스템 보안성 강화</li><li><strong>대용량 파일 처리 파이프라인</strong>: TUS 기반 대용량 오디오 업로드 및 파일 처리 파이프라인 구축으로 안정적인 파일 처리 환경 구현</li><li><strong>REST API 개발 및 신뢰성 향상</strong>: 녹취 이력 관리 REST API 설계 및 메타데이터 검증 로직 구현, 예외 처리 구조 개선을 통한 시스템 안정성 향상</li><li><strong>AI 컨택센터 및 STT 연동</strong>: STT 기반 콜 처리 워크플로우 및 AI 컨택센터 기능 개발 지원, 제품팀 협업을 통한 보안 및 규정 준수 대응</li>',
             thinkstormCareerOrg: 'Thinkstorm',
             thinkstormCareerStart: '3월 2024',
-            thinkstormCareerEnd: '현재',
+            thinkstormCareerEnd: '10월 2025',
             thinkstormCareerTitle: '풀스택 개발자',
             thinkstormCareerDetail:
-              '<li><strong>Redis 기반</strong>의 요청 제한 및 캐싱 시스템을 설계 및 구현하여 보안과 성능 향상</li><li><strong>Jest 테스트</strong>를 통합한 <strong>CI/CD 파이프라인 구성</strong>으로 배포 자동화</li><li><strong>JWT 인증 시스템 구축</strong>을 통해 API 보안 강화</li><li><strong>개발자 온보딩 주도</strong>, 신입 팀원 멘토링</li><li><strong>새로운 기술 스택을 빠르게 학습 및 적용</strong>하여 프로젝트 요구사항 충족</li>',
+              '<li><strong>백엔드 아키텍처 설계</strong>: Nest.js 기반 백엔드 구조 설계 및 REST API 아키텍처 구현, 유지보수성과 확장성을 고려한 서버 구조 설계</li><li><strong>API 최적화 및 Rate Limiting</strong>: Redis 캐싱 및 Rate Limiting 구조 적용을 통한 API 응답 성능 개선 및 트래픽 안정성 강화</li><li><strong>인증 및 보안 강화</strong>: JWT 기반 인증/인가 시스템 구축 및 GitHub Actions/Docker 환경 기반 보안 관리 체계 구성</li><li><strong>DevOps 및 배포 자동화</strong>: Jest 테스트 환경 및 CI/CD 파이프라인 설계를 통한 배포 자동화 및 운영 안정성 개선</li><li><strong>프론트엔드 아키텍처 설계</strong>: React/Next.js 기반 SPA 구축 및 Redux, TanStack Query, Zustand 기반 상태 관리 구조 설계</li><li><strong>협업 프로세스 개선</strong>: 신규 개발자 온보딩 및 협업 프로세스 개선을 통한 프로젝트 적응 속도 향상</li>',
             sherpasoftCareerOrg: '셀파 소프트',
             sherpasoftCareerStart: '7월 2023',
             sherpasoftCareerEnd: '3월 2024',
             sherpasoftCareerTitle: '풀스택 개발자',
             sherpasoftCareerDetail:
-              '<li><strong>내부 시스템 개선을 주도하여 회의 시간을 </strong>주간 4시간 → 1시간으로 단축. <strong>월 210 인력시간</strong> 절감</li><li>대규모 데이터 처리를 위한 <strong>Kafka 및 ActiveMQ 리서치 및 발표</strong>, 결과적으로 <strong>ActiveMQ</strong> 도입</li><li>다양한 팀과 협업하여 <strong>상충되는 요구사항 조율</strong> 및 솔루션 도출</li><li>대기업 고객사를 대상으로 하여 <strong>Java, Spring Boot, JSP</strong>를 활용한 데이터베이스 모니터링 시스템 개발</li><li><strong>PostgreSQL, Oracle, MySQL, MongoDB, MariaDB, SAP HANA</strong>등 다양한 DB 사용</li><li><strong>리눅스 서버 환경 관리</strong> 및 성능 최적화</li>',
+              '<li><strong>내부 시스템 개선을 주도하여 회의 시간을 </strong>주간 4시간 → 1시간으로 단축. <strong>월 210 인력시간</strong> 절감</li><li>대규모 데이터 처리를 위한 <strong>Kafka 및 ActiveMQ 리서치 및 발표</strong>, 결과적으로 <strong>ActiveMQ</strong> 도입</li><li>다양한 팀과 협업하여 <strong>상충되는 요구사항 조율</strong> 및 솔루션 도출</li><li>대기업 고객사를 대상으로 하여 <strong>Java, Spring Boot, JSP</strong>를 활용한 데이터베이스 모니터링 시스템 개발</li><li><strong>PostgreSQL, Oracle, MySQL, MongoDB, MariaDB, SAP HANA</strong> 등 다양한 DB 사용</li><li><strong>리눅스 서버 환경 관리</strong> 및 성능 최적화</li>',
             allraFinTechCareerOrg: '올라 핀테크',
             allraFinTechCareerStart: '6월 2023',
-            allraFinTechCareerEnd: '7월 2024',
+            allraFinTechCareerEnd: '7월 2023',
             allraFinTechCareerTitle: '풀스택 개발자 인턴',
             allraFinTechCareerDetail:
-              '<li>핀테크 결제 시스템을<strong> 1달만에</strong> 시뮬레이션하여 시연</li><li><strong>JUnit 5를 활용한 행동 주도 개발(BDD) </strong>테스트 실습</li><li><strong>시니어 개발자의 피드백을 수용 </strong> 및 코드 품질 향상 및 성장</li><li><strong>JSP, JavaScript, HTML/CSS (프론트엔드)</strong>와 <strong> Java, Spring Data JPA, MariaDB (백엔드)</strong> 사용</li><li>온라인 판매업체의 <strong>현금 흐름 문제 해결을 위한 금융 솔루션</strong> 이해</li><li>입사 후 <strong>한 달 내 기술 스택과 워크플로우에 빠르게 적응</strong></li>',
+              '<li><strong>결제 시스템 기능 개발</strong>: JSP 및 Spring Data JPA 기반 결제 시스템 기능 개발 및 유지보수 경험</li><li><strong>애자일 개발 경험</strong>: 1개월 단위 스프린트 환경에서 기능 개발 및 협업 경험 수행</li><li><strong>엔터프라이즈 아키텍처 학습</strong>: 시니어 개발자 코드 리뷰 및 피드백 기반 실무 아키텍처 패턴 학습</li>',
             multiCampusCareerOrg: '멀티캠퍼스 - 풀스택 개발자 부트캠프',
             multiCampusCareerStart: '1월 2023',
             multiCampusCareerEnd: '6월 2023',
             multiCampusCareerTitle: '학생',
             multiCampusCareerDetail:
-              '<li>넷플릭스 클론 앱인 <a target="_blank" href="https://net-flix-clone-dahee-kim.netlify.app/"><strong>Netflix And Chill</strong> 개발</a>(Full-Stack Developer)</li><li>웨딩 플래너 웹앱 <a target="_blank" href="https://weddingyou-dahee-kim.netlify.app/"><strong>Wedding You</strong> 개발</a>(Full-Stack Developer)</li><li>최신 기술을 적용하여 <strong> 애플리케이션 리팩토링</strong> (최근).</li><li><strong>두 개의 팀 프로젝트 리더</strong>로서 일정 관리 및 협업 주도</li><li><strong>React, Java, and Spring</strong>에 대한 멘토링 제공으로 팀 역량 향상</li>',
+              '<li>넷플릭스 클론 앱인 <a target="_blank" href="https://net-flix-clone-dahee-kim.netlify.app/"><strong>Netflix And Chill</strong> 개발</a>(Full-Stack Developer)</li><li>웨딩 플래너 웹앱 <a target="_blank" href="https://weddingyou-dahee-kim.netlify.app/"><strong>Wedding You</strong> 개발</a>(Full-Stack Developer)</li><li>최신 기술을 적용하여 <strong>애플리케이션 리팩토링</strong> (최근)</li><li><strong>두 개의 팀 프로젝트 리더</strong>로서 일정 관리 및 협업 주도</li><li><strong>React, Java, and Spring</strong>에 대한 멘토링 제공으로 팀 역량 향상</li>',
             samsungSDSCareerOrg: '삼성 SDS',
             samsungSDSCareerStart: '3월 2022',
             samsungSDSCareerEnd: '4월 2022',
             samsungSDSCareerTitle: '글로벌 소프트웨어 무역 인턴',
             samsungSDSCareerDetail:
-              '<li>호주의 <strong>IT 기반 물류 및 이커머스 트렌드 리서치 및 분석</strong></li><li><strong>AI 및 물류 솔루션</strong> 에 대한 조사</li><li>삼성 SDS의 <strong>물류 관리 시스템</strong>에 대한 이해</li><li><strong>소비자 행동, 온라인 플랫폼, 풀필먼트 서비스</strong> 에 대한 데이터 분석</li><li><strong>무역 자동화 및 실시간 추적 시스템 </strong>연구</li>',
+              '<li>호주의 <strong>IT 기반 물류 및 이커머스 트렌드 리서치 및 분석</strong></li><li><strong>AI 및 물류 솔루션</strong>에 대한 조사</li><li>삼성 SDS의 <strong>물류 관리 시스템</strong>에 대한 이해</li><li><strong>소비자 행동, 온라인 플랫폼, 풀필먼트 서비스</strong>에 대한 데이터 분석</li><li><strong>무역 자동화 및 실시간 추적 시스템</strong> 연구</li>',
             incheonNationalUniversityCareerOrg: '인천 대학교',
             incheonNationalUniversityCareerStart: '3월 2017',
             incheonNationalUniversityCareerEnd: '2월 2023',
             incheonNationalUniversityCareerTitle:
-              '인천대학교 학생 (영어 영문학 & 전자 공학 & 컴퓨터 공학)',
+              '인천대학교 학생 (영문학 & 전자공학 & 컴퓨터공학)',
             incheonNationalUniversityCareerDetail:
-              '<li>영문학 <strong>GPA 4.2/4.5</strong> 로 졸업</li><li>KH Coder를 활용한 <strong>코퍼스 데이터 분석 조교</strong> 로 활동</li><li>컴퓨터공학 심화과정 이수, <strong>복수전공 수준의 이론 습득</strong></li><li><strong>APYE (아시아태평양청년교류)  대회 우승, </strong> 다문화 아동을 위한 문화 교류 앱 </strong>개발</li>',
+              '<li><strong>영문학과 수석 졸업</strong>, 인문학 학장상 수상 (GPA 4.2/4.5)</li><li>KH Coder를 활용한 <strong>코퍼스 데이터 분석 조교</strong>로 활동</li><li>컴퓨터공학 심화과정 이수, <strong>복수전공 수준의 이론 습득</strong></li><li><strong>APYE(아시아태평양청년교류) 대회 우승</strong>, 다문화 아동을 위한 <strong>문화 교류 앱</strong> 개발</li>',
             techstack: '기술 스택',
             techstackDetail:
               '<p>이 블로그는 <a href="https://vercel.com/" target="_blank">Vercel</a>에 호스팅되어 있으며, <a href="https://nextjs.org/" target="_blank">Next.js</a>와 <a href="https://tailwindcss.com/" target="_blank">Tailwind CSS</a>로 제작되었고, <strong>Tailwind Nextjs Starter Blog</strong>를 기반으로 개발되었습니다.</p><p>이 블로그의 <a href="https://github.com/kimdahee0815/kimdahee0815.github.io" target="_blank">Github 저장소</a>도 확인해 보세요.</p>',
@@ -205,7 +219,7 @@ export const useLanguageStore = create<LanguageStore>()(
           books: {
             title: '책 목록',
             description1:
-              '<p>책 읽기를 좋아해서 매일 독서 습관을 유지하고 있습니다. 저는 매주 열리는 독서 모임의 활동적인 멤버이기도 해요📚. <br/><br/>예전에는 주로 소설을 읽었지만, 요즘은 다양한 장르를 즐기고 있으며 특히 논픽션, 기술, 과학, 자기 계발, 철학, 심리학, 역사, 예술 분야에 큰 흥미를 느끼고 있습니다.<br /><br/>이 공간에서는 저의 독서 기록과 앞으로 읽고 싶은 책 목록을 확인하실 수 있어요.</p>',
+              '<p>책 읽기를 좋아해서 매일 독서 습관을 유지하고 있습니다. 저는 매주 열리는 독서 모임의 활동적인 멤버이기도 해요📚. <br/><br/>예전에는 주로 소설을 읽었지만, 요즘은 특히 논픽션, 기술, 철학 분야에 큰 흥미를 느끼고 있습니다.<br /><br/>이 공간에서는 저의 독서 기록과 앞으로 읽고 싶은 책 목록을 확인하실 수 있어요.</p>',
             description2: '*자료 출처 ',
             description3: 'Goodreads Bookshelf',
             readingTime: '분',
@@ -249,8 +263,8 @@ export const useLanguageStore = create<LanguageStore>()(
           profile: {
             name: '김다희',
             intro: '스스로 길을 찾는 개발자 | 배움이 일상인 사람 | 호기심 많은 크리에이터',
-            title: '소프트웨어 엔지니어 @',
-            company: 'Thinkstorm',
+            title: '풀스택 개발자',
+            company: '',
             location: '인천, 대한민국',
           },
         },
@@ -258,12 +272,12 @@ export const useLanguageStore = create<LanguageStore>()(
           greeting: 'Hey, Everyone!',
           home: {
             intro1:
-              'I\'m <span className="font-medium">Dahee Kim</span> - a self-taught Software Engineer <span className="hidden font-medium">South Korea</span>',
+              'I\'m <span className="font-medium">someone who loves learning, building, and documenting ideas</span>. Software development is currently <span className="font-medium">the fastest way for me to turn ideas into reality</span>, and the field I\'m most excited to explore.',
             intro2:
-              '<p>Developer who values <b className="font-medium">curiosity, clarity, and compassion</b>.</p><p>Always curious about <b className="font-medium">how computers work</b> from the ground up and enjoy exploring the logic behind the scenes.</p><p>Thinking about logic isn\'t always easy, but the excitement you feel when you discover something meaningful is truly rewarding! 🤩😄</p><p>My main goal is to be a <b className="font-medium">developer & writer</b>, so I can share what I\'ve learned along the way and help others.</p><p>That\'s the main reason I created this blog.</p><p>I hope you find something helpful here!🔮</p><p>Thanks for visiting 🙏🏻 & Enjoy reading 😊</p>',
-            intro3: 'Happy Reading',
+              '<p>I believe <b className="font-medium">great developers are ultimately great problem solvers.</b></p><p>That\'s why I care not only about learning new technologies, but also about understanding <b className="font-medium">people, experiences, and ideas.</b></p><p>This blog is where I document what I learn, build, break, and discover along the way.</p><p>I hope it becomes an archive that reflects how I\'ve grown over time.</p><p>If something here gives you a new idea or helps you solve a problem, that would make me genuinely happy. ✨</p><p>Thanks for stopping by, and enjoy exploring. 😊</p>',
+            intro3: 'Enjoy exploring',
             typedbios:
-              '<li>I started to write my first code in <b className="font-medium">C</b>.</li><li>I relieve stress by <b className="font-medium">swimming, Zumba, and modeling classes</b>.</li><li>I love cats, but I have cat allergies😿.</li><li>I\'ve been in book club📚 for many years now!</li>',
+              '<li>I wrote my first lines of code in <b className="font-medium">C</b>.</li><li>I recharge through <b className="font-medium">a variety of activities</b>, including swimming, pole dancing, tango, and traveling.</li><li>I\'m a cat lover with the unfortunate bonus of cat allergies. 😿</li><li>I\'ve been a regular member of a <b className="font-medium">book club</b> for years! 📚</li>',
             links1: 'What have I built?',
             links2: 'My writings',
             links3: 'Snippets collection',
@@ -316,6 +330,7 @@ export const useLanguageStore = create<LanguageStore>()(
             categories7: 'CS & Fundamentals',
             categories8: 'Tools & Env',
             categories9: 'Tech News & Trends',
+            categories10: 'AI',
           },
           snippets: {
             title: 'Snippets',
@@ -331,66 +346,79 @@ export const useLanguageStore = create<LanguageStore>()(
             sideProjects: 'Side Projects',
             thinkstormTitle: 'ThinkStorm (Work In Progress)',
             thinkstormDescription:
-              'Full-stack collaboration platform empowering global developers to team up, build real projects, and grow skills.',
+              'Full-stack collaboration platform empowering global developers to team up, build real projects, and grow skills. I worked as a full-stack developer. On the backend, I designed and built Redis-based caching/rate-limiting, JWT authentication, and CI/CD pipelines; on the frontend, I built SPAs with React/Next.js and designed the state management architecture using Redux, TanStack Query, and Zustand.',
             natoursTitle: 'Natours',
             natoursDescription:
-              'Eco-tour booking system with payments, map-based exploration, admin dashboard, and transactional email support.',
+              'Eco-tour booking system with payments, map-based exploration, admin dashboard, and transactional email support. A solo project where I designed and built the entire stack, frontend to backend.',
             weddingyouTitle: 'Wedding You',
             weddingyouDescription:
-              'Wedding planning platform with client-planner matching, secure payments, real-time updates, and cloud hosting.',
+              'Wedding planning platform with client-planner matching, secure payments, real-time updates, and cloud hosting. I led this as team lead and full-stack developer, from planning through deployment.',
             netflixTitle: 'Netflix And Chill',
             netflixDescription:
-              'Netflix-inspired streaming platform with role-based auth, admin dashboard, dockerized backend, and movie discovery.',
+              'Netflix-inspired streaming platform with role-based auth, admin dashboard, dockerized backend, and movie discovery. I led this as team lead and full-stack developer, building out both the frontend and backend.',
             wetubeTitle: 'Wetube',
             wetubeDescription:
-              'YouTube-style video sharing site with video upload/playback, GitHub OAuth login, real-time commenting, and AWS S3 storage.',
+              'YouTube-style video sharing site with video upload/playback, GitHub OAuth login, real-time commenting, and AWS S3 storage. A solo project where I built both the frontend and backend myself.',
             forkifyTitle: 'Forkify',
             forkifyDescription:
-              'Minimalist frontend recipe finder with real-time search, bookmarks, and dynamic serving adjustments.',
+              'Minimalist frontend recipe finder with real-time search, bookmarks, and dynamic serving adjustments, built solo with vanilla JavaScript, including all UI and state management logic.',
             learnMore: 'Learn More',
             builtWith: 'Stack',
           },
           about: {
             title: 'About',
             description:
-              "Hey there! This is just a little bit about who I am, what I\'m usually up to, and why I decided to start rambling on this blog. Think of it as a quick \'hi\' from the person behind all these posts. 😄",
+              "Hey there! This is a space where I share who I am, how I think about development, and the story behind why I started this blog. Feel free to look around, and I'd love for you to walk away thinking, 'huh, so this is the person behind these posts.' 😄",
             greeting1: 'Hey, Everyone!',
             greeting2: "I'm Dahee Kim",
             intro1:
-              "A self-taught software engineer based in <strong>Incheon, South Korea</strong>. I'm deeply passionate about both <strong>frontend</strong> and <strong>backend</strong> development, and I also have a growing fascination with how artificial intelligence bridges the gap between human language and computers.",
+              "I'm a software engineer who loves creating better experiences for users. I enjoy working on both frontend and backend development, and what excites me most is learning new technologies and building things with them. I'm especially fascinated by how AI understands human language and connects it with computers.",
             intro2:
-              'I began coding in 2017, the year I started college. Through an unexpected turn of events(which can be very long to explain here 😅), I found myself curious about how computers work <em>from the ground up</em>. So I decided to pursue Computer Science alongside my main field of study. In 2023, I landed my first job as a Full-Stack Developer!',
+              'The reason I got into development is a bit unusual. I originally majored in English Literature, drawn to how learning a language broadens your view of the world and lets you connect with more people. From there, I naturally started wondering, "Could technology help close the gap between languages?" That curiosity led me to want to build programs that connect language and computers myself, so I started coding. I began studying development in 2017, and I\'ve been growing ever since into a developer who builds services that genuinely help people.',
             intro3:
-              "I'm currently working on the <strong>ThinkStorm Project</strong> while diving deeper into <strong>Next.js</strong>, <strong>Nest.js</strong>, <strong>DevOps</strong>, and <strong>System Design</strong>.",
+              "Most recently, I gained hands-on experience at Furence, working on backend development for LG U+'s call recording system, and led a team as both team lead and backend/MCP server developer in an AI Service Developer Program with MCP. I'm especially interested in combining AI with web development, and I'm continuing to study <strong>Next.js</strong>, <strong>Nest.js</strong>, <strong>DevOps</strong>, and <strong>System Design</strong> as I think about how to build better services.",
             intro4:
-              'This blog is my digital lab where I document things I learn, build, and break. Writing helps me think clearly, solve problems better, and connect with other curious developers like you. 😊',
-            intro5: 'I would greatly appreciate any comments and thoughts on my posts',
+              "This blog is where I record what I've learned, built, wrestled with, and sometimes failed at along the way. Writing has helped me organize my thoughts and remember what I've learned for longer, and I hope these posts can be a small help to other developers working through similar questions.",
+            intro5:
+              "If anything you read here sparks a question or something you'd like to chat about, feel free to leave a comment anytime. 😊",
             mycareer: 'My Career',
             resume: 'Resume',
+            aiProgramCareerOrg: 'DMC Conet',
+            aiProgramCareerStart: 'Apr 2026',
+            aiProgramCareerEnd: 'Jul 2026',
+            aiProgramCareerTitle: 'AI Service Developer Program with MCP',
+            aiProgramCareerDetail:
+              '<li><strong>Prompt engineering</strong></li><li>Building <strong>LLM applications with LangChain</strong></li><li>Implementing a <strong>RAG-based document search chatbot</strong></li><li><strong>AI backend development with FastAPI</strong></li>',
+            furenceCareerOrg: 'Furence',
+            furenceCareerStart: 'Nov 2025',
+            furenceCareerEnd: 'Jan 2026',
+            furenceCareerTitle: 'Backend Developer',
+            furenceCareerDetail:
+              "<li><strong>Backend Architecture & Security:</strong> Designed backend architecture for LG U+'s call recording system and implemented user/permission verification logic, strengthening system security.</li><li><strong>Large-File Processing Pipeline:</strong> Built a large-scale audio upload and processing pipeline based on TUS, enabling stable file handling at scale.</li><li><strong>REST API Development & Reliability:</strong> Designed REST APIs for call recording history management, implemented metadata validation logic, and improved exception handling to strengthen system stability.</li><li><strong>AI Contact Center & STT Integration:</strong> Supported AI contact center features built on an STT-based call processing workflow, collaborating with the product team on security and compliance requirements.</li>",
             thinkstormCareerOrg: 'Thinkstorm',
             thinkstormCareerStart: 'Mar 2024',
-            thinkstormCareerEnd: 'Present',
+            thinkstormCareerEnd: 'Oct 2025',
             thinkstormCareerTitle: 'Full-Stack Developer',
             thinkstormCareerDetail:
-              '<li>Designed and implemented <strong>Redis-based rate-limiting and caching systems</strong>, enhancing application security and performance.</li><li>Configured <strong>CI/CD pipelines</strong> incorporating <strong>Jest testing</strong> for streamlined deployment processes.</li><li>Built <strong>JWT authentication systems</strong> to secure application endpoints.</li><li><strong>Led developer onboarding</strong> processes and mentored new team members.</li><li><strong>Rapidly learned and implemented unfamiliar technologies</strong> to meet project requirements.</li>',
+              '<li><strong>Backend Architecture Design:</strong> Designed backend structure and REST API architecture on Nest.js, prioritizing maintainability and scalability.</li><li><strong>API Optimization & Rate Limiting:</strong> Applied Redis caching and rate limiting to improve API response performance and strengthen traffic stability.</li><li><strong>Authentication & Security:</strong> Built a JWT-based authentication/authorization system and established a security management process using GitHub Actions and Docker.</li><li><strong>DevOps & Deployment Automation:</strong> Designed a Jest-based testing environment and CI/CD pipeline to automate deployments and improve operational stability.</li><li><strong>Frontend Architecture Design:</strong> Built SPAs with React/Next.js and designed state management architecture using Redux, TanStack Query, and Zustand.</li><li><strong>Collaboration Process Improvement:</strong> Improved onboarding and collaboration processes for new developers, accelerating their ramp-up on the project.</li>',
             sherpasoftCareerOrg: 'Sherpasoft',
             sherpasoftCareerStart: 'Jul 2023',
             sherpasoftCareerEnd: 'Mar 2024',
             sherpasoftCareerTitle: 'Full-Stack Developer',
             sherpasoftCareerDetail:
-              '<li><strong>Spearheaded internal system improvements</strong>, reducing weekly meeting time from 4 to 1 hour and saving <strong>210 person-hours monthly</strong>.</li><li>Researched and presented <strong>Kafka and Active MQ implementation</strong> for large scale dataprocessing, resulting in adoption of <strong>ActiveMQ</strong>.</li><li>Collaborated with cross-functional teams to resolve <strong>conflicting requirements</strong> and facilitate consensus based solutions.</li><li>Developed <strong>database monitoring systems</strong> using <strong>Java, Spring Boot, and JSP</strong> for enterprise clients.</li><li>Worked with <strong>PostgreSQL, Oracle, MySQL, MongoDB, MariaDB, SAP HANA</strong>.</li><li>Managed <strong>Linux server environments</strong> for database monitoring andperformance optimization.</li>',
+              '<li><strong>Spearheaded internal system improvements</strong>, reducing weekly meeting time from 4 to 1 hour and saving <strong>210 person-hours monthly</strong>.</li><li>Researched and presented <strong>Kafka and Active MQ implementation</strong> for large scale data processing, resulting in adoption of <strong>ActiveMQ</strong>.</li><li>Collaborated with cross-functional teams to resolve <strong>conflicting requirements</strong> and facilitate consensus based solutions.</li><li>Developed <strong>database monitoring systems</strong> using <strong>Java, Spring Boot, and JSP</strong> for enterprise clients.</li><li>Worked with <strong>PostgreSQL, Oracle, MySQL, MongoDB, MariaDB, SAP HANA</strong>.</li><li>Managed <strong>Linux server environments</strong> for database monitoring and performance optimization.</li>',
             allraFinTechCareerOrg: 'Allra Fin-Tech',
             allraFinTechCareerStart: 'Jun 2023',
-            allraFinTechCareerEnd: 'Jul 2024',
+            allraFinTechCareerEnd: 'Jul 2023',
             allraFinTechCareerTitle: 'Full-Stack Developer Intern',
             allraFinTechCareerDetail:
-              "<li>Contributed to <strong>fintech payment processing systems</strong> within a professional development environment.</li><li>Practiced <strong>behavior-driven development</strong> using <strong>JUnit 5</strong>.</li><li><strong>Incorporated feedback from senior developers</strong> to improve code quality and grow professional practices.</li><li><strong>Quickly adapted</strong> to the company's tech stack and development workflows within one month.</li><li>Worked with <strong>JSP, JavaScript, HTML/CSS</strong> (frontend) and <strong>Java, Spring Data JPA, MariaDB</strong> (backend).</li><li>Observed how <strong>financial solutions</strong> help online retailers solve <strong>cash flow challenges</strong>.</li>",
+              '<li><strong>Payment System Development:</strong> Developed and maintained payment system features using JSP and Spring Data JPA.</li><li><strong>Agile Development Experience:</strong> Developed features and collaborated with the team in a one-month sprint cycle.</li><li><strong>Enterprise Architecture Learning:</strong> Learned practical architecture patterns through senior developer code reviews and feedback.</li>',
             multiCampusCareerOrg: 'MultiCampus - Full Stack Developer Bootcamp',
             multiCampusCareerStart: 'Jan 2023',
             multiCampusCareerEnd: 'Jun 2023',
             multiCampusCareerTitle: 'Student at Multicampus',
             multiCampusCareerDetail:
-              '<li>Built <a target="_blank" href="https://net-flix-clone-dahee-kim.netlify.app/"><strong>Netflix And Chill</strong></a>(Full-Stack Developer)</li><li>Built <a target="_blank" href="https://weddingyou-dahee-kim.netlify.app/"><strong>Wedding You</strong></a>(Full-Stack Developer)</li><li>Refactored both applications by <strong>integrating newly gained knowledge</strong> and <strong>applying best practices</strong> (Recent).</li><li><strong>Led two team projects</strong> as team leader, ensuring timely delivery and collaboration.</li><li><strong>Mentored team members</strong> in <strong>React, Java, and Spring</strong>, boosting team performance.</li>',
+              '<li>Built <a target="_blank" href="https://net-flix-clone-dahee-kim.netlify.app/"><strong>Netflix And Chill</strong></a> (Full-Stack Developer)</li><li>Built <a target="_blank" href="https://weddingyou-dahee-kim.netlify.app/"><strong>Wedding You</strong></a> (Full-Stack Developer)</li><li>Refactored both applications by <strong>integrating newly gained knowledge</strong> and <strong>applying best practices</strong> (Recent).</li><li><strong>Led two team projects</strong> as team leader, ensuring timely delivery and collaboration.</li><li><strong>Mentored team members</strong> in <strong>React, Java, and Spring</strong>, boosting team performance.</li>',
             samsungSDSCareerOrg: 'Samsung SDS',
             samsungSDSCareerStart: 'Mar 2022',
             samsungSDSCareerEnd: 'Apr 2022',
@@ -403,7 +431,7 @@ export const useLanguageStore = create<LanguageStore>()(
             incheonNationalUniversityCareerTitle:
               'Student at INU (English Literature & Electronics Engineering & Computer Engineering)',
             incheonNationalUniversityCareerDetail:
-              '<li>Graduated with a <strong>GPA of 4.2/4.5</strong> in <strong>English Literature</strong></li><li>Worked as a <strong>Corpus Professor Assistant</strong> using KH Coder for <strong>data analysis</strong>.</li><li>Completed <strong>extensive coursework in Computer Engineering</strong>, effectively equivalent to a double major.</li><li>Won the <strong>APYE (Asia Pacific Youth Exchange)</strong> competition; developed a <strong>cultural exchange app</strong> to help multicultural children in Korea.</li>',
+              "<li>Graduated <strong>at the top of the department</strong> and received the <strong>Dean's Award for the College of Humanities</strong> (GPA 4.2/4.5)</li><li>Worked as a <strong>Corpus Professor Assistant</strong> using KH Coder for <strong>data analysis</strong>.</li><li>Completed <strong>extensive coursework in Computer Engineering</strong>, effectively equivalent to a double major.</li><li>Won the <strong>APYE (Asia Pacific Youth Exchange)</strong> competition; developed a <strong>cultural exchange app</strong> to help multicultural children in Korea.</li>",
             techstack: 'Tech Stack',
             techstackDetail:
               '<p>This blog is hosted on <a href="https://vercel.com/" target="_blank">Vercel</a>, built with <a href="https://nextjs.org/" target="_blank">Next.js</a> and <a href="https://tailwindcss.com/" target="_blank">Tailwind CSS</a> using <strong>Tailwind Nextjs Starter Blog</strong>.</p><p>See my <a href="https://github.com/kimdahee0815/kimdahee0815.github.io" target="_blank">Github repository</a> for this blog.</p>',
@@ -413,12 +441,12 @@ export const useLanguageStore = create<LanguageStore>()(
             assetsDetail2: 'Thanks for the free resources ',
             contact: 'Contact',
             contactDetail:
-              'Reach out to me at <a href={`mailto:$kimdahee0815@gmail.com`}>kimdahee0815@gmail.com</a> or find me on social media:',
+              'Reach out to me at <a href="mailto:kimdahee0815@gmail.com">kimdahee0815@gmail.com</a> or find me on social media:',
           },
           books: {
             title: 'Books',
             description1:
-              '<p>A lifelong love for books drives my daily reading habit. I\'m also a long-time member of a weekly book club 📚. <br/><br/>While novels were once my main focus, I now appreciate a wide array of genres, with a particular fondness for non-fiction, technology, science, productivity, philosophy, psychology, history, art these days.<br /><br/>Here, you\'ll find my reading log and my ever-growing "to-read" list.</p>',
+              "<p>A lifelong love for books drives my daily reading habit. I'm also a long-time member of a weekly book club 📚. <br/><br/>While novels were once my main focus, these days I'm especially drawn to non-fiction, technology, and philosophy.<br /><br/>Here, you'll find my reading log and my ever-growing \"to-read\" list.</p>",
             description2: '*Data pulled from my ',
             description3: 'Goodreads Bookshelf',
             readingTime: 'mins read',
@@ -430,7 +458,7 @@ export const useLanguageStore = create<LanguageStore>()(
           movies: {
             title: 'Movies',
             description1:
-              "<p>This is where I log of all the films and series I've seen. Being a big fan of Christopher Nolan and Jim Carrey, their work often tops my list! <br/>A 10-star rating means I consider it an absolute masterpiece, something I've probably seen many times or truly love (consider it a strong recommendation!).<br/><br/>My favorite genres lean towards fantasy, adventure, and detective stories, and I'm always up for sci-fi (but definitely no horror!). When I need to unwind, my go-to is usually a spontaneous trip to the cinema. <br/><br/>Take a look, maybe you'll find your next favorite film! 🤩🎞️🍿</p>",
+              "<p>This is where I log all the films and series I've seen. Being a big fan of Christopher Nolan and Jim Carrey, their work often tops my list! <br/>A 10-star rating means I consider it an absolute masterpiece, something I've probably seen many times or truly love (consider it a strong recommendation!).<br/><br/>My favorite genres lean towards fantasy, adventure, and detective stories, and I'm always up for sci-fi (but definitely no horror!). When I need to unwind, my go-to is usually a spontaneous trip to the cinema. <br/><br/>Take a look, maybe you'll find your next favorite film! 🤩🎞️🍿</p>",
             description2: '*Data is exported from my ',
             description3: 'IMDB ratings list',
             description4: ', with extra details pulled in from the ',
@@ -439,7 +467,7 @@ export const useLanguageStore = create<LanguageStore>()(
             rates2: 'Recommended',
             rates3: 'Good',
             rates4: 'Okay / Not Bad',
-            rates5: 'I Don’t Like',
+            rates5: 'Not for Me',
             types1: 'All',
             types2: 'Movie',
             types3: 'TV Series',
@@ -462,8 +490,8 @@ export const useLanguageStore = create<LanguageStore>()(
           profile: {
             name: 'Dahee Kim',
             intro: 'Self-Taught Developer | Learner | Creator',
-            title: 'Full-Stack Developer @',
-            company: 'Thinkstorm',
+            title: 'Full-Stack Developer',
+            company: '',
             location: 'Incheon, South Korea',
           },
         },
