@@ -5,8 +5,9 @@ import type { LinkProps } from 'next/link'
 import type { AnchorHTMLAttributes } from 'react'
 import clsx from 'clsx'
 
-type Props = LinkProps &
-  AnchorHTMLAttributes<HTMLAnchorElement> & {
+type Props = Omit<LinkProps, 'href'> &
+  Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'href'> & {
+    href?: string
     inline?: boolean
   }
 

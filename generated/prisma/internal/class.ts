@@ -11,7 +11,7 @@
  */
 
 import * as runtime from '@prisma/client/runtime/client'
-import type * as Prisma from './prismaNamespace.js'
+import type * as Prisma from './prismaNamespace'
 
 const config: runtime.GetPrismaClientConfig = {
   previewFeatures: [],
@@ -19,7 +19,7 @@ const config: runtime.GetPrismaClientConfig = {
   engineVersion: '3c6e192761c0362d496ed980de936e2f3cebcd3a',
   activeProvider: 'postgresql',
   inlineSchema:
-    '// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\ngenerator client {\n  provider = "prisma-client"\n  output   = "../generated/prisma"\n}\n\ndatasource db {\n  provider = "postgresql"\n}\n\nenum StatsType {\n  blog\n  snippet\n}\n\nmodel Stats {\n  type      StatsType @default(blog)\n  slug      String    @db.VarChar(255)\n  views     Int       @default(0)\n  loves     Int       @default(0)\n  applauses Int       @default(0)\n  ideas     Int       @default(0)\n  bullseye  Int       @default(0)\n\n  @@id([type, slug])\n  @@map("stats")\n}\n',
+    '// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\ngenerator client {\n  provider            = "prisma-client"\n  output              = "../generated/prisma"\n  importFileExtension = ""\n}\n\ndatasource db {\n  provider = "postgresql"\n}\n\nenum StatsType {\n  blog\n  snippet\n}\n\nmodel Stats {\n  type      StatsType @default(blog)\n  slug      String    @db.VarChar(255)\n  views     Int       @default(0)\n  loves     Int       @default(0)\n  applauses Int       @default(0)\n  ideas     Int       @default(0)\n  bullseye  Int       @default(0)\n\n  @@id([type, slug])\n  @@map("stats")\n}\n',
   runtimeDataModel: {
     models: {},
     enums: {},
