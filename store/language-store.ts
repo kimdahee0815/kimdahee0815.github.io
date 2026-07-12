@@ -50,7 +50,7 @@ export const useLanguageStore = create<LanguageStore>()(
               '<p>저는 <b className="font-medium">좋은 개발자는 결국 좋은 문제 해결사</b>라고 생각합니다.</p><p>그래서 새로운 기술뿐 아니라 <b className="font-medium">사람, 경험, 생각</b>을 배우는 일도 중요하게 여기고 있습니다.</p><p>이 블로그는 제가 배우고, 만들고, 실패하고, 또다시 배우며 얻은 기록들을 차곡차곡 남기는 공간입니다.</p><p>제가 남긴 기록들이 누군가의 다음 시작에 작은 영감이 된다면 그것만으로도 제게는 충분히 의미가 있을 것 같습니다. ✨</p><p>그럼 천천히 둘러보시고, 편하게 읽어주세요! 😊</p>',
             intro3: '오늘도 멋진 하루 보내세요',
             typedbios:
-              '<li>제가 처음 코딩을 시작한 언어는 <b className="font-medium">C</b>예요.</li><li>저는 스트레스를 <b className="font-medium">수영, 모델수업, 댄스, 여행과 같은 다양한 활동</b>으로 풀어요!</li><li>고양이를 사랑하지만, 고양이 알러지가 있어요😿.</li><li>책을 좋아해 독서모임📚 활동을 한지 꽤 오래되었어요!</li>',
+              '<li>제가 처음 코딩을 시작한 언어는 <b className="font-medium">C</b>예요.</li><li>저는 스트레스를 <b className="font-medium">수영, 모델수업, 댄스, 여행</b>으로 풀어요!</li><li>고양이를 사랑하지만, 고양이 알러지가 있어요😿.</li><li>책을 좋아해 독서모임📚 활동을 한지 꽤 오래되었어요!</li>',
             links1: '나의 프로젝트들',
             links2: '내가 쓴 게시글들',
             links3: '코드 스니펫 모음',
@@ -277,7 +277,7 @@ export const useLanguageStore = create<LanguageStore>()(
               '<p>I believe <b className="font-medium">great developers are ultimately great problem solvers.</b></p><p>That\'s why I care not only about learning new technologies, but also about understanding <b className="font-medium">people, experiences, and ideas.</b></p><p>This blog is where I document what I learn, build, break, and discover along the way.</p><p>If something here gives you a new idea or helps you solve a problem, that would make me genuinely happy. ✨</p><p>Thanks for stopping by, and enjoy exploring. 😊</p>',
             intro3: 'Enjoy exploring',
             typedbios:
-              '<li>I wrote my first lines of code in <b className="font-medium">C</b>.</li><li>I recharge through <b className="font-medium">a variety of activities</b>, including swimming, model classes, dancing, and traveling.</li><li>I\'m a cat lover with the unfortunate bonus of cat allergies. 😿</li><li>I\'ve been a regular member of a <b className="font-medium">book club</b> for years! 📚</li>',
+              '<li>I wrote my first lines of code in <b className="font-medium">C</b>.</li><li>I recharge through <b className="font-medium">swimming, model classes, dancing, and traveling.</b></li><li>I\'m a cat lover with the unfortunate bonus of cat allergies. 😿</li><li>I\'ve been a regular member of a <b className="font-medium">book club</b> for years! 📚</li>',
             links1: 'What have I built?',
             links2: 'My writings',
             links3: 'Snippets collection',
@@ -340,7 +340,7 @@ export const useLanguageStore = create<LanguageStore>()(
           projects: {
             title: 'Projects',
             description:
-              'This is a showcase of full-stack / frontend web applications I built. Each project is either fully deployed or presented with a preview and source code.',
+              'This is a showcase of full-stack web applications I built. Each project is either fully deployed or presented with a preview and source code.',
             portfolio: 'View Full Portfolio',
             work: 'Work',
             sideProjects: 'Side Projects',
