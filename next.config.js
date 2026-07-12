@@ -93,6 +93,33 @@ module.exports = () => {
         },
       ]
     },
+    turbopack: {
+      resolveExtensions: ['.tsx', '.ts', '.jsx', '.js', '.mjs', '.json'],
+      rules: {
+        '*.svg': {
+          loaders: [
+            {
+              loader: '@svgr/webpack',
+              options: {
+                svgoConfig: {
+                  plugins: [
+                    {
+                      name: 'prefixIds',
+                      params: {
+                        delim: '__',
+                        prefixIds: true,
+                        prefixClassNames: true,
+                      },
+                    },
+                  ],
+                },
+              },
+            },
+          ],
+          as: '*.js',
+        },
+      },
+    },
     webpack: (config) => {
       config.resolve.extensionAlias = {
         '.js': ['.js', '.ts', '.tsx'],
