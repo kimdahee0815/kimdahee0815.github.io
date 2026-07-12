@@ -26,6 +26,34 @@ export function CareerTimeline() {
   const t = (key: string) => getTranslation(translations[language], key)
   const EXPERIENCES = [
     {
+      org: t('about.aiProgramCareerOrg'),
+      url: 'https://www.dmcportal.kr/',
+      logo: '/static/images/dmc_conet_logo.webp',
+      start: t('about.aiProgramCareerStart'),
+      end: t('about.aiProgramCareerEnd'),
+      title: t('about.aiProgramCareerTitle'),
+      icon: 'man-student',
+      event: 'career-AIProgram',
+      details: () => {
+        return (
+          <ul className="[&>li]:my-2 [&>li]:pl-0">{parse(t('about.aiProgramCareerDetail'))}</ul>
+        )
+      },
+    },
+    {
+      org: t('about.furenceCareerOrg'),
+      url: 'https://furence.com/',
+      logo: '/static/images/furence_logo.webp',
+      start: t('about.furenceCareerStart'),
+      end: t('about.furenceCareerEnd'),
+      title: t('about.furenceCareerTitle'),
+      icon: 'man-technologist',
+      event: 'career-Furence',
+      details: () => {
+        return <ul className="[&>li]:my-2 [&>li]:pl-0">{parse(t('about.furenceCareerDetail'))}</ul>
+      },
+    },
+    {
       org: t('about.thinkstormCareerOrg'),
       url: 'https://thinkstorm.app',
       logo: '/static/images/think_storm_logo.jpg',
