@@ -418,7 +418,7 @@ export const useLanguageStore = create<LanguageStore>()(
             multiCampusCareerEnd: 'Jun 2023',
             multiCampusCareerTitle: 'Student at Multicampus',
             multiCampusCareerDetail:
-              '<li>Built <a target="_blank" href="https://net-flix-clone-dahee-kim.netlify.app/"><strong>Netflix And Chill</strong></a> (Full-Stack Developer)</li><li>Built <a target="_blank" href="https://weddingyou-dahee-kim.netlify.app/"><strong>Wedding You</strong></a> (Full-Stack Developer)</li><li>Refactored both applications by <strong>integrating newly gained knowledge</strong> and <strong>applying best practices</strong> (Recent).</li><li><strong>Led two team projects</strong> as team leader, ensuring timely delivery and collaboration.</li><li><strong>Mentored team members</strong> in <strong>React, Java, and Spring</strong>, boosting team performance.</li>',
+              '<li>Built <a target="_blank" href="https://net-flix-and-chill.netlify.app/"><strong>Netflix And Chill</strong></a> (Full-Stack Developer)</li><li>Built <a target="_blank" href="https://weddingyou-dahee-kim.netlify.app/"><strong>Wedding You</strong></a> (Full-Stack Developer)</li><li>Refactored both applications by <strong>integrating newly gained knowledge</strong> and <strong>applying best practices</strong> (Recent).</li><li><strong>Led two team projects</strong> as team leader, ensuring timely delivery and collaboration.</li><li><strong>Mentored team members</strong> in <strong>React, Java, and Spring</strong>, boosting team performance.</li>',
             samsungSDSCareerOrg: 'Samsung SDS',
             samsungSDSCareerStart: 'Mar 2022',
             samsungSDSCareerEnd: 'Apr 2022',
