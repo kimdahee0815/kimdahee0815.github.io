@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from 'react'
 
 import { useBlogStats, useUpdateBlogStats } from 'hooks'
 
-import { type Stats, StatsType } from '@prisma/client'
+import { type Stats, StatsType } from '~/generated/prisma/browser'
 
 import { Twemoji } from '~/components/ui/twemoji'
 

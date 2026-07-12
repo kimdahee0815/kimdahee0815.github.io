@@ -3,7 +3,7 @@
 import type readingTime from 'reading-time'
 import { formatDate, getTimeAgo } from '~/utils/misc'
 import { ViewsCounter } from './views-counter'
-import { StatsType } from '@prisma/client'
+import { StatsType } from '~/generated/prisma/browser'
 import { Twemoji } from '~/components/ui/twemoji'
 import { useLanguageStore, getTranslation } from '~/store/language-store'
 

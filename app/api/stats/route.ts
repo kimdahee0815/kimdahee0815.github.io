@@ -1,6 +1,6 @@
 import type { NextRequest } from 'next/server'
 
-import type { Stats, StatsType } from '@prisma/client'
+import type { Stats, StatsType } from '~/generated/prisma/client'
 
 import prisma from '~/servers/prisma.server'
 

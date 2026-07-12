@@ -94,6 +94,10 @@ module.exports = () => {
       ]
     },
     webpack: (config) => {
+      config.resolve.extensionAlias = {
+        '.js': ['.js', '.ts', '.tsx'],
+      }
+
       config.module.rules.push({
         test: /\.svg$/,
         use: [
