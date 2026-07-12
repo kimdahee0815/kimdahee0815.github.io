@@ -281,9 +281,8 @@ type NoExpand<T> = T extends unknown ? T : never
 // this type assumes the passed object is entirely optional
 export type AtLeast<O extends object, K extends string> = NoExpand<
   O extends unknown
-    ?
-        | (K extends keyof O ? { [P in K]: O[P] } & O : O)
-        | ({ [P in keyof O as P extends K ? P : never]-?: O[P] } & O)
+    ? | (K extends keyof O ? { [P in K]: O[P] } & O : O)
+      | ({ [P in keyof O as P extends K ? P : never]-?: O[P] } & O)
     : never
 >
 
@@ -380,11 +379,10 @@ export const ModelName = {
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
 
-export interface TypeMapCb<GlobalOmitOptions = {}>
-  extends runtime.Types.Utils.Fn<
-    { extArgs: runtime.Types.Extensions.InternalArgs },
-    runtime.Types.Utils.Record<string, any>
-  > {
+export interface TypeMapCb<GlobalOmitOptions = {}> extends runtime.Types.Utils.Fn<
+  { extArgs: runtime.Types.Extensions.InternalArgs },
+  runtime.Types.Utils.Record<string, any>
+> {
   returns: TypeMap<this['params']['extArgs'], GlobalOmitOptions>
 }
 
