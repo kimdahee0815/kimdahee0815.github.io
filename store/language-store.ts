@@ -151,7 +151,7 @@ export const useLanguageStore = create<LanguageStore>()(
             intro3:
               '최근에는 <b className="font-medium">퓨렌스에서 LG U+ 녹취 시스템 백엔드 개발</b>에 참여하며 실무 경험을 쌓았고, <b className="font-medium">MCP를 활용한 AI 서비스 개발자 양성과정</b>에서 팀 리더와 백엔드·MCP 서버 개발을 맡아 프로젝트를 진행했습니다. AI와 웹 기술을 함께 활용하는 개발에 관심이 많으며, 지금도 <b className="font-medium">Next.js, Nest.js, DevOps, 시스템 설계</b> 등을 꾸준히 공부하며 더 나은 서비스를 만드는 방법을 고민하고 있습니다.',
             intro4:
-              '이 블로그는 제가 <b className="font-medium">배우고, 만들고, 고민하고, 때로는 실패하면서</b> 얻은 경험들을 기록하는 공간입니다. 글을 쓰는 과정에서 생각을 정리하고 배운 내용을 오래 기억할 수 있었고, <b className="font-medium">같은 고민을 하는 개발자들에게도 작은 도움</b>이 되었으면 하는 마음으로 하나씩 기록을 남기고 있습니다.',
+              '이 블로그는 제가 <b className="font-medium">배우고, 만들고, 고민하고, 때로는 실패하면서</b> 얻은 경험들을 기록하는 공간입니다. 제가 지금까지 글을 쓰면서 깨닫은 것은 글은 생각을 정리하고 배운 내용을 오래 기억할 수 있게 해준다는 것이었습니다. 그래서 <b className="font-medium">같은 고민을 하는 개발자들에게도 작은 도움</b>이 되었으면 하는 마음으로 하나씩 기록을 남기고 있습니다.',
             intro5:
               '혹시 글을 읽으며 궁금한 점이나 함께 이야기하고 싶은 주제가 있다면 언제든 편하게 댓글을 남겨주세요. 😊',
             mycareer: '경력',
@@ -274,10 +274,10 @@ export const useLanguageStore = create<LanguageStore>()(
             intro1:
               '<p><span className="font-medium">Living life doing what I love, anywhere in the world.</span></p><p>I\'m <span className="font-medium">Dahee Kim</span>, a developer who loves learning, building, and documenting in pursuit of that goal.</p>',
             intro2:
-              '<p>I believe <b className="font-medium">great developers are ultimately great problem solvers.</b></p><p>That\'s why I care not only about learning new technologies, but also about understanding <b className="font-medium">people, experiences, and ideas.</b></p><p>This blog is where I document what I learn, build, break, and discover along the way.</p><p>If something here gives you a new idea or helps you solve a problem, that would make me genuinely happy. ✨</p><p>Thanks for stopping by, and enjoy exploring. 😊</p>',
+              '<p>I believe <b className="font-medium">great developers are ultimately great problem solvers.</b></p><p>That\'s why I care not only about learning new technologies, but also about understanding <b className="font-medium">people, experiences, and ideas.</b></p><p>This blog is where I document what I learn, build, break, and discover along the way.</p><p>If what I leave here becomes a small spark for someone\'s next beginning, that alone would mean a lot to me. ✨</p><p>Thanks for stopping by, and enjoy exploring. 😊</p>',
             intro3: 'Enjoy exploring',
             typedbios:
-              '<li>I wrote my first lines of code in <b className="font-medium">C</b>.</li><li>I recharge through <b className="font-medium">swimming, model classes, dancing, and traveling.</b></li><li>I\'m a cat lover with the unfortunate bonus of cat allergies. 😿</li><li>I\'ve been a regular member of a <b className="font-medium">book club</b> for years! 📚</li>',
+              '<li>I wrote my first lines of code in <b className="font-medium">C</b>.</li><li>I recharge through <b className="font-medium">swimming, model classes, dancing, and traveling</b>.</li><li>I\'m a cat lover with the unfortunate bonus of cat allergies. 😿</li><li>I\'ve been a regular member of a <b className="font-medium">book club</b> for years! 📚</li>',
             links1: 'What have I built?',
             links2: 'My writings',
             links3: 'Snippets collection',
@@ -335,7 +335,7 @@ export const useLanguageStore = create<LanguageStore>()(
           snippets: {
             title: 'Snippets',
             description:
-              '<p>This is where I keep my favorite, easy-to-use code snippets. They\'re all about efficiency and reusability. Go ahead and take what you need, customize it, and put it to work.</p><p className="mt-3 italic">Credit goes to both my own coding sessions and the collaborative spirit of the internet\'s open-source contributors.</p>',
+              "<p>This is where I keep my favorite, easy-to-use code snippets. They're all about efficiency and reusability. Go ahead and take what you need, customize it, and put it to work.</p>",
           },
           projects: {
             title: 'Projects',
