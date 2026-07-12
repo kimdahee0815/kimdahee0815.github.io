@@ -45,12 +45,12 @@ export const useLanguageStore = create<LanguageStore>()(
           greeting: '안녕하세요!',
           home: {
             intro1:
-              '저는 <span className="font-medium">배우고, 만들고, 기록하는 것</span>을 좋아합니다. 개발은 지금의 저에게 <span className="font-medium">아이디어를 가장 빠르게 현실로 만드는 길</span>이자, 가장 재미있게 몰입하고 있는 분야입니다.',
+              '<p><span className="font-medium">세상 어디에서든 좋아하는 일을 하며 살아가는 것.</span></p><p>그 목표를 향해 배우고, 만들고, 기록하는 것을 좋아하는 개발자, <span className="font-medium">김다희</span>입니다.</p><p>개발은 지금의 저에게 <span className="font-medium">아이디어를 가장 빠르게 현실로 만드는 길</span>이자, 제가 가장 재미있게 몰입하고 있는 분야입니다.</p>',
             intro2:
-              '<p>저는 <b className="font-medium">좋은 개발자는 결국 좋은 문제 해결사</b>라고 생각합니다.</p><p>그래서 새로운 기술뿐 아니라 <b className="font-medium">사람, 경험, 생각</b>을 배우는 일도 중요하게 여기고 있습니다.</p><p>이 블로그는 제가 배우고, 만들고, 실패하고, 또다시 배우며 얻은 기록들을 차곡차곡 남기는 공간입니다.</p><p>언젠가 뒤돌아봤을 때 저의 성장 과정이 그대로 담겨 있는 공간이 되었으면 좋겠습니다.</p><p>저에게 도움이 될 뿐 아니라 여러분에게도 작은 아이디어나 영감을 드릴 수 있다면 더없이 기쁠 것 같습니다. ✨</p><p>천천히 둘러보시고, 편하게 읽어주세요. 😊</p>',
+              '<p>저는 <b className="font-medium">좋은 개발자는 결국 좋은 문제 해결사</b>라고 생각합니다.</p><p>그래서 새로운 기술뿐 아니라 <b className="font-medium">사람, 경험, 생각</b>을 배우는 일도 중요하게 여기고 있습니다.</p><p>이 블로그는 제가 배우고, 만들고, 실패하고, 또다시 배우며 얻은 기록들을 차곡차곡 남기는 공간입니다.</p><p>제가 남긴 기록들이 누군가의 다음 시작에 작은 영감이 된다면 그것만으로도 제게는 충분히 의미가 있을 것 같습니다. ✨</p><p>그럼 천천히 둘러보시고, 편하게 읽어주세요! 😊</p>',
             intro3: '오늘도 멋진 하루 보내세요',
             typedbios:
-              '<li>제가 처음 코딩을 시작한 언어는 <b className="font-medium">C</b>예요.</li><li>저는 스트레스를 <b className="font-medium">수영, 폴댄스, 탱고, 여행과 같은 다양한 활동</b>으로 풀어요!</li><li>고양이를 사랑하지만, 고양이 알러지가 있어요😿.</li><li>책을 좋아해 독서모임📚 활동을 한지 꽤 오래되었어요!</li>',
+              '<li>제가 처음 코딩을 시작한 언어는 <b className="font-medium">C</b>예요.</li><li>저는 스트레스를 <b className="font-medium">수영, 모델수업, 댄스, 여행과 같은 다양한 활동</b>으로 풀어요!</li><li>고양이를 사랑하지만, 고양이 알러지가 있어요😿.</li><li>책을 좋아해 독서모임📚 활동을 한지 꽤 오래되었어요!</li>',
             links1: '나의 프로젝트들',
             links2: '내가 쓴 게시글들',
             links3: '코드 스니펫 모음',
@@ -272,12 +272,12 @@ export const useLanguageStore = create<LanguageStore>()(
           greeting: 'Hey, Everyone!',
           home: {
             intro1:
-              'I\'m <span className="font-medium">someone who loves learning, building, and documenting ideas</span>. Software development is currently <span className="font-medium">the fastest way for me to turn ideas into reality</span>, and the field I\'m most excited to explore.',
+              '<p><span className="font-medium">Living life doing what I love, anywhere in the world.</span></p><p>I\'m <span className="font-medium">Dahee Kim</span>, a developer who loves learning, building, and documenting in pursuit of that goal.</p><p>Software development is currently <span className="font-medium">the fastest way for me to turn ideas into reality</span>, and the field I\'m most excited to dive into.</p>',
             intro2:
               '<p>I believe <b className="font-medium">great developers are ultimately great problem solvers.</b></p><p>That\'s why I care not only about learning new technologies, but also about understanding <b className="font-medium">people, experiences, and ideas.</b></p><p>This blog is where I document what I learn, build, break, and discover along the way.</p><p>I hope it becomes an archive that reflects how I\'ve grown over time.</p><p>If something here gives you a new idea or helps you solve a problem, that would make me genuinely happy. ✨</p><p>Thanks for stopping by, and enjoy exploring. 😊</p>',
             intro3: 'Enjoy exploring',
             typedbios:
-              '<li>I wrote my first lines of code in <b className="font-medium">C</b>.</li><li>I recharge through <b className="font-medium">a variety of activities</b>, including swimming, pole dancing, tango, and traveling.</li><li>I\'m a cat lover with the unfortunate bonus of cat allergies. 😿</li><li>I\'ve been a regular member of a <b className="font-medium">book club</b> for years! 📚</li>',
+              '<li>I wrote my first lines of code in <b className="font-medium">C</b>.</li><li>I recharge through <b className="font-medium">a variety of activities</b>, including swimming, model classes, dancing, and traveling.</li><li>I\'m a cat lover with the unfortunate bonus of cat allergies. 😿</li><li>I\'ve been a regular member of a <b className="font-medium">book club</b> for years! 📚</li>',
             links1: 'What have I built?',
             links2: 'My writings',
             links3: 'Snippets collection',
@@ -376,7 +376,7 @@ export const useLanguageStore = create<LanguageStore>()(
             intro2:
               'The reason I got into development is a bit unusual. I originally majored in English Literature, drawn to how learning a language broadens your view of the world and lets you connect with more people. From there, I naturally started wondering, "Could technology help close the gap between languages?" That curiosity led me to want to build programs that connect language and computers myself, so I started coding. I began studying development in 2017, and I\'ve been growing ever since into a developer who builds services that genuinely help people.',
             intro3:
-              "Most recently, I gained hands-on experience at Furence, working on backend development for LG U+'s call recording system, and led a team as both team lead and backend/MCP server developer in an AI Service Developer Program with MCP. I'm especially interested in combining AI with web development, and I'm continuing to study <strong>Next.js</strong>, <strong>Nest.js</strong>, <strong>DevOps</strong>, and <strong>System Design</strong> as I think about how to build better services.",
+              "Most recently, I gained hands-on experience at Furence, working on backend development for LG U+'s call recording system, and led a team as both team lead and backend / MCP server developer in an AI Service Developer Program with MCP. I'm especially interested in combining AI with web development, and I'm continuing to study <strong>Next.js</strong>, <strong>Nest.js</strong>, <strong>DevOps</strong>, and <strong>System Design</strong> as I think about how to build better services.",
             intro4:
               "This blog is where I record what I've learned, built, wrestled with, and sometimes failed at along the way. Writing has helped me organize my thoughts and remember what I've learned for longer, and I hope these posts can be a small help to other developers working through similar questions.",
             intro5:
