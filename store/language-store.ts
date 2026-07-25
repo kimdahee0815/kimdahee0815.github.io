@@ -45,12 +45,12 @@ export const useLanguageStore = create<LanguageStore>()(
           greeting: '안녕하세요!',
           home: {
             intro1:
-              '<p><span className="font-medium">세상 어디에서든 좋아하는 일을 하며 살아가는 것.</span></p><p>그 목표를 향해 배우고, 만들고, 기록하는 것을 좋아하는 개발자 - <span className="font-medium">김다희</span>입니다.</p>',
+              '<p>개발자 <span className="font-medium">김다희</span>입니다.<span className="font-medium">아프리카 4개국을 트럭킹으로 24일간 여행하며, 여러 나라에서 온 친구들과 매일 함께 캠프를 쳤습니다.</span></p><p>그중 개발자 친구가 있었는데, 어디서든 일할 수 있다는 이야기를 들으며 그런 삶도 가능하다는 걸 처음 실감했습니다. 그 여행에서 얻은 생각의 전환이, 지금 제가 이 방식으로 일하고 싶어진 중요한 이유 중 하나입니다.</p>',
             intro2:
-              '<p>저는 <b className="font-medium">좋은 개발자는 결국 좋은 문제 해결사</b>라고 생각합니다.</p><p>그래서 새로운 기술뿐 아니라 <b className="font-medium">사람, 경험, 생각</b>을 배우는 일도 중요하게 여기고 있습니다.</p><p>이 블로그는 제가 배우고, 만들고, 실패하고, 또다시 배우며 얻은 기록들을 차곡차곡 남기는 공간입니다.</p><p>제가 남긴 기록들이 누군가의 다음 시작에 작은 영감이 된다면 그것만으로도 제게는 충분히 의미가 있을 것 같습니다. ✨</p><p>그럼 천천히 둘러보시고, 편하게 읽어주세요! 😊</p>',
-            intro3: '오늘도 멋진 하루 보내세요',
+              '<p>좋은 코드보다 <b className="font-medium">좋은 질문을 던지는 개발자</b>가 되고 싶습니다.</p><p>그래서 기술 못지않게 <b className="font-medium">사람, 경험, 생각의 흐름</b>을 관찰하는 데도 시간을 씁니다.</p><p>캠핑장 바로 옆으로 치타와 야생 코끼리가 지나다니는 사파리 한복판에서, 의외로 추웠던 밤마다 텐트를 치고 직접 빨래를 하며 스스로를 챙겼습니다. 그렇게 하나씩 낯선 것들을 이겨내며 배웠던 감각으로, 이곳은 낯선 문제 앞에서도 두려움 대신 용기를 내어 배우고 다시 시도한 기록들을 쌓아두는 공간입니다.</p><p>노트북 하나면 어디서든 이어갈 수 있는 방식으로, 그 여정을 계속하고 있습니다.</p><p>여기 남긴 기록들이 누군가에게 작은 힌트가 된다면 좋겠습니다. ✨</p><p>방문해주셔서 감사합니다! 😊</p>',
+            intro3: '언제든지 들러주시고 오늘도 멋진 하루 보내세요',
             typedbios:
-              '<li>제가 처음 코딩을 시작한 언어는 <b className="font-medium">C</b>예요.</li><li>저는 스트레스를 <b className="font-medium">수영, 댄스, 여행</b>으로 풀어요!</li><li>고양이를 사랑하지만, 고양이 알러지가 있어요😿.</li><li>책을 좋아해 독서모임📚 활동을 한지 꽤 오래되었어요!</li>',
+              '<li>제가 처음 코딩을 시작한 언어는 <b className="font-medium">C</b>예요.</li><li>아프리카 트럭킹 여행 중 스카이다이빙에도 도전해봤어요🪂.</li><li>저는 스트레스를 <b className="font-medium">수영, 댄스, 여행</b>으로 풀어요!</li><li>고양이를 사랑하지만, 고양이 알러지가 있어요😿.</li><li>책을 좋아해 독서모임📚 활동을 한지 꽤 오래되었어요!</li>',
             links1: '나의 프로젝트들',
             links2: '내가 쓴 게시글들',
             links3: '코드 스니펫 모음',
@@ -145,11 +145,11 @@ export const useLanguageStore = create<LanguageStore>()(
             greeting1: '안녕하세요',
             greeting2: '제 이름은 김다희입니다.',
             intro1:
-              '저는 <b className="font-medium">사용자에게 더 좋은 경험을 만드는 일</b>을 좋아하는 소프트웨어 엔지니어입니다. <b className="font-medium">프론트엔드와 백엔드</b> 모두 즐겨 개발하며, 새로운 기술을 배우고 직접 만들어보는 과정을 가장 재미있게 생각합니다. 특히 <b className="font-medium">AI가 사람의 언어를 이해하고 컴퓨터와 연결하는 방식</b>에 큰 흥미를 가지고 있습니다.',
+              '저는 <b className="font-medium">사용자에게 더 나은 경험을 만드는 일</b>을 좋아하는 소프트웨어 엔지니어입니다. 프론트엔드와 백엔드를 가리지 않고 필요한 만큼 만들어보는 걸 즐기고, 요즘은 특히 <b className="font-medium">AI가 사람의 언어를 이해하고 컴퓨터와 연결하는 방식</b>에 관심이 많습니다.',
             intro2:
-              '제가 개발을 시작한 계기는 조금 특별합니다. 원래 <b className="font-medium">영문학을 전공</b>하면서 언어를 배우면 세상을 바라보는 시야가 넓어지고, 더 많은 사람들과 소통할 수 있다는 점에 큰 매력을 느꼈습니다. 그러다 자연스럽게 "<b className="font-medium">언어의 장벽을 기술로 줄일 수 없을까?</b>"라는 궁금증이 생겼고, 언어와 컴퓨터를 연결하는 프로그램을 직접 만들어 보고 싶다는 생각으로 코딩을 시작하게 되었습니다. 그렇게 <b className="font-medium">2017년부터 개발을 공부</b>하기 시작했고, 지금은 사람들에게 도움이 되는 서비스를 만드는 개발자로 성장해가고 있습니다.',
+              '개발을 시작한 계기는 조금 특이합니다. 2017년, <b className="font-medium">전자공학과에 입학</b>하며 처음 <b className="font-medium">C 언어</b>를 접했습니다. 그러다 2019년, <b className="font-medium">아프리카 4개국을 트럭킹으로 여행</b>하며 만난 개발자 친구를 통해 개발자로 어디서든 일할 수 있다는 걸 처음 실감했습니다. 그 경험을 계기로 2021년, 언어를 배우면 세상을 보는 시야가 넓어진다는 생각에 <b className="font-medium">영문학과로 전과</b>했고, 같은 해부터 <b className="font-medium">본격적으로 개발을 공부</b>하기 시작했습니다.',
             intro3:
-              '최근에는 <b className="font-medium">퓨렌스에서 LG U+ 녹취 시스템 백엔드 개발</b>에 참여하며 실무 경험을 쌓았고, <b className="font-medium">MCP를 활용한 AI 서비스 개발자 양성과정</b>에서 팀 리더와 백엔드·MCP 서버 개발을 맡아 프로젝트를 진행했습니다. AI와 웹 기술을 함께 활용하는 개발에 관심이 많으며, 지금도 <b className="font-medium">Next.js, Nest.js, DevOps, 시스템 설계</b> 등을 꾸준히 공부하며 더 나은 서비스를 만드는 방법을 고민하고 있습니다.',
+              '최근에는 <b className="font-medium">퓨렌스에서 LG U+ 녹취 시스템 백엔드 개발</b>에 참여하며 실무 경험을 쌓았고, <b className="font-medium">DMC 코넷의 MCP 기반 AI 서비스 개발자 양성과정</b>에서 팀 리더 겸 백엔드, MCP 서버, GPU 서버 연동 및 개발을 맡아 프로젝트를 이끌었습니다. 지금도 <b className="font-medium">Next.js, Nest.js, 시스템 설계</b> 등을 꾸준히 공부하며 더 나은 서비스를 만드는 방법을 고민하고 있습니다.',
             intro4:
               '이 블로그는 제가 <b className="font-medium">배우고, 만들고, 고민하고, 때로는 실패하면서</b> 얻은 경험들을 기록하는 공간입니다. 제가 지금까지 글을 쓰면서 깨닫은 것은 글은 생각을 정리하고 배운 내용을 오래 기억할 수 있게 해준다는 것이었습니다. 그래서 <b className="font-medium">같은 고민을 하는 개발자들에게도 작은 도움</b>이 되었으면 하는 마음으로 하나씩 기록을 남기고 있습니다.',
             intro5:
@@ -272,12 +272,12 @@ export const useLanguageStore = create<LanguageStore>()(
           greeting: 'Hey, Everyone!',
           home: {
             intro1:
-              '<p><span className="font-medium">Living life doing what I love, anywhere in the world.</span></p><p>I\'m <span className="font-medium">Dahee Kim</span>, a developer who loves learning, building, and documenting in pursuit of that goal.</p>',
+              '<p>I\'m <span className="font-medium">Dahee Kim</span>, a developer. <span className="font-medium">I once spent 24 days overlanding across four African countries, pitching camp every night with friends from all over the world.</span><p>One of them was a software developer and told me developers could work from anywhere. That was the moment I realized a lifestyle like that was actually possible, and it completely changed how I imagined my future.</p>',
             intro2:
-              '<p>I believe <b className="font-medium">great developers are ultimately great problem solvers.</b></p><p>That\'s why I care not only about learning new technologies, but also about understanding <b className="font-medium">people, experiences, and ideas.</b></p><p>This blog is where I document what I learn, build, break, and discover along the way.</p><p>If what I leave here becomes a small spark for someone\'s next beginning, that alone would mean a lot to me. ✨</p><p>Thanks for stopping by, and enjoy exploring. 😊</p>',
-            intro3: 'Enjoy exploring',
+              '<p>I\'d rather be a developer who asks <b className="font-medium">good questions</b> than one who just writes good code.</p><p>So I spend as much time paying attention to <b className="font-medium">people, experiences, and the way ideas move</b> as I do to technology.</p><p>In the middle of a safari, with cheetahs and wild elephants wandering right past the campsite, I did my own laundry and pitched my own tent every night which was colder than I\'d expected. Overcoming one unfamiliar thing at a time out there is the same instinct I bring to unfamiliar problems here: choosing courage over fear, learning, and trying again.</p><p>These days I keep that same journey going in a form that only needs a laptop, wherever I happen to be.</p><p>I hope what I leave here ends up being a small hint for someone. ✨</p><p>Thanks for stopping by, and enjoy exploring. 😊</p>',
+            intro3: 'Stop by anytime and have a great day!',
             typedbios:
-              '<li>I wrote my first lines of code in <b className="font-medium">C</b>.</li><li>I recharge through <b className="font-medium">swimming, dancing, and traveling</b>.</li><li>I\'m a cat lover with the unfortunate bonus of cat allergies. 😿</li><li>I\'ve been a regular member of a <b className="font-medium">book club</b> for years! 📚</li>',
+              '<li>I wrote my first lines of code in <b className="font-medium">C</b>.</li><li>Somewhere along that African trip, I also talked myself into skydiving🪂.</li><li>I recharge through <b className="font-medium">swimming, dancing, and traveling</b>.</li><li>I\'m a cat lover with the unfortunate bonus of cat allergies. 😿</li><li>I\'ve been a regular member of a <b className="font-medium">book club</b> for years! 📚</li>',
             links1: 'What have I built?',
             links2: 'My writings',
             links3: 'Snippets collection',
@@ -372,11 +372,11 @@ export const useLanguageStore = create<LanguageStore>()(
             greeting1: 'Hey, Everyone!',
             greeting2: "I'm Dahee Kim",
             intro1:
-              'I\'m a software engineer who loves <b className="font-medium">creating better experiences for users</b>. I enjoy working on both <b className="font-medium">frontend and backend development</b>, and what excites me most is learning new technologies and building things with them. I\'m especially fascinated by <b className="font-medium">how AI understands human language and connects it with computers</b>.',
+              'I\'m a software engineer who enjoys <b className="font-medium">building better experiences for users</b>. I move between frontend and backend depending on what a project needs, and lately I\'m especially drawn to <b className="font-medium">how AI understands human language and connects it to computers</b>.',
             intro2:
-              'The reason I got into development is a bit unusual. I originally <b className="font-medium">majored in English Literature</b>, drawn to how learning a language broadens your view of the world and lets you connect with more people. From there, I naturally started wondering, "<b className="font-medium">Could technology help close the gap between languages?</b>" That curiosity led me to want to build programs that connect language and computers myself, so I started coding. I <b className="font-medium">began studying development in 2017</b>, and I\'ve been growing ever since into a developer who builds services that genuinely help people.',
+              'I got into development in a roundabout way. I entered university as an <b className="font-medium">electronics engineering</b> major in 2017 and first encountered <b className="font-medium">C</b> there. Then in 2019, while <b className="font-medium">overlanding across four African countries</b>, I met a developer friend and realized for the first time that working as a developer could mean working from anywhere. That experience led me to <b className="font-medium">switch my major to English Literature</b> in 2021, drawn to how learning a language widens your view of the world, and I <b className="font-medium">started studying development seriously</b> that same year.',
             intro3:
-              'Most recently, I gained hands-on experience at <b className="font-medium">Furence, working on backend development for LG U+\'s call recording system</b>, and led a team as both team lead and backend·MCP server developer in an <b className="font-medium">AI Service Developer Program with MCP</b>. I\'m especially interested in combining AI with web development, and I\'m continuing to study <strong>Next.js</strong>, <strong>Nest.js</strong>, <strong>DevOps</strong>, and <strong>System Design</strong> as I think about how to build better services.',
+              'Most recently, I worked on <b className="font-medium">backend development for LG U+\'s call recording system at Furence</b>, and led a team as team lead and backend, MCP server, GPU server developer in <b className="font-medium">DMC Conet\'s MCP-based AI Service Developer Program</b>. I\'m still studying <b className="font-medium">Next.js, Nest.js, and system design</b>, thinking through how to build better services.',
             intro4:
               'This blog is where I record what I\'ve <b className="font-medium">learned, built, wrestled with, and sometimes failed at</b> along the way. Writing has helped me organize my thoughts and remember what I\'ve learned for longer, and I hope these posts can be <b className="font-medium">a small help to other developers</b> working through similar questions.',
             intro5:
