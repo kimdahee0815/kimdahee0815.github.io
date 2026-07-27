@@ -3,6 +3,24 @@ import type { Project } from '~/types/data'
 export const PROJECTS: Project[] = [
   {
     type: 'self',
+    title: 'watchersTitle',
+    description: 'watchersDescription',
+    imgSrc: '/static/images/projects/watchers.png',
+    url: 'https://github.com/The-Watcherss',
+    builtWith: [
+      'Python',
+      'Machine Learning',
+      'Computer Vision',
+      'FastAPI',
+      'MCP',
+      'LLM Development',
+      'OpenAI',
+      'React',
+      'Electron',
+    ],
+  },
+  {
+    type: 'self',
     title: 'thinkstormTitle',
     description: 'thinkstormDescription',
     imgSrc: '/static/images/projects/thinkstorm.png',

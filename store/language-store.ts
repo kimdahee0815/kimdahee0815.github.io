@@ -117,6 +117,9 @@ export const useLanguageStore = create<LanguageStore>()(
             portfolio: '포트폴리오 둘러보기',
             work: '직장',
             sideProjects: '사이드 프로젝트',
+            watchersTitle: 'Watchers',
+            watchersDescription:
+              'CCTV 영상에서 지게차, 작업자, 헬멧 착용 여부를 실시간으로 감지하는 산업 안전 탐지 플랫폼입니다. 4인 팀의 팀 리더로서 FastAPI 백엔드, GPU 추론 서버, MCP 서버, 프론트엔드를 아우르는 end-to-end MLOps 파이프라인과 시스템 아키텍처를 총괄했습니다. 제로샷 탐지(Grounding DINO)와 액티브 러닝을 결합한 자동 라벨링 파이프라인을 구축하고, 골드셋 기반 모델 프로모션 게이트를 설계했으며, 커스텀 MCP 도구와 OpenAI Responses API 기반의 자연어 챗 제어 기능을 구현해 안전 핵심 클래스의 탐지 recall을 66.4%에서 78.3%로 개선했습니다.',
             thinkstormTitle: 'ThinkStorm (작업 진행 중)',
             thinkstormDescription:
               '글로벌 개발자들이 팀을 이루고 실제 프로젝트를 진행하며 실력을 키울 수 있도록 돕는 풀스택 협업 플랫폼입니다. 저는 풀스택 개발자로 참여해, 백엔드에서는 Redis 기반 캐싱/요청 제한 시스템과 JWT 인증, CI/CD 파이프라인을 설계·구축했고, 프론트엔드에서는 React/Next.js 기반 SPA를 구축하며 Redux, TanStack Query, Zustand로 상태 관리 아키텍처를 설계했습니다.',
@@ -344,6 +347,9 @@ export const useLanguageStore = create<LanguageStore>()(
             portfolio: 'View Full Portfolio',
             work: 'Work',
             sideProjects: 'Side Projects',
+            watchersTitle: 'Watchers',
+            watchersDescription:
+              "CCTV-based industrial safety platform that detects forklifts, workers, and helmet compliance in real time. I led a 4-person team as team lead, owning the end-to-end MLOps pipeline and system architecture across the FastAPI backend, GPU inference server, MCP server, and frontend. I built an automated labeling pipeline combining zero-shot detection (Grounding DINO) with active learning, designed a gold-set model-promotion gate, and implemented natural-language chat control via custom MCP tools and OpenAI's Responses API, improving safety-critical detection recall from 66.4% to 78.3%.",
             thinkstormTitle: 'ThinkStorm (Work In Progress)',
             thinkstormDescription:
               'Full-stack collaboration platform empowering global developers to team up, build real projects, and grow skills. I worked as a full-stack developer. On the backend, I designed and built Redis-based caching/rate-limiting, JWT authentication, and CI/CD pipelines; on the frontend, I built SPAs with React/Next.js and designed the state management architecture using Redux, TanStack Query, and Zustand.',
