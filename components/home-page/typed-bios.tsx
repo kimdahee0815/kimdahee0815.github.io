@@ -50,13 +50,13 @@ export function TypedBios() {
         {parse(t('home.typedbios'))}
         {language === 'ko' ? (
           <li>
-            언어 배우는 것을 매우 좋아해요. 현재 스페인어<Twemoji emoji="flag-spain"></Twemoji>를
-            배우고 있어요.
+            언어 배우는 것을 매우 좋아해요. 현재 스페인어를 배우고 있어요.{' '}
+            <Twemoji emoji="flag-spain"></Twemoji>
           </li>
         ) : (
           <li>
-            Love learning languages. Currently learning Spanish
-            <Twemoji emoji="flag-spain"></Twemoji>.
+            Love learning languages. Currently learning Spanish.{' '}
+            <Twemoji emoji="flag-spain"></Twemoji>
           </li>
         )}
       </ul>
