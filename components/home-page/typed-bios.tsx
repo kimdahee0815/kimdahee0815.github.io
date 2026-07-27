@@ -35,7 +35,7 @@ export function TypedBios() {
   return (
     <div
       className={clsx([
-        'flex min-h-[2.5rem] items-center gap-0.5',
+        'mb-4 flex min-h-[2.5rem] items-center gap-0.5 md:mb-6',
         [
           '[&_.typed-cursor]:inline-block',
           '[&_.typed-cursor]:w-2',
