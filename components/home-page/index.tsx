@@ -32,7 +32,7 @@ export function Home({
           <div className="text-[1.1rem] leading-[1.9rem] text-gray-600 dark:text-slate-300 sm768:text-[1.2rem] sm768:leading-[2.1rem] lg900:text-[1.3rem] lg900:leading-[2.2rem] xl1080:text-[1.4rem] xl1080:leading-[2.3rem] 2xl1280:text-[1.5rem] 2xl1280:leading-[2.5rem]">
             <TypedBios />
             <Intro />
-            <div className="mb-6 mt-2 md:mb-8 md:mt-2">{parse(t('home.intro2'))}</div>
+            <div className="mb-6 mt-4 md:mb-8 md:mt-6">{parse(t('home.intro2'))}</div>
             <BlogLinks />
             <p className="my-6 flex md:my-8">
               <span className="mr-2">{parse(t('home.intro3'))}</span>
