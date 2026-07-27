@@ -495,7 +495,7 @@ export const useLanguageStore = create<LanguageStore>()(
           },
           profile: {
             name: 'Dahee Kim',
-            intro: 'Self-Taught Developer | Learner | Creator',
+            intro: 'Explorer | Learner | Creator',
             title: 'Full-Stack Developer',
             company: '',
             location: 'Incheon, South Korea',
