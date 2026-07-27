@@ -66,6 +66,11 @@ import Axios from '~/icons/axios.svg'
 import Render from '~/icons/render.svg'
 import Mongoose from '~/icons/mongoose.svg'
 import Multer from '~/icons/multer.svg'
+import MachineLearning from '~/icons/machinelearning.svg'
+import ComputerVision from '~/icons/computervision.svg'
+import Electron from '~/icons/electron.svg'
+import FastAPI from '~/icons/fastapi.svg'
+import MCP from '~/icons/mcp.svg'
 
 export const BrandIconsMap = {
   React,
@@ -92,6 +97,11 @@ export const BrandIconsMap = {
   MongoDB,
   SpringBoot,
   AWS,
+  MachineLearning,
+  ComputerVision,
+  Electron,
+  FastAPI,
+  MCP,
 }
 
 export type BrandIconType = keyof typeof BrandIconsMap

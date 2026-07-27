@@ -9,8 +9,8 @@ export const PROJECTS: Project[] = [
     url: 'https://github.com/The-Watcherss',
     builtWith: [
       'Python',
-      'Machine Learning',
-      'Computer Vision',
+      'MachineLearning',
+      'ComputerVision',
       'FastAPI',
       'MCP',
       'LLM Development',

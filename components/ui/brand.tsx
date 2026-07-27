@@ -66,6 +66,11 @@ import Axios from '~/icons/axios.svg'
 import Render from '~/icons/render.svg'
 import Mongoose from '~/icons/mongoose.svg'
 import Multer from '~/icons/multer.svg'
+import MachineLearning from '~/icons/machinelearning.svg'
+import ComputerVision from '~/icons/computervision.svg'
+import Electron from '~/icons/electron.svg'
+import FastAPI from '~/icons/fastapi.svg'
+import MCP from '~/icons/mcp.svg'
 
 export let BrandsMap: Record<
   string,
@@ -92,6 +97,21 @@ export let BrandsMap: Record<
   React: {
     Icon: React,
     url: 'https://reactjs.org',
+  },
+  MachineLearning: {
+    Icon: MachineLearning,
+  },
+  ComputerVision: {
+    Icon: ComputerVision,
+  },
+  Electron: {
+    Icon: Electron,
+  },
+  FastAPI: {
+    Icon: FastAPI,
+  },
+  MCP: {
+    Icon: MCP,
   },
   Drizzle: {
     Icon: Drizzle,
