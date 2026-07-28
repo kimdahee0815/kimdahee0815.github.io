@@ -52,7 +52,16 @@ export function AuthorLayout({ children }: Props) {
             <div>
               <div className="mb-2 mt-2 flex items-center justify-between text-[1.1rem] leading-[1.9rem] text-gray-700 dark:text-slate-400 sm:text-[1.15rem] sm:leading-[2rem] md:text-[1.25rem] md:leading-[2.2rem] lg:text-[1.4rem] lg:leading-[2.4rem]">
                 <h2>{t('about.mycareer')}</h2>
-                <Button as="a" href="/static/resume.pdf" target="_blank">
+                <Button
+                  as="a"
+                  href={
+                    language === 'ko'
+                      ? '/static/DaheeKim_Resume_KR.pdf'
+                      : '/static/DaheeKim_Resume_EN.pdf'
+                  }
+                  download
+                  target="_blank"
+                >
                   <span>{t('about.resume')}</span>
                   <Twemoji emoji="page-facing-up" />
                 </Button>

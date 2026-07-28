@@ -25,7 +25,10 @@ export function FooterNav() {
 
   const FOOTER_PERSONAL_STUFF = [
     { href: '/about', title: t('footer.personal1') },
-    { href: '/static/resume.pdf', title: t('footer.personal2') },
+    {
+      href: language === 'ko' ? '/static/DaheeKim_Resume_KR.pdf' : '/static/DaheeKim_Resume_EN.pdf',
+      title: t('footer.personal2'),
+    },
     { href: '/books', title: t('footer.personal3') },
     { href: '/movies', title: t('footer.personal4') },
     { href: SITE_METADATA.analytics.umamiAnalytics.shareUrl, title: t('footer.personal5') },
